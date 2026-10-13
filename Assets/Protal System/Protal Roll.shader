@@ -4,10 +4,16 @@ Shader "Unlit/Protal Roll"
     {
         _MainTex ("Texture", 2D) = "white" {}
         _Speed ("Rotate Speed", Float) = 1
+        _Cutoff ("Alpha Cutoff", Range(0, 1)) = 0.5 // 透明裁切門檻
     }
     SubShader
     {
-        Tags { "RenderType"="Opaque" }
+        // 1. 改為 AlphaTest（裁切）模式
+        Tags { "Queue"="AlphaTest" "RenderType"="TransparentCutout" }
+
+        Cull Off     // 開啟雙面渲染
+        ZWrite On    // 開啟深度寫入，防止前後面互相穿透
+
         Pass
         {
             CGPROGRAM
@@ -17,8 +23,12 @@ Shader "Unlit/Protal Roll"
 
             sampler2D _MainTex;
             float _Speed;
+            fixed _Cutoff;
 
-            struct v2f { float4 pos : SV_POSITION; float2 uv : TEXCOORD0; };
+            struct v2f { 
+                float4 pos : SV_POSITION; 
+                float2 uv : TEXCOORD0; 
+            };
 
             v2f vert (appdata_base v)
             {
@@ -35,7 +45,13 @@ Shader "Unlit/Protal Roll"
                 float s = sin(a), c = cos(a);
                 uv = float2(uv.x * c - uv.y * s, uv.x * s + uv.y * c);
                 uv += 0.5;
-                return tex2D(_MainTex, uv);
+
+                fixed4 col = tex2D(_MainTex, uv);
+                
+                // 關鍵：將 Alpha 低於門檻的像素直接剔除（丟棄）
+                clip(col.a - _Cutoff);
+
+                return col;
             }
             ENDCG
         }

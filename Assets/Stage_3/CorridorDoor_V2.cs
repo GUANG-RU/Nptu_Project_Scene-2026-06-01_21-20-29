@@ -61,12 +61,16 @@ public class CorridorDoor_V2 : MonoBehaviour
     // ──────────────────────────────────────────
     void Update()
     {
+        if (Input.GetKeyDown(interactKey))
+            Debug.Log($"[Door:{gameObject.name}] F pressed | playerNear={playerNear} isReady={isReady} IsOpen={IsOpen}");
+
         if (!playerNear || IsOpen) return;
         if (Input.GetKeyDown(interactKey)) OpenDoor();
     }
 
     void OnTriggerEnter(Collider other)
     {
+        Debug.Log($"[Door:{gameObject.name}] TriggerEnter tag={other.tag} isReady={isReady}");
         if (!isReady || !other.CompareTag("Player")) return;
         playerNear = true;
         if (autoCloseCoroutine != null)
@@ -90,6 +94,7 @@ public class CorridorDoor_V2 : MonoBehaviour
     // ──────────────────────────────────────────
     void OpenDoor()
     {
+        Debug.Log($"[Door:{gameObject.name}] OpenDoor! isCorrect={isCorrect}");
         IsOpen = true;
         if (interactPrompt) interactPrompt.SetActive(false);
         if (doorAnimator)   doorAnimator.SetTrigger(openTrigger);

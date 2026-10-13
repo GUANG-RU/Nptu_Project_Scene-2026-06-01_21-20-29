@@ -51,12 +51,16 @@ public class SeamlessCorridorSystem_V3 : MonoBehaviour
     [Header("走廊朝向（玩家面對門廳的方向，預設 +Z）")]
     [SerializeField] private Vector3 corridorForward = Vector3.forward;
 
+    [Header("浮動走道延伸方向（門內側朝向，預設 +Z）")]
+    [SerializeField] private Vector3 pathForward = Vector3.forward;
+
     // ──────────────────────────────────────────
     public System.Action OnWrongDoor;
     public System.Action OnCorrectDoor;
 
-    private CorridorDoor_V2 activeDoor  = null;
-    private bool            isMoving    = false;
+    private CorridorDoor_V2 activeDoor   = null;
+    private bool            isMoving     = false;
+    private bool            playerInPath = false;  // 玩家是否在浮動走道裡
 
     // ──────────────────────────────────────────
     void Start()
@@ -77,6 +81,7 @@ public class SeamlessCorridorSystem_V3 : MonoBehaviour
 
         if (wrongEndTrigger)   wrongEndTrigger.OnPlayerEnter   += HandleWrongEnd;
         if (correctEndTrigger) correctEndTrigger.OnPlayerEnter += HandleCorrectEnd;
+
     }
 
     void OnDestroy()
@@ -98,14 +103,22 @@ public class SeamlessCorridorSystem_V3 : MonoBehaviour
     void HandleDoorClose(int idx)
     {
         if (activeDoor != doors[idx]) return;
-        ReturnPaths();
+        // 延遲收回，讓玩家有時間走進去；若已在傳送序列則不處理
+        if (!isMoving) StartCoroutine(DelayedReturnPaths());
         activeDoor = null;
+    }
+
+    IEnumerator DelayedReturnPaths()
+    {
+        yield return new WaitForSeconds(3f);  // 等 3 秒，玩家如果沒進去才收回
+        if (!isMoving) ReturnPaths();
     }
 
     // ──────────────────────────────────────────
     void HandleWrongEnd()
     {
         if (isMoving) return;
+        playerInPath = false;
         OnWrongDoor?.Invoke();
         StartCoroutine(TransportSequence(corridorSpawn));
     }
@@ -113,6 +126,7 @@ public class SeamlessCorridorSystem_V3 : MonoBehaviour
     void HandleCorrectEnd()
     {
         if (isMoving) return;
+        playerInPath = false;
         OnCorrectDoor?.Invoke();
         StartCoroutine(TransportSequence(puzzleRoomSpawn));
     }
@@ -139,8 +153,10 @@ public class SeamlessCorridorSystem_V3 : MonoBehaviour
     void DockPath(Transform path, Transform door)
     {
         if (!path || !door) return;
-        path.position = door.position + door.forward * dockOffset;
-        path.rotation = door.rotation;
+        // 沿著指定的走道方向偏移，接在門內側
+        Vector3 dir = pathForward.normalized;
+        path.position = door.position + dir * dockOffset;
+        path.rotation = Quaternion.LookRotation(dir, Vector3.up);
     }
 
     void ParkPath(Transform path)

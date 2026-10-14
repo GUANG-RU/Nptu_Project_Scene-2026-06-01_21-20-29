@@ -2,24 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// 無縫走廊系統 V3（最終版）
-///
-/// 流程：
-///   玩家按 F 開門
-///   → 浮動走道瞬間移到門後
-///   → 玩家走進去（每扇門體驗完全一樣）
-///   → 走到盡頭（TurnTrigger）
-///   → 視角背對門廳後瞬間傳送回 SpawnPoint
-///   → 門關、走道縮回待機點
-///
-///   正確門：走到盡頭傳送到謎題房間入口
-///   玩家遠離門（不走進去）：門自動關、走道縮回
-/// </summary>
 public class SeamlessCorridorSystem_V3 : MonoBehaviour
 {
     [Header("走廊")]
-    [SerializeField] private Transform corridorSpawn;   // 門廳起點，傳送回這裡
+    [SerializeField] private Transform corridorSpawn;
 
     [Header("門（依序拖入 5 扇）")]
     [SerializeField] private List<CorridorDoor_V2> doors = new();
@@ -28,15 +14,15 @@ public class SeamlessCorridorSystem_V3 : MonoBehaviour
     [SerializeField] private int correctDoorIndex = 2;
 
     [Header("浮動走道")]
-    [SerializeField] private Transform      wrongPath;          // 錯誤走道
-    [SerializeField] private TurnTrigger_V2 wrongEndTrigger;    // 錯誤走道盡頭
-    [SerializeField] private Transform      correctPath;        // 正確走道
-    [SerializeField] private TurnTrigger_V2 correctEndTrigger;  // 正確走道盡頭
+    [SerializeField] private Transform      wrongPath;
+    [SerializeField] private TurnTrigger_V2 wrongEndTrigger;
+    [SerializeField] private Transform      correctPath;
+    [SerializeField] private TurnTrigger_V2 correctEndTrigger;
 
     [Header("待機位置（夠遠，玩家看不到）")]
     [SerializeField] private Transform parkingSpot;
 
-    [Header("走道入口偏移（門後多少距離接走道）")]
+    [Header("走道入口偏移")]
     [SerializeField] private float dockOffset = 0.05f;
 
     [Header("謎題房間入口")]
@@ -48,19 +34,16 @@ public class SeamlessCorridorSystem_V3 : MonoBehaviour
     [SerializeField] private MonoBehaviour playerLook;
     [SerializeField] private Transform     playerCameraTransform;
 
-    [Header("走廊朝向（玩家面對門廳的方向，預設 +Z）")]
-    [SerializeField] private Vector3 corridorForward = Vector3.forward;
-
-    [Header("浮動走道延伸方向（門內側朝向，預設 +Z）")]
+    [Header("浮動走道延伸方向（門內側朝向）")]
     [SerializeField] private Vector3 pathForward = Vector3.forward;
 
     // ──────────────────────────────────────────
     public System.Action OnWrongDoor;
     public System.Action OnCorrectDoor;
 
-    private CorridorDoor_V2 activeDoor   = null;
-    private bool            isMoving     = false;
-    private bool            playerInPath = false;  // 玩家是否在浮動走道裡
+    private CorridorDoor_V2 activeDoor = null;
+    private Transform       activePath = null;
+    private bool            isMoving   = false;
 
     // ──────────────────────────────────────────
     void Start()
@@ -81,7 +64,6 @@ public class SeamlessCorridorSystem_V3 : MonoBehaviour
 
         if (wrongEndTrigger)   wrongEndTrigger.OnPlayerEnter   += HandleWrongEnd;
         if (correctEndTrigger) correctEndTrigger.OnPlayerEnter += HandleCorrectEnd;
-
     }
 
     void OnDestroy()
@@ -93,32 +75,23 @@ public class SeamlessCorridorSystem_V3 : MonoBehaviour
     // ──────────────────────────────────────────
     void HandleDoorOpen(int idx)
     {
-        if (activeDoor != null) return;
+        Debug.Log($"[System] HandleDoorOpen idx={idx} | isMoving={isMoving} | activeDoor={activeDoor?.name ?? "null"}");
+        if (isMoving) return;
         activeDoor = doors[idx];
-
-        bool correct = (idx == correctDoorIndex);
-        DockPath(correct ? correctPath : wrongPath, activeDoor.transform);
+        activePath = (idx == correctDoorIndex) ? correctPath : wrongPath;
+        DockPath(activePath, activeDoor.transform);
+        Debug.Log($"[System] Docked path={activePath.name} to door={activeDoor.name}");
     }
 
     void HandleDoorClose(int idx)
     {
-        if (activeDoor != doors[idx]) return;
-        // 延遲收回，讓玩家有時間走進去；若已在傳送序列則不處理
-        if (!isMoving) StartCoroutine(DelayedReturnPaths());
-        activeDoor = null;
-    }
-
-    IEnumerator DelayedReturnPaths()
-    {
-        yield return new WaitForSeconds(3f);  // 等 3 秒，玩家如果沒進去才收回
-        if (!isMoving) ReturnPaths();
+        Debug.Log($"[System] HandleDoorClose idx={idx} | activeDoor={activeDoor?.name ?? "null"} | isMoving={isMoving}");
     }
 
     // ──────────────────────────────────────────
     void HandleWrongEnd()
     {
         if (isMoving) return;
-        playerInPath = false;
         OnWrongDoor?.Invoke();
         StartCoroutine(TransportSequence(corridorSpawn));
     }
@@ -126,7 +99,6 @@ public class SeamlessCorridorSystem_V3 : MonoBehaviour
     void HandleCorrectEnd()
     {
         if (isMoving) return;
-        playerInPath = false;
         OnCorrectDoor?.Invoke();
         StartCoroutine(TransportSequence(puzzleRoomSpawn));
     }
@@ -134,26 +106,31 @@ public class SeamlessCorridorSystem_V3 : MonoBehaviour
     // ──────────────────────────────────────────
     IEnumerator TransportSequence(Transform destination)
     {
+        Debug.Log($"[System] TransportSequence START → {destination.name}");
         isMoving = true;
         DisablePlayer();
-
-        // 等視角背對走廊（已在走道轉彎處）再傳送
-        yield return new WaitUntil(IsLookingAway);
+        yield return null;
 
         TeleportTo(destination);
+        Debug.Log($"[System] TeleportTo done | player={player.position} | yaw={player.eulerAngles.y}");
+
         ReturnPaths();
-        if (activeDoor != null) { activeDoor.ForceClose(); activeDoor = null; }
+        activePath = null;
+        activeDoor = null;
+
+        yield return new WaitForSeconds(1f);
         foreach (var d in doors) d.ResetDoor();
+        Debug.Log("[System] ResetDoor all done");
 
         EnablePlayer();
         isMoving = false;
+        Debug.Log("[System] TransportSequence END");
     }
 
     // ──────────────────────────────────────────
     void DockPath(Transform path, Transform door)
     {
         if (!path || !door) return;
-        // 沿著指定的走道方向偏移，接在門內側
         Vector3 dir = pathForward.normalized;
         path.position = door.position + dir * dockOffset;
         path.rotation = Quaternion.LookRotation(dir, Vector3.up);
@@ -175,14 +152,42 @@ public class SeamlessCorridorSystem_V3 : MonoBehaviour
     void TeleportTo(Transform target)
     {
         if (!player || !target) return;
-        player.position = target.position;
-        player.rotation = target.rotation;
-    }
 
-    bool IsLookingAway() =>
-        !playerCameraTransform ||
-        Vector3.Dot(playerCameraTransform.forward.normalized,
-                    corridorForward.normalized) < 0f;
+        var cc = player.GetComponent<CharacterController>();
+        if (cc) cc.enabled = false;
+
+        if (target == corridorSpawn && activePath != null)
+        {
+            // 相對位置：玩家在WP的局部座標 → 套到corridorSpawn
+            Vector3 localPos = activePath.InverseTransformPoint(player.position);
+            player.position  = corridorSpawn.TransformPoint(localPos);
+
+            // 面向：WP → 主走廊 的方向映射
+            float camYaw      = playerCameraTransform ? playerCameraTransform.eulerAngles.y : player.eulerAngles.y;
+            float pathYaw     = activePath.eulerAngles.y;
+            float spawnYaw    = corridorSpawn.eulerAngles.y;
+            float relativeYaw = camYaw - pathYaw;
+            float finalYaw    = spawnYaw + relativeYaw;
+
+            Debug.Log($"[System] TeleportTo YAWLOG | camYaw={camYaw:F1} pathYaw={pathYaw:F1} spawnYaw={spawnYaw:F1} relYaw={relativeYaw:F1} finalYaw={finalYaw:F1}");
+
+            player.rotation = Quaternion.Euler(0f, finalYaw, 0f);
+            if (playerCameraTransform)
+                playerCameraTransform.localRotation = Quaternion.Euler(
+                    playerCameraTransform.localEulerAngles.x, 0f, 0f);
+        }
+        else
+        {
+            player.position = target.position;
+            float yaw = target.eulerAngles.y;
+            player.rotation = Quaternion.Euler(0f, yaw, 0f);
+            if (playerCameraTransform)
+                playerCameraTransform.localRotation = Quaternion.identity;
+            Debug.Log($"[System] TeleportTo (direct) | yaw={yaw:F1}");
+        }
+
+        if (cc) cc.enabled = true;
+    }
 
     void DisablePlayer()
     {
@@ -192,20 +197,70 @@ public class SeamlessCorridorSystem_V3 : MonoBehaviour
 
     void EnablePlayer()
     {
+        // StandardAssets FirstPersonController：同步 MouseLook 內部的 m_CharacterTargetRot / m_CameraTargetRot
+        // 否則下一幀 LookRotation() 會用舊值把傳送後的面向蓋掉
+        SyncMouseLook();
+
         if (playerMovement) playerMovement.enabled = true;
         if (playerLook)     playerLook.enabled     = true;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible   = false;
     }
 
-    // ──────────────────────────────────────────
+    void SyncMouseLook()
+    {
+        // 支援 FirstPersonController（m_MouseLook）和 RigidbodyFirstPersonController（mouseLook）
+        var flags = System.Reflection.BindingFlags.NonPublic |
+                    System.Reflection.BindingFlags.Public |
+                    System.Reflection.BindingFlags.Instance;
+
+        // 找 playerMovement 或 playerLook 裡的 MouseLook 欄位
+        MonoBehaviour target = playerMovement ? playerMovement : playerLook;
+        if (!target) return;
+
+        var mouseLookField = target.GetType().GetField("m_MouseLook", flags)
+                          ?? target.GetType().GetField("mouseLook",   flags);
+        if (mouseLookField == null)
+        {
+            Debug.LogWarning("[System] SyncMouseLook: MouseLook field not found");
+            return;
+        }
+
+        object mouseLook = mouseLookField.GetValue(target);
+        if (mouseLook == null) return;
+
+        var mlType = mouseLook.GetType();
+
+        // m_CharacterTargetRot = 玩家 body 的目標 rotation（純 Yaw）
+        var charRotField = mlType.GetField("m_CharacterTargetRot", flags);
+        // m_CameraTargetRot = 相機的目標 rotation（純 Pitch，localRotation）
+        var camRotField  = mlType.GetField("m_CameraTargetRot",    flags);
+
+        if (charRotField != null)
+        {
+            Quaternion newCharRot = Quaternion.Euler(0f, player.eulerAngles.y, 0f);
+            charRotField.SetValue(mouseLook, newCharRot);
+            Debug.Log($"[System] SyncMouseLook: m_CharacterTargetRot → yaw={player.eulerAngles.y:F1}");
+        }
+
+        if (camRotField != null && playerCameraTransform)
+        {
+            // 保留相機的 pitch（上下角度），只清掉 yaw 讓 body 負責
+            Quaternion newCamRot = Quaternion.Euler(playerCameraTransform.localEulerAngles.x, 0f, 0f);
+            camRotField.SetValue(mouseLook, newCamRot);
+            Debug.Log($"[System] SyncMouseLook: m_CameraTargetRot → pitch={playerCameraTransform.localEulerAngles.x:F1}");
+        }
+
+        // 把改動寫回（struct 是 value type，必須 SetValue 回去）
+        mouseLookField.SetValue(target, mouseLook);
+    }
+
     void OnDrawGizmosSelected()
     {
         if (corridorSpawn)
         {
             Gizmos.color = Color.cyan;
             Gizmos.DrawSphere(corridorSpawn.position, 0.3f);
-            Gizmos.DrawRay(corridorSpawn.position, corridorForward * 3f);
         }
         if (puzzleRoomSpawn)
         {

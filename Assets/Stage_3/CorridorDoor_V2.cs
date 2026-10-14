@@ -3,12 +3,6 @@ using UnityEngine;
 
 /// <summary>
 /// V2 走廊門控
-///
-/// 功能：
-///   - 玩家靠近：顯示互動提示
-///   - 按 F：門開啟動畫，通知系統對接浮動走道
-///   - 玩家遠離：門自動關閉動畫，通知系統收回走道
-///   - 提示物件：只有正確門顯示（微小刻痕/符文等）
 /// </summary>
 [RequireComponent(typeof(Collider))]
 public class CorridorDoor_V2 : MonoBehaviour
@@ -17,7 +11,7 @@ public class CorridorDoor_V2 : MonoBehaviour
     [SerializeField] private Animator doorAnimator;
     [SerializeField] private string   openTrigger  = "Open";
     [SerializeField] private string   closeTrigger = "Close";
-    [SerializeField] private float    autoCloseDelay = 0.5f;  // 玩家離開後幾秒關門
+    [SerializeField] private float    autoCloseDelay = 0.5f;
 
     [Header("提示物件（正確門才顯示）")]
     [SerializeField] private GameObject hintObject;
@@ -39,6 +33,7 @@ public class CorridorDoor_V2 : MonoBehaviour
     private bool playerNear = false;
     private bool isReady    = false;
     private Coroutine autoCloseCoroutine;
+    private Transform playerTransform;
 
     // ──────────────────────────────────────────
     public void Init(bool isCorrect, System.Action onOpen, System.Action onClose)
@@ -56,7 +51,21 @@ public class CorridorDoor_V2 : MonoBehaviour
         Invoke(nameof(SetReady), 0.3f);
     }
 
-    void SetReady() => isReady = true;
+    void SetReady()
+    {
+        isReady = true;
+        // 若玩家已在範圍內（傳送後停在門旁），補觸發 playerNear
+        if (playerTransform != null && !IsOpen)
+        {
+            float dist = Vector3.Distance(transform.position, playerTransform.position);
+            if (dist <= interactRadius)
+            {
+                playerNear = true;
+                if (interactPrompt) interactPrompt.SetActive(true);
+                Debug.Log($"[Door:{gameObject.name}] SetReady: player already near, restored playerNear");
+            }
+        }
+    }
 
     // ──────────────────────────────────────────
     void Update()
@@ -70,15 +79,16 @@ public class CorridorDoor_V2 : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log($"[Door:{gameObject.name}] TriggerEnter tag={other.tag} isReady={isReady}");
         if (!isReady || !other.CompareTag("Player")) return;
         playerNear = true;
+        playerTransform = other.transform;
         if (autoCloseCoroutine != null)
         {
             StopCoroutine(autoCloseCoroutine);
             autoCloseCoroutine = null;
         }
         if (interactPrompt && !IsOpen) interactPrompt.SetActive(true);
+        Debug.Log($"[Door:{gameObject.name}] OnTriggerEnter | playerNear=true");
     }
 
     void OnTriggerExit(Collider other)
@@ -86,6 +96,7 @@ public class CorridorDoor_V2 : MonoBehaviour
         if (!other.CompareTag("Player")) return;
         playerNear = false;
         if (interactPrompt) interactPrompt.SetActive(false);
+        Debug.Log($"[Door:{gameObject.name}] OnTriggerExit | IsOpen={IsOpen}");
 
         if (IsOpen)
             autoCloseCoroutine = StartCoroutine(AutoCloseAfterDelay());
@@ -114,22 +125,47 @@ public class CorridorDoor_V2 : MonoBehaviour
         if (doorAnimator) doorAnimator.SetTrigger(closeTrigger);
         onClose?.Invoke();
         autoCloseCoroutine = null;
+
+        // 關門後如果玩家還在觸發範圍內，恢復 playerNear
+        if (playerTransform != null)
+        {
+            float dist = Vector3.Distance(transform.position, playerTransform.position);
+            if (dist <= interactRadius + 0.5f)
+            {
+                playerNear = true;
+                if (interactPrompt) interactPrompt.SetActive(true);
+            }
+        }
     }
 
-    /// <summary>系統強制關門（傳送後呼叫）</summary>
+    /// <summary>系統強制關門（傳送後呼叫）- 不觸發 onClose callback、不播動畫</summary>
     public void ForceClose()
     {
-        if (autoCloseCoroutine != null) StopCoroutine(autoCloseCoroutine);
+        if (autoCloseCoroutine != null)
+        {
+            StopCoroutine(autoCloseCoroutine);
+            autoCloseCoroutine = null;
+        }
         IsOpen = false;
-        if (doorAnimator) doorAnimator.SetTrigger(closeTrigger);
-        autoCloseCoroutine = null;
+        // 重置 Animator 到 Idle 狀態，不播放關門動畫
+        if (doorAnimator)
+        {
+            doorAnimator.ResetTrigger(openTrigger);
+            doorAnimator.ResetTrigger(closeTrigger);
+            doorAnimator.Play("Idle", 0, 0f);
+        }
+        // 不呼叫 onClose — 系統內部重置，不需要通知
     }
 
     public void ResetDoor()
     {
         ForceClose();
+        playerNear = false;
+        if (interactPrompt) interactPrompt.SetActive(false);
         isReady = false;
-        Invoke(nameof(SetReady), 0.3f);
+        CancelInvoke(nameof(SetReady));
+        Invoke(nameof(SetReady), 1.0f);
+        Debug.Log($"[Door:{gameObject.name}] ResetDoor called, isReady=false for 1s");
     }
 
     void OnDrawGizmosSelected()

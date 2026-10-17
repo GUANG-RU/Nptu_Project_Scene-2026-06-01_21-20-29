@@ -100,7 +100,30 @@ public class SeamlessCorridorSystem_V3 : MonoBehaviour
     {
         if (isMoving) return;
         OnCorrectDoor?.Invoke();
-        StartCoroutine(TransportSequence(puzzleRoomSpawn));
+        // 正確路：走廊直接固定在這裡，不傳送、不收回
+        // correctPath 已經 Docked 到正確門旁，保持不動
+        // 只需要關閉其他門、鎖定系統避免重複觸發
+        LockCorrectPath();
+    }
+
+    /// <summary>踩到正確路終點：鎖定走廊，所有猜門關閉並停用</summary>
+    void LockCorrectPath()
+    {
+        isMoving = true;   // 防止重複觸發
+
+        // 其他猜門全部重置並停用互動
+        foreach (var d in doors) d.ResetDoor();
+
+        // correctPath 留在原位不動（已 Docked 到正確門）
+        // wrongPath 收回待機
+        ParkPath(wrongPath);
+
+        activePath = null;
+        activeDoor = null;
+        // isMoving 故意不改回 false，讓猜門系統永久鎖定
+        // 玩家從此只走正確路進謎題房間
+
+        Debug.Log("[System] LockCorrectPath: 走廊已固定，猜門停用");
     }
 
     // ──────────────────────────────────────────

@@ -10,6 +10,7 @@ TagManager:
   - LaserTarget
   - Menu
   - Laser
+  - Photosensor
   layers:
   - Default
   - TransparentFX

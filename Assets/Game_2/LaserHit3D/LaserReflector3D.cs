@@ -18,6 +18,9 @@ public class LaserReflector3D : MonoBehaviour
     public Transform[] prismOutputPoints; // 3 個發射點 (RGB)
     public Color[] prismColors = new Color[] { Color.red, Color.green, Color.blue };
 
+    [Header("雷射外觀設定")]
+    public float laserWidth = 0.25f; // 可在 Inspector 隨時調整數值
+
     private List<LineRenderer> lineRenderers = new List<LineRenderer>();
 
     private void Update()
@@ -66,7 +69,8 @@ public class LaserReflector3D : MonoBehaviour
             // 打到光敏接收器
             else if (hit.collider.CompareTag("Photosensor"))
             {
-                Photosensor sensor = hit.collider.GetComponent<Photosensor>();
+                // 使用 GetComponentInParent 防範碰撞體位在子物件的情況
+                Photosensor sensor = hit.collider.GetComponentInParent<Photosensor>();
                 if (sensor != null)
                 {
                     sensor.ReceiveLaser(color);
@@ -86,14 +90,19 @@ public class LaserReflector3D : MonoBehaviour
             GameObject lineObj = new GameObject($"LaserLine_{lineRenderers.Count}");
             lineObj.transform.SetParent(transform);
             LineRenderer lr = lineObj.AddComponent<LineRenderer>();
-            lr.startWidth = 0.08f;
-            lr.endWidth = 0.08f;
+            
             lr.material = new Material(Shader.Find("Sprites/Default"));
             lineRenderers.Add(lr);
         }
 
-        lineRenderers[targetIdx].enabled = true;
-        return lineRenderers[targetIdx];
+        LineRenderer currentLr = lineRenderers[targetIdx];
+        currentLr.enabled = true;
+        
+        // 即時讀取變數設定寬度
+        currentLr.startWidth = laserWidth;
+        currentLr.endWidth = laserWidth;
+
+        return currentLr;
     }
 
     private void ClearLines()

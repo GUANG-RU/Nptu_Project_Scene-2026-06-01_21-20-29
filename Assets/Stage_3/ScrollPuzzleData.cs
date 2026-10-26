@@ -12,6 +12,10 @@ public class ScrollPuzzleData
     public int columns = 4;   // 左右格數
     public int rows    = 3;   // 上下格數
 
+    [Header("光線入口 / 出口（row 從 0 開始，左下為 row=0）")]
+    public int entryRow = 0;   // 左側入口列（綠色 ▶）
+    public int exitRow  = 0;   // 右側出口列（紅色 ◀）
+
     [Header("障礙格子（不能畫線）— 填入格子座標 (col, row)，左下為 (0,0)")]
     public Vector2Int[] obstacles;
 

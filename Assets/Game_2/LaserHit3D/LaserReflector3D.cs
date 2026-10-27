@@ -76,6 +76,23 @@ public class LaserReflector3D : MonoBehaviour
                     sensor.ReceiveLaser(color);
                 }
             }
+            // --- 補上此段判斷 ---
+            else if (hit.collider.CompareTag("Splitter"))
+            {
+                LaserCrossSplitter splitter = hit.collider.GetComponentInParent<LaserCrossSplitter>();
+                if (splitter != null)
+                {
+                    splitter.ReceiveLaser(color);
+                }
+            }
+            else if (hit.collider.CompareTag("Combiner"))
+            {
+                LaserCombiner combiner = hit.collider.GetComponentInParent<LaserCombiner>();
+                if (combiner != null)
+                {
+                    combiner.ReceiveLaser(color);
+                }
+            }
         }
         else
         {

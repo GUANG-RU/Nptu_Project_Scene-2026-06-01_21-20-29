@@ -4,7 +4,7 @@ using UnityEngine.Events;
 public class Photosensor : MonoBehaviour
 {
     [Header("目標解謎顏色")]
-    public Color requiredColor = Color.yellow; // 在 Inspector 中設定目標顏色 (例如黃色/紫色)
+    public Color requiredColor = Color.yellow; // 在 Inspector 中設定目標顏色
 
     [Header("顏色判定容差")]
     [Range(0.01f, 0.3f)]
@@ -19,6 +19,17 @@ public class Photosensor : MonoBehaviour
 
     private Color accumulatedColor = Color.black;
     private bool receivedHitThisFrame = false;
+    private DroneHover droneHover;
+
+    private void Awake()
+    {
+        // 自動取得同層或子物件的 DroneHover 腳本
+        droneHover = GetComponent<DroneHover>();
+        if (droneHover == null)
+        {
+            droneHover = GetComponentInChildren<DroneHover>();
+        }
+    }
 
     /// <summary>
     /// 當雷射打中此感應器時，由 Raycast 邏輯每幀呼叫一次
@@ -27,6 +38,12 @@ public class Photosensor : MonoBehaviour
     {
         accumulatedColor += laserColor;
         receivedHitThisFrame = true;
+
+        // 傳送發光訊號給 DroneHover
+        if (droneHover != null)
+        {
+            droneHover.OnLaserHit(laserColor);
+        }
     }
 
     private void LateUpdate()
@@ -49,7 +66,7 @@ public class Photosensor : MonoBehaviour
 
     private void CheckColorMatch()
     {
-        // 將 RGB 數值限制在 0~1 之間 (防止重複打上的光線數值破表)
+        // 將 RGB 數值限制在 0~1 之間
         Color normalizedColor = new Color(
             Mathf.Clamp01(accumulatedColor.r),
             Mathf.Clamp01(accumulatedColor.g),

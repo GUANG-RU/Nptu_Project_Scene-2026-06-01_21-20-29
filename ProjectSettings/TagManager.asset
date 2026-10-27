@@ -11,6 +11,8 @@ TagManager:
   - Menu
   - Laser
   - Photosensor
+  - Splitter
+  - Combiner
   layers:
   - Default
   - TransparentFX

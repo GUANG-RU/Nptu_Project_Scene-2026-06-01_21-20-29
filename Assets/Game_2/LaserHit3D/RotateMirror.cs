@@ -12,6 +12,11 @@ public class RotateMirror : MonoBehaviour
     [Tooltip("互動按鍵")]
     public KeyCode interactKey = KeyCode.E;
 
+    [Header("玩家對焦視角限制")]
+    [Tooltip("玩家面向鏡子的判定門檻 (0.5 代表玩家正面視野 ±60 度錐形區域內對準鏡子即可互動)")]
+    [Range(0f, 1f)]
+    public float playerFacingThreshold = 0.5f;
+
     [Header("上下俯仰 (Pitch) 限制")]
     [Tooltip("向下最大傾斜角度 (負數)")]
     public float minPitchAngle = -45.0f;
@@ -19,9 +24,12 @@ public class RotateMirror : MonoBehaviour
     [Tooltip("向上最大傾斜角度 (正數)")]
     public float maxPitchAngle = 45.0f;
 
-    [Header("玩家腳本關聯")]
+    [Header("玩家與攝影機關聯")]
     [Tooltip("若留空，系統會自動尋找 Tag 為 Player 的物件移動腳本")]
     public MonoBehaviour playerMovementScript;
+
+    [Tooltip("玩家攝影機 (若留空會自動抓取 Camera.main)")]
+    public Camera playerCamera;
 
     [Header("目前狀態 (唯讀觀察)")]
     public bool isControlling = false;
@@ -38,6 +46,12 @@ public class RotateMirror : MonoBehaviour
             playerMovementScript = playerObj.GetComponent<MonoBehaviour>();
         }
 
+        // 自動抓取主攝影機
+        if (playerCamera == null)
+        {
+            playerCamera = Camera.main;
+        }
+
         // 記錄初始 X 軸的角度 (轉換至 -180 ~ 180 範圍)
         Vector3 currentEuler = transform.localEulerAngles;
         currentPitch = NormalizeAngle(currentEuler.x);
@@ -52,7 +66,22 @@ public class RotateMirror : MonoBehaviour
         // 1. 按下 E 鍵切換操控模式
         if (distance <= interactDistance && Input.GetKeyDown(interactKey))
         {
-            SetControlMode(!isControlling);
+            if (!isControlling)
+            {
+                // 開啟操控前，檢查玩家是否面向該鏡子物件
+                if (IsPlayerFacingMirror())
+                {
+                    SetControlMode(true);
+                }
+                else
+                {
+                    Debug.Log("無法操控：玩家必須將視野/正面對準鏡子！");
+                }
+            }
+            else
+            {
+                SetControlMode(false);
+            }
         }
 
         // 2. 超出距離自動解除
@@ -69,7 +98,7 @@ public class RotateMirror : MonoBehaviour
             if (Mathf.Abs(hInput) > 0.01f)
             {
                 float rotAmount = hInput * rotationSpeed * Time.deltaTime;
-                // 鏡台與玩家視角同步水平旋轉
+                // 鏡台與玩家身體/視角同步水平旋轉
                 transform.Rotate(Vector3.up, rotAmount, Space.World);
                 playerObj.transform.Rotate(Vector3.up, rotAmount, Space.World);
             }
@@ -78,15 +107,43 @@ public class RotateMirror : MonoBehaviour
             float vInput = Input.GetAxis("Vertical");
             if (Mathf.Abs(vInput) > 0.01f)
             {
-                // W鍵向上抬起，S鍵向下俯低
-                float pitchAmount = -vInput * rotationSpeed * Time.deltaTime;
-                currentPitch = Mathf.Clamp(currentPitch + pitchAmount, minPitchAngle, maxPitchAngle);
+                float targetPitchAmount = -vInput * rotationSpeed * Time.deltaTime;
+                
+                // 計算實際被套用的角度變化 (考慮到 minPitchAngle 與 maxPitchAngle 的限制)
+                float previousPitch = currentPitch;
+                currentPitch = Mathf.Clamp(currentPitch + targetPitchAmount, minPitchAngle, maxPitchAngle);
+                float actualDeltaPitch = currentPitch - previousPitch;
 
-                // 更新鏡台 local 旋轉，保持 Y 軸與 Z 軸穩定
+                // 更新鏡台 local 旋轉
                 Vector3 currentEuler = transform.localEulerAngles;
                 transform.localRotation = Quaternion.Euler(currentPitch, currentEuler.y, currentEuler.z);
+
+                // 🌟 同步旋轉玩家攝影機的 X 軸 (上下俯仰視角)
+                if (playerCamera != null)
+                {
+                    playerCamera.transform.Rotate(Vector3.right, actualDeltaPitch, Space.Self);
+                }
             }
         }
+    }
+
+    /// <summary>
+    /// 檢查玩家的「正面朝向」是否正對著鏡子物件
+    /// </summary>
+    public bool IsPlayerFacingMirror()
+    {
+        if (playerObj == null) return false;
+
+        Vector3 dirToMirror = transform.position - playerObj.transform.position;
+        dirToMirror.y = 0;
+        dirToMirror.Normalize();
+
+        Vector3 playerForward = playerObj.transform.forward;
+        playerForward.y = 0;
+        playerForward.Normalize();
+
+        float dot = Vector3.Dot(playerForward, dirToMirror);
+        return dot >= playerFacingThreshold;
     }
 
     private void SetControlMode(bool state)
@@ -98,7 +155,6 @@ public class RotateMirror : MonoBehaviour
         }
     }
 
-    // 將角度標準化為 -180 到 180 度
     private float NormalizeAngle(float angle)
     {
         while (angle > 180) angle -= 360;

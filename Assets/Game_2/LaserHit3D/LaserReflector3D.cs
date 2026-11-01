@@ -61,10 +61,21 @@ public class LaserReflector3D : MonoBehaviour
             // 打到 3D 鏡面：計算反射角並推進第二段雷射
             if (hit.collider.CompareTag("Mirror"))
             {
-                Vector3 reflectDir = Vector3.Reflect(direction, hit.normal);
-                // 沿法線推開 0.01 米，避免二次 Raycast 打到鏡子本身
-                Vector3 nextStartPos = hit.point + hit.normal * 0.01f;
-                CastLaserLine(nextStartPos, reflectDir, color, depth + 1, lineIndex);
+                // 🌟 判斷碰撞面法線是否與鏡子正面方向 (transform.forward) 一致
+                float dot = Vector3.Dot(hit.normal, hit.transform.forward);
+
+                if (dot > 0.7f) 
+                {
+                    // 【正面擊中】進行正常雷射反射
+                    Vector3 reflectDir = Vector3.Reflect(direction, hit.normal);
+                    Vector3 nextStartPos = hit.point + hit.normal * 0.01f;
+                    CastLaserLine(nextStartPos, reflectDir, color, depth + 1, lineIndex);
+                }
+                else
+                {
+                    // 【背面或側邊擊中】雷射被鏡框/背面擋住，不繼續反射
+                    // 此處不呼叫 CastLaserLine，光線會自然終止於 hit.point
+                }
             }
             // 打到光敏接收器
             else if (hit.collider.CompareTag("Photosensor"))

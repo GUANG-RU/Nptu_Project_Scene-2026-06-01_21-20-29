@@ -34,7 +34,13 @@ namespace LaserHit2D
             {
                 int min = Mathf.RoundToInt(m_MinAngle);
                 int max = Mathf.RoundToInt(m_MaxAngle);
-                m_CurrentAngle = Random.Range(min, max + 1);
+
+                // 🌟 使用 do-while 迴圈，確保開局隨機出來的角度絕對不為 0 度
+                do
+                {
+                    m_CurrentAngle = Random.Range(min, max + 1);
+                } 
+                while (Mathf.Approximately(m_CurrentAngle, 0f) || m_CurrentAngle == 0);
             }
             else
             {

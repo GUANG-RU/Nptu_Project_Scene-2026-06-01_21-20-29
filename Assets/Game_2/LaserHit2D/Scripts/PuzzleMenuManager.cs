@@ -104,31 +104,39 @@ namespace LaserHit2D
 
         private void ResetTargetLaser()
         {
-            if (m_TargetShooter != null)
+            if (m_TargetShooter == null) return;
+
+            int randomAngle = 0;
+
+            if (m_ResetCount >= 2)
             {
-                int randomAngle = 0;
-
-                if (m_ResetCount >= 2)
+                // 🌟 重置 2 次以上 (含第二次)：10 的倍數 (-90, -80, ..., 80, 90)，排除 0
+                do
                 {
-                    int[] valid10StepAngles = new int[] { 
-                        -90, -80, -70, -60, -50, -40, -30, -20, -10, 
-                        10,  20,  30,  40,  50,  60,  70,  80,  90 
-                    };
-
-                    int randomIndex = Random.Range(0, valid10StepAngles.Length);
-                    randomAngle = valid10StepAngles[randomIndex];
-                }
-                else
-                {
-                    do
-                    {
-                        randomAngle = Random.Range(-90, 91);
-                    } 
-                    while (randomAngle == 0);
-                }
-
-                m_TargetShooter.transform.rotation = Quaternion.Euler(0, 0, randomAngle);
+                    randomAngle = Random.Range(-9, 10) * 10;
+                } 
+                while (randomAngle == 0);
             }
+            else if (m_ResetCount == 1)
+            {
+                // 🌟 按下 Reset 第 1 次：5 的倍數 (-90, -85, ..., 85, 90)，排除 0
+                do
+                {
+                    randomAngle = Random.Range(-18, 19) * 5;
+                } 
+                while (randomAngle == 0);
+            }
+            else
+            {
+                // 🌟 初始未按 Reset (m_ResetCount == 0)：全範圍隨機角度，排除 0
+                do
+                {
+                    randomAngle = Random.Range(-90, 91);
+                } 
+                while (randomAngle == 0);
+            }
+
+            m_TargetShooter.transform.rotation = Quaternion.Euler(0, 0, randomAngle);
         }
 
         // Exit 按鈕邏輯

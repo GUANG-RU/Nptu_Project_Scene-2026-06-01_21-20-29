@@ -28,9 +28,12 @@ public class ScrollPuzzleManager : MonoBehaviour
     [SerializeField] private GameObject interactPrompt;  // 可選：「按 F 查看捲軸」提示
 
     [Header("通關後：牆壁")]
-    [SerializeField] private GameObject[] wallsToDestroy;   // disable 這些物件
-    [SerializeField] private GameObject   explosionVFX;     // Particle System prefab，實例化後播放
-    [SerializeField] private Transform[]  explosionPoints;  // 爆炸特效生成位置
+    [SerializeField] private GameObject[] wallsToDestroy;    // disable 這些物件
+    [SerializeField] private Transform[]  explosionPoints;   // 爆炸特效生成位置（建議放在牆面中心）
+    [Tooltip("特效縮放，對應牆壁大小調整（預設 1）")]
+    [SerializeField] private float        explosionScale = 1f;
+    [Tooltip("爆炸到牆壁消失的延遲（秒）")]
+    [SerializeField] private float        wallHideDelay  = 0.55f;
 
     [Header("通關後：可選事件")]
     public UnityEngine.Events.UnityEvent onPuzzleSolved;
@@ -124,37 +127,51 @@ public class ScrollPuzzleManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
 
-        // 爆炸特效
-        if (explosionVFX && explosionPoints != null)
+        // ── 1. 在每個爆炸點生成特效 ──────────────
+        bool hasPoints = explosionPoints != null && explosionPoints.Length > 0;
+        Debug.Log($"[ScrollPuzzleManager] SolvedSequence: hasPoints={hasPoints} wallCount={wallsToDestroy?.Length}");
+
+        if (hasPoints)
         {
             foreach (var pt in explosionPoints)
             {
-                if (pt)
-                {
-                    var vfx = Instantiate(explosionVFX, pt.position, pt.rotation);
-                    // 自動銷毀（Particle System 播完）
-                    var ps = vfx.GetComponent<ParticleSystem>();
-                    if (ps)
-                    {
-                        float dur = ps.main.duration + ps.main.startLifetime.constantMax;
-                        Destroy(vfx, dur + 0.5f);
-                    }
-                    else Destroy(vfx, 3f);
-                }
+                if (pt == null) continue;
+                Debug.Log($"[ScrollPuzzleManager] Spawn VFX at {pt.position}");
+                WallExplosionVFX.Spawn(pt.position, explosionScale);
             }
         }
+        else if (wallsToDestroy != null && wallsToDestroy.Length > 0)
+        {
+            // 若沒設爆炸點，自動在每面牆的 Bounds 中心生成
+            foreach (var w in wallsToDestroy)
+            {
+                if (w == null) continue;
+                var b = w.GetComponent<Renderer>()?.bounds
+                     ?? w.GetComponentInChildren<Renderer>()?.bounds
+                     ?? new Bounds(w.transform.position, Vector3.one);
+                Debug.Log($"[ScrollPuzzleManager] Spawn VFX at wall center {b.center}");
+                WallExplosionVFX.Spawn(b.center, explosionScale);
+            }
+        }
+        else
+        {
+            // fallback：在 Manager 自己位置生成一個
+            Debug.LogWarning("[ScrollPuzzleManager] No explosionPoints or wallsToDestroy — spawning VFX at self");
+            WallExplosionVFX.Spawn(transform.position, explosionScale);
+        }
 
-        yield return new WaitForSeconds(0.5f);
+        // ── 2. 等煙霧遮住牆壁（hideDuration）──────
+        yield return new WaitForSeconds(wallHideDelay);
 
-        // 隱藏牆壁
+        // ── 3. 牆壁消失 ──────────────────────────
         if (wallsToDestroy != null)
             foreach (var w in wallsToDestroy)
                 if (w) w.SetActive(false);
 
-        // 呼叫外部事件（例如開啟走廊）
+        // ── 4. 呼叫外部事件 ───────────────────────
         onPuzzleSolved?.Invoke();
 
-        // 開啟謎題房間出口的門（若 SimpleDoor 掛在此物件子層）
+        // ── 5. 開啟出口門（若有 SimpleDoor 子物件）──
         var door = GetComponentInChildren<SimpleDoor>();
         if (door) door.ForceOpen();
     }

@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1119777298356441585}
+  - component: {fileID: 3801064850933833289}
+  - component: {fileID: 5337678721361912993}
   m_Layer: 0
   m_Name: Wall BayDoor Laser
   m_TagString: Untagged
@@ -36,6 +38,58 @@ Transform:
   - {fileID: 9161233082173945734}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
+--- !u!65 &3801064850933833289
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4000810497854795004}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 7.0102816, y: 10.227174, z: 7.330738}
+  m_Center: {x: 0.029485345, y: 4.613587, z: 2.9471378}
+--- !u!114 &5337678721361912993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4000810497854795004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca9942d112bfbd8449dea4ccc1003922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
+  puzzleTypeID: LaserPuzzle
+  saveAcrossSessions: 1
+  encounterStages:
+  - stageName: First
+    messages:
+    - What is this?
+    - It looks like a laser guide device.
+    - 'And it seems to match the pattern I need to create for mirrored light guiding. '
+    - Let's try pressing E to rotate the mirror and guide the light to the receiver!
+  - stageName: Second
+    messages:
+    - Another laser puzzle, let's try again!
+    - I hope this is the last time.
+  - stageName: Third
+    messages:
+    - ...
+    - FU*O*K
+  displayTime: 3
+  storyManager: {fileID: 0}
 --- !u!1 &4239413524770478473
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,214 +1,129 @@
+using System.Collections;
 using UnityEngine;
 using TMPro;
-using System.Collections;
+
+public enum StoryPriority
+{
+    Low = 0,   // è¬é¡Œæ•™å­¸ã€ç’°å¢ƒæç¤º (æœƒè¢«é«˜å„ªå…ˆç´šæ‰“æ–·ï¼Œæˆ–åœ¨å¿™ç¢Œæ™‚æš«ç·©)
+    High = 1   // æ€ªç‰©ç™»å ´ã€æ€ªç‰©è¡Œç‚ºè­¦å‘Šã€é—œéµæ•…äº‹ç‰‡æ®µ (å¯æ‰“æ–· Low)
+}
 
 public class StoryManager : MonoBehaviour
 {
-    [Header("UI")]
+    [Header("UI é€£çµ")]
     public GameObject storyPanel;
     public TMP_Text storyText;
 
-    [Header("¥´¦r¾÷®ÄªG")]
-    [Tooltip("¨C­Ó¦r¥X²{ªº¶¡¹j¡A¶V¤p¶V§Ö")]
+    [Header("æ‰“å­—æ©Ÿèˆ‡è·³éè¨­å®š")]
+    [Tooltip("æ¯å€‹å­—å‡ºç¾çš„é–“éš”ï¼ˆç§’ï¼‰ï¼Œè¶Šå°è¶Šå¿«")]
     public float typingSpeed = 0.05f;
-
-    [Header("¸õ¹L¼@±¡³]©w")]
-    [Tooltip("¬O§_¤¹³\·Æ¹«¥ªÁä¸õ¨ì¤U¤@¬q")]
+    [Tooltip("æ˜¯å¦å…è¨±æ»‘é¼ å·¦éµè·³éç›®å‰é€™æ®µ")]
     public bool allowMouseSkip = true;
 
     private Coroutine storyCoroutine;
-
-    // ¬O§_­n¨D¸õ¨ì¤U¤@¬q
     private bool skipCurrentMessage = false;
-
-    // ¬O§_¥¿¦b¼½©ñ¼@±¡
     private bool isPlayingStory = false;
+    private StoryPriority currentPriority = StoryPriority.Low;
 
+    public bool IsPlayingStory => isPlayingStory;
+    public StoryPriority CurrentPriority => currentPriority;
 
     void Start()
     {
-        if (storyPanel != null)
-        {
-            storyPanel.SetActive(false);
-        }
+        if (storyPanel != null) storyPanel.SetActive(false);
     }
-
 
     void Update()
     {
-        // ¨S¦³¼½©ñ¼@±¡´N¤£³B²z·Æ¹«
-        if (!isPlayingStory)
-        {
-            return;
-        }
+        if (!isPlayingStory || !allowMouseSkip) return;
 
-        // ¬O§_¤¹³\·Æ¹«¸õ¹L
-        if (!allowMouseSkip)
-        {
-            return;
-        }
-
-        // ·Æ¹«¥ªÁä
         if (Input.GetMouseButtonDown(0))
         {
             skipCurrentMessage = true;
         }
     }
 
-
-    // =====================================================
-    // Åã¥Ü³æ¬q¼@±¡
-    // =====================================================
     public void ShowStory(string message, float duration)
     {
-        ShowStories(
-            new string[] { message },
-            duration
-        );
+        ShowStories(new string[] { message }, duration, StoryPriority.Low);
     }
 
-
-    // =====================================================
-    // Åã¥Ü¦h¬q¼@±¡
-    // =====================================================
-    public void ShowStories(string[] messages, float duration)
+    public void ShowStories(string[] messages, float duration, StoryPriority priority = StoryPriority.Low)
     {
-        if (storyPanel == null || storyText == null)
+        if (storyPanel == null || storyText == null || messages == null || messages.Length == 0) return;
+
+        // è‹¥æ­£åœ¨æ’­æ”¾ High Priority å°è©±ï¼Œä¸”æ–°è¼¸å…¥ç‚º Low Priorityï¼Œç›´æ¥é˜»æ“‹
+        if (isPlayingStory && currentPriority == StoryPriority.High && priority == StoryPriority.Low)
         {
-            Debug.LogError("StoryManager UI ©|¥¼³]©w¡I");
+            Debug.Log("[StoryManager] æ­£åœ¨æ’­æ”¾é«˜å„ªå…ˆç´šåŠ‡æƒ…ï¼Œç„¡è¦–ä½å„ªå…ˆå°è©±ã€‚");
             return;
         }
 
-        if (messages == null || messages.Length == 0)
-        {
-            return;
-        }
-
-        // °±¤î¤W¤@¬q¼@±¡¬yµ{
+        // åœæ­¢ä¸Šä¸€æ®µå°è©± (è‹¥æ–°è¨Šæ¯ç‚º High Priorityï¼Œå¯å¼·åˆ¶æ‰“æ–·æ­£åœ¨æ’­çš„ Low Priority)
         if (storyCoroutine != null)
         {
             StopCoroutine(storyCoroutine);
             storyCoroutine = null;
         }
 
+        currentPriority = priority;
         skipCurrentMessage = false;
-
         isPlayingStory = true;
 
-        storyCoroutine = StartCoroutine(
-            ShowStoriesRoutine(messages, duration)
-        );
+        storyCoroutine = StartCoroutine(ShowStoriesRoutine(messages, duration));
     }
 
-
-    // =====================================================
-    // ¼@±¡¼½©ñ¬yµ{
-    // =====================================================
-    IEnumerator ShowStoriesRoutine(
-        string[] messages,
-        float duration)
+    private IEnumerator ShowStoriesRoutine(string[] messages, float duration)
     {
         storyPanel.SetActive(true);
 
-        // ¨Ì§Ç¼½©ñ¨C¤@¬q
         foreach (string message in messages)
         {
-            if (string.IsNullOrWhiteSpace(message))
-            {
-                continue;
-            }
+            if (string.IsNullOrWhiteSpace(message)) continue;
 
-            // ¨C¬q¶}©l®É­«³]¸õ¹Lª¬ºA
             skipCurrentMessage = false;
-
-            // ³]©w§¹¾ã¤å¦r
             storyText.text = message;
-
-            // §ó·s TMP ¤å¦r¸ê°T
             storyText.ForceMeshUpdate();
 
-            // ¨ú±o¤å¦rÁ`¦r¤¸¼Æ
-            int totalCharacters =
-                storyText.textInfo.characterCount;
-
-            // ¤@¶}©lÁôÂÃ¥ş³¡¤å¦r
+            int totalCharacters = storyText.textInfo.characterCount;
             storyText.maxVisibleCharacters = 0;
 
-
-            // =============================================
-            // ³v¦rÅã¥Ü
-            // =============================================
+            // é€å­—æ‰“å­—æ©Ÿ
             for (int i = 0; i < totalCharacters; i++)
             {
-                // ª±®a«ö¤U·Æ¹«¥ªÁä
-                // ª½±µ¸õ¹L¥Ø«e³o¬q
-                if (skipCurrentMessage)
-                {
-                    break;
-                }
+                if (skipCurrentMessage) break;
 
-                // Åã¥Ü¤U¤@­Ó¦r
                 storyText.maxVisibleCharacters = i + 1;
-
-                // ®Ú¾Ú¼ĞÂI²Å¸¹½Õ¾ã°±¹y
-                char letter =
-                    storyText.textInfo.characterInfo[i].character;
-
+                char letter = storyText.textInfo.characterInfo[i].character;
                 float delay = typingSpeed;
 
-                if (letter == '¡C' ||
-                    letter == '¡I' ||
-                    letter == '¡H' ||
-                    letter == '!' ||
-                    letter == '?')
+                // ä½¿ç”¨ Unicode ç¢¼é¿å…æª”æ¡ˆç·¨ç¢¼å•é¡Œ (\u3002=å¥è™Ÿ, \uFF01=é©šå˜†è™Ÿ, \uFF1F=å•è™Ÿ, \uFF0C=é€—è™Ÿ, \u2026=çœç•¥è™Ÿ)
+                if (letter == '\u3002' || letter == '\uFF01' || letter == '\uFF1F' || letter == '!' || letter == '?')
                 {
                     delay *= 6f;
                 }
-                else if (letter == '¡A' ||
-                         letter == ',' ||
-                         letter == '¡K')
+                else if (letter == '\uFF0C' || letter == ',' || letter == '\u2026')
                 {
                     delay *= 3f;
                 }
 
-                if (delay > 0f)
-                {
-                    yield return new WaitForSeconds(delay);
-                }
-                else
-                {
-                    yield return null;
-                }
+                if (delay > 0f) yield return new WaitForSeconds(delay);
+                else yield return null;
             }
 
-
-            // =============================================
-            // ¥ş³¡¤å¦r¥X²{«áµ¥«İ
-            // =============================================
+            // æ‰“å®Œå­—å¾Œçš„ç•™å­˜åœç•™
             float timer = 0f;
-
-            while (!skipCurrentMessage &&
-                   timer < duration)
+            while (!skipCurrentMessage && timer < duration)
             {
                 timer += Time.deltaTime;
-
                 yield return null;
             }
-
-            // ¦pªG«ö¤U·Æ¹«¥ªÁä
-            // ´N¤£µ¥«İ¡Aª½±µ¶i¤J¤U¤@¬q
         }
 
-
-        // =================================================
-        // ©Ò¦³¼@±¡¼½©ñ§¹¦¨
-        // =================================================
         storyPanel.SetActive(false);
-
         skipCurrentMessage = false;
-
         isPlayingStory = false;
-
         storyCoroutine = null;
+        currentPriority = StoryPriority.Low;
     }
 }

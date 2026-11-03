@@ -3,24 +3,24 @@ using UnityEngine.InputSystem;
 
 public class PlayerSoundEmitter2 : MonoBehaviour
 {
-    [Header("Án­µ±j«×")]
+    [Header("ï¿½nï¿½ï¿½ï¿½jï¿½ï¿½")]
     public float breathIntensity = 0.5f;
     public float crouchIntensity = 5f;
     public float walkIntensity   = 10f;
     public float sprintIntensity = 25f;
 
-    [Header("¸}¨B¶¡¹j¡]¬í¡^")]
+    [Header("ï¿½}ï¿½Bï¿½ï¿½ï¿½jï¿½]ï¿½ï¿½ï¿½^")]
     public float crouchInterval  = 0.75f;
     public float walkInterval    = 0.40f;
     public float sprintInterval  = 0.20f;
 
-    [Header("©I§l¶¡¹j¡]¬í¡^")]
+    [Header("ï¿½Iï¿½lï¿½ï¿½ï¿½jï¿½]ï¿½ï¿½ï¿½^")]
     public float breathInterval  = 3.0f;
 
-    [Header("ÃÛ¤U Input¡A¥i¤£³]©w")]
+    [Header("ï¿½Û¤U Inputï¿½Aï¿½iï¿½ï¿½ï¿½]ï¿½w")]
     public InputAction crouchAction;
 
-    [Header("¥Ø«eª±®a¿é¤Jª¬ºA")]
+    [Header("ï¿½Ø«eï¿½ï¿½ï¿½aï¿½ï¿½Jï¿½ï¿½ï¿½A")]
     public bool IsMovingInput { get; private set; }
 
     CharacterController cc;
@@ -37,7 +37,7 @@ public class PlayerSoundEmitter2 : MonoBehaviour
 
         if (cc == null)
         {
-            Debug.LogWarning("PlayerSoundEmitter2¡G§ä¤£¨ì CharacterController¡C", this);
+            Debug.LogWarning("PlayerSoundEmitter2ï¿½Gï¿½ä¤£ï¿½ï¿½ CharacterControllerï¿½C", this);
         }
     }
 
@@ -79,9 +79,9 @@ public class PlayerSoundEmitter2 : MonoBehaviour
 
     void HandleFootstep()
     {
-        // ­«ÂI¡G
-        // ¥u¬Ýª±®a¿é¤J¡A¤£¬Ý CharacterController.velocity
-        // ³o¼Ë©Çª«±À°Êª±®a®É¡A¤£·|»~§P¦¨¸}¨BÁn
+        // ï¿½ï¿½ï¿½Iï¿½G
+        // ï¿½uï¿½Ýªï¿½ï¿½aï¿½ï¿½Jï¿½Aï¿½ï¿½ï¿½ï¿½ CharacterController.velocity
+        // ï¿½oï¿½Ë©Çªï¿½ï¿½ï¿½ï¿½Êªï¿½ï¿½aï¿½É¡Aï¿½ï¿½ï¿½|ï¿½~ï¿½Pï¿½ï¿½ï¿½}ï¿½Bï¿½n
         if (!IsMovingInput)
         {
             footstepTimer = 0f;
@@ -130,6 +130,7 @@ public class PlayerSoundEmitter2 : MonoBehaviour
         Debug.Log($"[SOUND] Player/{type} intensity:{intensity:F1} @ {transform.position}");
     }
 
+    #if UNITY_EDITOR
     void OnGUI()
     {
         if (Keyboard.current == null) return;
@@ -178,6 +179,7 @@ public class PlayerSoundEmitter2 : MonoBehaviour
         GUI.color = Color.white;
         GUI.Label(new Rect(220, 106, 40, 20), $"{lastIntensity:F1}", style);
     }
+    #endif
 
     void OnDrawGizmosSelected()
     {

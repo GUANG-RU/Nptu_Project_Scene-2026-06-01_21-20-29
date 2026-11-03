@@ -6256,7 +6256,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5708847785946672294, guid: de6b562675bc0914ab8871f08fba7398, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 23.5
       objectReference: {fileID: 0}
     - target: {fileID: 5708847785946672294, guid: de6b562675bc0914ab8871f08fba7398, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6293,7 +6293,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3685494528537717739, guid: de6b562675bc0914ab8871f08fba7398, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2089307414}
   m_SourcePrefab: {fileID: 100100000, guid: de6b562675bc0914ab8871f08fba7398, type: 3}
 --- !u!1001 &167607311
 PrefabInstance:
@@ -12439,6 +12442,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2068639784}
     m_Modifications:
+    - target: {fileID: 3014957457717815903, guid: a5bdd75aae644814e85973b2701dc151, type: 3}
+      propertyPath: rotationSpeed
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 3014957457717815903, guid: a5bdd75aae644814e85973b2701dc151, type: 3}
       propertyPath: interactDistance
       value: 1.5
@@ -38285,7 +38292,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ce65141939545d440ac8591812208a12, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.58842
+      value: 2.25
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ce65141939545d440ac8591812208a12, type: 3}
       propertyPath: m_LocalRotation.w
@@ -46547,6 +46554,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 2068639784}
     m_Modifications:
     - target: {fileID: 3014957457717815903, guid: a5bdd75aae644814e85973b2701dc151, type: 3}
+      propertyPath: rotationSpeed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3014957457717815903, guid: a5bdd75aae644814e85973b2701dc151, type: 3}
       propertyPath: interactDistance
       value: 1.5
       objectReference: {fileID: 0}
@@ -52661,7 +52672,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &1594672800
 Light:
   m_ObjectHideFlags: 0
@@ -53496,6 +53507,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2068639784}
     m_Modifications:
+    - target: {fileID: 3014957457717815903, guid: a5bdd75aae644814e85973b2701dc151, type: 3}
+      propertyPath: rotationSpeed
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 3014957457717815903, guid: a5bdd75aae644814e85973b2701dc151, type: 3}
       propertyPath: interactDistance
       value: 1.5
@@ -55717,7 +55732,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ce65141939545d440ac8591812208a12, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.6984205
+      value: 2.25
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ce65141939545d440ac8591812208a12, type: 3}
       propertyPath: m_LocalRotation.w
@@ -60493,6 +60508,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2068639784}
     m_Modifications:
+    - target: {fileID: 3014957457717815903, guid: a5bdd75aae644814e85973b2701dc151, type: 3}
+      propertyPath: rotationSpeed
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 3014957457717815903, guid: a5bdd75aae644814e85973b2701dc151, type: 3}
       propertyPath: interactDistance
       value: 1.5
@@ -66221,6 +66240,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 2068639784}
     m_Modifications:
     - target: {fileID: 3014957457717815903, guid: a5bdd75aae644814e85973b2701dc151, type: 3}
+      propertyPath: rotationSpeed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3014957457717815903, guid: a5bdd75aae644814e85973b2701dc151, type: 3}
       propertyPath: interactDistance
       value: 1.5
       objectReference: {fileID: 0}
@@ -67381,6 +67404,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 2068639784}
     m_Modifications:
     - target: {fileID: 3014957457717815903, guid: a5bdd75aae644814e85973b2701dc151, type: 3}
+      propertyPath: rotationSpeed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3014957457717815903, guid: a5bdd75aae644814e85973b2701dc151, type: 3}
       propertyPath: interactDistance
       value: 1.5
       objectReference: {fileID: 0}
@@ -68127,6 +68154,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 2068639784}
     m_Modifications:
     - target: {fileID: 3014957457717815903, guid: a5bdd75aae644814e85973b2701dc151, type: 3}
+      propertyPath: rotationSpeed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3014957457717815903, guid: a5bdd75aae644814e85973b2701dc151, type: 3}
       propertyPath: interactDistance
       value: 1.5
       objectReference: {fileID: 0}
@@ -68693,6 +68724,42 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf8443763fc34314490f8a3e2f94dd37, type: 3}
+--- !u!1 &2089307409 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3685494528537717739, guid: de6b562675bc0914ab8871f08fba7398, type: 3}
+  m_PrefabInstance: {fileID: 166701421}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2089307414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089307409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44e3043f1e787474da0015688f932e1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerSoundEmitter2
+  breathIntensity: 0.5
+  crouchIntensity: 5
+  walkIntensity: 10
+  sprintIntensity: 25
+  crouchInterval: 0.75
+  walkInterval: 0.4
+  sprintInterval: 0.2
+  breathInterval: 3
+  crouchAction:
+    m_Name: Crouch
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: ee3f2c7d-af8c-4fb7-bb72-735fe2978367
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  lastIntensity: 0
+  lastType: '-'
 --- !u!4 &2090435194 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6954531691785998512, guid: cf8443763fc34314490f8a3e2f94dd37, type: 3}

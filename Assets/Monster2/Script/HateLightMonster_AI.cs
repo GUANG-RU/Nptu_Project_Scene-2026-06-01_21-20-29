@@ -5,10 +5,16 @@ public class HateLightMonster_AI : MonoBehaviour {
     private Animator anim;
     private NavMeshAgent agent; 
     
+    // ====== 【門解鎖機制設定】 ======
+    [Header("門解鎖機制設定")]
+    [Tooltip("勾選：遊戲開始時怪物原地待命，等待大門升起完成呼叫 UnlockMonster() 才開始移動。\n不勾選：維持原本設定（遊戲一開始就到處巡邏）。")]
+    public bool useDoorUnlockMechanism = false;
+    private bool isUnlocked = false; // 紀錄怪物目前是否解鎖行動
+
     [Header("目標設定")]
     public Transform player;      
 
-    // ====== 【新加入：自主偵測手電筒所需的變數】 ======
+    // ====== 【手電筒自主偵測設定】 ======
     [Header("手電筒自主偵測設定")]
     public Transform flashlight;         // 玩家的手電筒 Transform
     public Light flashlightLight;       // 手電筒的 Light 組件
@@ -61,15 +67,37 @@ public class HateLightMonster_AI : MonoBehaviour {
     void Start () {
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
-        agent.updateRotation = true;  
+        if (agent != null) agent.updateRotation = true;  
 
         if (audioSource == null) audioSource = GetComponent<AudioSource>();
+
+        // ====== 門解鎖機制初始化 ======
+        if (!useDoorUnlockMechanism) {
+            // 未勾選機制：預設直接解鎖，維持原本直接巡邏的行為
+            isUnlocked = true;
+        } else {
+            // 有勾選機制：初始鎖定，使 NavMeshAgent 暫停並保持 IDLE
+            isUnlocked = false;
+            if (agent != null && agent.enabled && agent.isOnNavMesh) {
+                agent.isStopped = true;
+                agent.velocity = Vector3.zero;
+            }
+            UpdateAnimation(IDLE);
+        }
     }
     
     void Update () {
         if (agent == null || !agent.isOnNavMesh) return;
 
-        // ====== 【核心修改：每幀自主檢查是否被玩家手電筒照到】 ======
+        // ====== 門機制控管：門未開時保持原地 IDLE 並跳過所有 AI 邏輯 ======
+        if (!isUnlocked) {
+            agent.isStopped = true;
+            agent.velocity = Vector3.zero;
+            UpdateAnimation(IDLE);
+            return;
+        }
+
+        // ====== 每幀自主檢查是否被玩家手電筒照到 ======
         if (IsHitByFlashlight()) {
             detectTimer = calmDownTime; // 被照到就重設驚醒計時器
         }
@@ -80,7 +108,7 @@ public class HateLightMonster_AI : MonoBehaviour {
             detectTimer -= Time.deltaTime;
 
             if (isFreezingPlayer && player != null) {
-                // 1. 玩家位置處理：死死固定在原地
+                // 1. 玩家位置處理：固定在原地
                 player.position = frozenPlayerPos;
 
                 Camera playerCam = player.GetComponentInChildren<Camera>();
@@ -100,7 +128,7 @@ public class HateLightMonster_AI : MonoBehaviour {
                     }
                 }
 
-                // 3. 怪物動作處理：取消衝刺撞擊，讓怪物原地停下並切換成 IDLE
+                // 3. 怪物動作處理：原地停下並切換成 IDLE
                 agent.isStopped = true;
                 agent.velocity = Vector3.zero;
                 UpdateAnimation(IDLE);
@@ -134,7 +162,6 @@ public class HateLightMonster_AI : MonoBehaviour {
             if (isFreezingPlayer) {
                 isFreezingPlayer = false;
 
-                // 還原相機位置
                 if (player != null && hasSavedCamPos) {
                     Camera playerCam = player.GetComponentInChildren<Camera>();
                     if (playerCam != null) {
@@ -158,32 +185,38 @@ public class HateLightMonster_AI : MonoBehaviour {
         }
     }
 
-    // ====== 【新加入：從第一個程式完美移植的數學自主偵測邏輯】 ======
+    /// <summary>
+    /// 【供 DoorController 等門腳本呼叫】大門開啟完成後解鎖怪物移動
+    /// </summary>
+    public void UnlockMonster() {
+        isUnlocked = true;
+        if (agent != null && agent.enabled && agent.isOnNavMesh) {
+            agent.isStopped = false;
+        }
+        Debug.Log($"🚪 大門完全開啟，怪物 {gameObject.name} 正式解鎖開始行動！");
+    }
+
+    // ====== 數學自主偵測手電筒邏輯 ======
     bool IsHitByFlashlight() {
         if (flashlight == null || flashlightLight == null) return false;
-        if (!flashlightLight.enabled) return false; // 手電筒沒開就不算
+        if (!flashlightLight.enabled) return false;
 
-        // 計算怪物與手電筒的距離 (加入高度偏移避免射線貼地)
         Vector3 monsterPoint = transform.position + Vector3.up * 1.2f;
         Vector3 directionToMonster = monsterPoint - flashlight.position;
         float distanceToMonster = directionToMonster.magnitude;
 
-        // 超出光照距離
         if (distanceToMonster > flashlightLight.range) return false;
 
-        // 計算夾角，判斷是否在手電筒光錐內
         float angle = Vector3.Angle(flashlight.forward, directionToMonster);
         if (angle > flashlightStopAngle) return false;
 
-        // 射線檢查是否有牆壁遮擋
         if (Physics.Raycast(flashlight.position, directionToMonster.normalized, out RaycastHit hit, distanceToMonster, obstacleLayer)) {
-            // 如果射線射中的東西不是怪物自己，代表被牆壁擋住了
             if (hit.transform != transform && !hit.transform.IsChildOf(transform)) {
                 return false;
             }
         }
 
-        return true; // 成功偵測到被手電筒照中！
+        return true;
     }
 
     void ChaseAndAttack() {

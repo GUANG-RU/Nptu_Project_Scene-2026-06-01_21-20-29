@@ -7,6 +7,11 @@ public class DoorController : MonoBehaviour
     [Header("門與平板關聯（拉入正面與背面的 TabletPuzzleManager）")]
     [SerializeField] private List<TabletPuzzleManager> m_LinkedTablets = new List<TabletPuzzleManager>();
 
+    // ====== 【連動怪物設定】 ======
+    [Header("連動怪物設定")]
+    [Tooltip("門【完全升起後】要解鎖行動的怪物（可留空）")]
+    [SerializeField] private HateLightMonster_AI m_TargetMonster;
+
     [Header("門上升設定")]
     [Tooltip("門往上升的高度")]
     [SerializeField] private float m_OpenHeight = 5.0f;
@@ -51,6 +56,7 @@ public class DoorController : MonoBehaviour
 
     private IEnumerator AnimateDoorOpen()
     {
+        // 1. 門平滑上升動畫
         while (Vector3.Distance(transform.localPosition, m_TargetPosition) > 0.001f)
         {
             transform.localPosition = Vector3.MoveTowards(
@@ -61,5 +67,11 @@ public class DoorController : MonoBehaviour
             yield return null;
         }
         transform.localPosition = m_TargetPosition;
+
+        // 2. 🚨【核心修改】：大門完全升起到底後，才呼叫怪物解鎖！
+        if (m_TargetMonster != null)
+        {
+            m_TargetMonster.UnlockMonster();
+        }
     }
 }

@@ -3492,6 +3492,71 @@ PrefabInstance:
       propertyPath: saveAcrossSessions
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[0].messages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[0].voiceClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[1].voiceClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[2].voiceClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[0]'
+      value: 'What the... a laser guide?
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[1]'
+      value: 'Guess it matches that mirror pattern I saw.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[2]'
+      value: Just press E to rotate it... guide the beam to the receiver. I can do
+        this.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].messages.Array.data[0]'
+      value: Another laser puzzle. Of course. Let's try this again.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].messages.Array.data[1]'
+      value: God, please let this be the last one.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 202602cc25e867b448fef41aef202702, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 7d31cf3b8e438424ea3cb36cb59df404, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 15dfbdfb5227f6540a25035c2d8dfd50, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].voiceClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 488c97bab1d973140a24b81602f664c9, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: b71d9cbb13a301744b1bbee3b2a88b5f, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[2].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 98835701e62a3fb4ab5eea961a19556b, type: 3}
     - target: {fileID: 6510223521580704717, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -5399,6 +5464,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3488798597472391038, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: m_TargetMonster
+      value: 
+      objectReference: {fileID: 1563263882}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -5415,6 +5484,71 @@ PrefabInstance:
       propertyPath: saveAcrossSessions
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[0].messages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[0].voiceClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[1].voiceClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[2].voiceClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[0]'
+      value: 'What the... a laser guide?
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[1]'
+      value: 'Guess it matches that mirror pattern I saw.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[2]'
+      value: Just press E to rotate it... guide the beam to the receiver. I can do
+        this.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].messages.Array.data[0]'
+      value: Another laser puzzle. Of course. Let's try this again.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].messages.Array.data[1]'
+      value: God, please let this be the last one.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 202602cc25e867b448fef41aef202702, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 7d31cf3b8e438424ea3cb36cb59df404, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 15dfbdfb5227f6540a25035c2d8dfd50, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].voiceClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 488c97bab1d973140a24b81602f664c9, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: b71d9cbb13a301744b1bbee3b2a88b5f, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[2].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 98835701e62a3fb4ab5eea961a19556b, type: 3}
     - target: {fileID: 6510223521580704717, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -6689,7 +6823,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5708847785946672294, guid: de6b562675bc0914ab8871f08fba7398, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.29
+      value: 1.88
       objectReference: {fileID: 0}
     - target: {fileID: 5708847785946672294, guid: de6b562675bc0914ab8871f08fba7398, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6697,7 +6831,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5708847785946672294, guid: de6b562675bc0914ab8871f08fba7398, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.7
+      value: 3.97
       objectReference: {fileID: 0}
     - target: {fileID: 5708847785946672294, guid: de6b562675bc0914ab8871f08fba7398, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6899,6 +7033,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 810599409}
     m_Modifications:
+    - target: {fileID: 540528893524011904, guid: 5be7a6959bf0b31418bc0272b100f9bb, type: 3}
+      propertyPath: m_Speed
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 963927344663494039, guid: 5be7a6959bf0b31418bc0272b100f9bb, type: 3}
       propertyPath: player
       value: 
@@ -7459,12 +7597,15 @@ MonoBehaviour:
   encounterStages:
   - stageName: First
     messages:
-    - It seems like shining a flashlight on this monster wouldn't do any good.
-    - After all, it doesn't appear to have any eyes.
-    - It looks like we can try approaching it first, then stay still and see how
-      it reacts.
-    - ' If it doesn''t attack us when we stay still, that means it''s guided by sound.'
-    voiceClips: []
+    - Great, the flashlight is completely useless.
+    - And it doesn't even have eyes. What an absolute unit.
+    - ' Okay... let''s try inching closer, then freeze.'
+    - If it doesn't attack me when I'm still... it must be hunting by sound.
+    voiceClips:
+    - {fileID: 8300000, guid: c365bab10e7237e46ac78d7c44d4f143, type: 3}
+    - {fileID: 8300000, guid: 159398ce589adbc4abb0fd03cf9d4e83, type: 3}
+    - {fileID: 8300000, guid: 8d26ff55102bab6459cd65b1b542abf8, type: 3}
+    - {fileID: 8300000, guid: 2637524cfa16802419442c95f7e048f2, type: 3}
   storyManager: {fileID: 288826885}
 --- !u!136 &183276517
 CapsuleCollider:
@@ -10448,6 +10589,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3488798597472391038, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: m_TargetMonster
+      value: 
+      objectReference: {fileID: 1338919975}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -10464,6 +10609,71 @@ PrefabInstance:
       propertyPath: saveAcrossSessions
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[0].messages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[0].voiceClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[1].voiceClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[2].voiceClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[0]'
+      value: 'What the... a laser guide?
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[1]'
+      value: 'Guess it matches that mirror pattern I saw.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[2]'
+      value: Just press E to rotate it... guide the beam to the receiver. I can do
+        this.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].messages.Array.data[0]'
+      value: Another laser puzzle. Of course. Let's try this again.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].messages.Array.data[1]'
+      value: God, please let this be the last one.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 202602cc25e867b448fef41aef202702, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 7d31cf3b8e438424ea3cb36cb59df404, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 15dfbdfb5227f6540a25035c2d8dfd50, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].voiceClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 488c97bab1d973140a24b81602f664c9, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: b71d9cbb13a301744b1bbee3b2a88b5f, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[2].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 98835701e62a3fb4ab5eea961a19556b, type: 3}
     - target: {fileID: 6510223521580704717, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -11708,6 +11918,71 @@ PrefabInstance:
       propertyPath: saveAcrossSessions
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[0].messages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[0].voiceClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[1].voiceClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[2].voiceClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[0]'
+      value: 'What the... a laser guide?
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[1]'
+      value: 'Guess it matches that mirror pattern I saw.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[2]'
+      value: Just press E to rotate it... guide the beam to the receiver. I can do
+        this.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].messages.Array.data[0]'
+      value: Another laser puzzle. Of course. Let's try this again.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].messages.Array.data[1]'
+      value: God, please let this be the last one.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 202602cc25e867b448fef41aef202702, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 7d31cf3b8e438424ea3cb36cb59df404, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 15dfbdfb5227f6540a25035c2d8dfd50, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].voiceClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 488c97bab1d973140a24b81602f664c9, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: b71d9cbb13a301744b1bbee3b2a88b5f, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[2].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 98835701e62a3fb4ab5eea961a19556b, type: 3}
     - target: {fileID: 6510223521580704717, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -13074,6 +13349,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3488798597472391038, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: m_TargetMonster
+      value: 
+      objectReference: {fileID: 1563263882}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -13090,6 +13369,71 @@ PrefabInstance:
       propertyPath: saveAcrossSessions
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[0].messages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[0].voiceClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[1].voiceClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[2].voiceClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[0]'
+      value: 'What the... a laser guide?
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[1]'
+      value: 'Guess it matches that mirror pattern I saw.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[2]'
+      value: Just press E to rotate it... guide the beam to the receiver. I can do
+        this.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].messages.Array.data[0]'
+      value: Another laser puzzle. Of course. Let's try this again.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].messages.Array.data[1]'
+      value: God, please let this be the last one.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 202602cc25e867b448fef41aef202702, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 7d31cf3b8e438424ea3cb36cb59df404, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 15dfbdfb5227f6540a25035c2d8dfd50, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].voiceClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 488c97bab1d973140a24b81602f664c9, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: b71d9cbb13a301744b1bbee3b2a88b5f, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[2].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 98835701e62a3fb4ab5eea961a19556b, type: 3}
     - target: {fileID: 6510223521580704717, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -16954,13 +17298,16 @@ MonoBehaviour:
   encounterStages:
   - stageName: First
     messages:
-    - Hey, isn't that the Neo Armstrong Cyclone Jet Armstrong Cannon?
-    - It's got a very high-quality finish!
-    - 'It looks like I need to adjust these mirrors to reflect the light onto each
-      of the light sensors. '
-    - I have to get close, press E, and use the WASD keys to adjust the mirrors while
-      dodging the monster's attacks.
-    voiceClips: []
+    - Wait a minute... is that the Neo Armstrong Cyclone Jet Armstrong Cannon?
+    - Damn, it actually has a really high-quality finish!
+    - Focus, man. I need to adjust these mirrors to hit all the sensors.
+    - So I gotta get close, press E, and use W, A, S, D, to rotate them......all
+      while dodging that thing's attacks. Perfect
+    voiceClips:
+    - {fileID: 8300000, guid: 00c0af0e48403364491ae4b93e0a4bdb, type: 3}
+    - {fileID: 8300000, guid: dad05b4c01ff3cf41bcbd081c4d66987, type: 3}
+    - {fileID: 8300000, guid: cd38bfb0a89716143b349d757d25d1d8, type: 3}
+    - {fileID: 8300000, guid: dedf6715ab386644093e53792272885c, type: 3}
   storyManager: {fileID: 288826885}
 --- !u!136 &416953897
 CapsuleCollider:
@@ -17239,6 +17586,10 @@ PrefabInstance:
       propertyPath: flashlightLight
       value: 
       objectReference: {fileID: 475259255}
+    - target: {fileID: 129569163575794162, guid: f3145b5067a026847b36bf8735d81074, type: 3}
+      propertyPath: useDoorUnlockMechanism
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2875591484993647025, guid: f3145b5067a026847b36bf8735d81074, type: 3}
       propertyPath: m_Name
       value: Monster2 (2)
@@ -20812,6 +21163,10 @@ PrefabInstance:
       propertyPath: flashlightLight
       value: 
       objectReference: {fileID: 475259255}
+    - target: {fileID: 129569163575794162, guid: f3145b5067a026847b36bf8735d81074, type: 3}
+      propertyPath: useDoorUnlockMechanism
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2875591484993647025, guid: f3145b5067a026847b36bf8735d81074, type: 3}
       propertyPath: m_Name
       value: Monster2 (4)
@@ -20826,7 +21181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6718165291927984172, guid: f3145b5067a026847b36bf8735d81074, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -37.40011
+      value: -41.11
       objectReference: {fileID: 0}
     - target: {fileID: 6718165291927984172, guid: f3145b5067a026847b36bf8735d81074, type: 3}
       propertyPath: m_LocalRotation.w
@@ -23216,6 +23571,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3488798597472391038, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: m_TargetMonster
+      value: 
+      objectReference: {fileID: 1338919975}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -23232,6 +23591,71 @@ PrefabInstance:
       propertyPath: saveAcrossSessions
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[0].messages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[0].voiceClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[1].voiceClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[2].voiceClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[0]'
+      value: 'What the... a laser guide?
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[1]'
+      value: 'Guess it matches that mirror pattern I saw.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[2]'
+      value: Just press E to rotate it... guide the beam to the receiver. I can do
+        this.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].messages.Array.data[0]'
+      value: Another laser puzzle. Of course. Let's try this again.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].messages.Array.data[1]'
+      value: God, please let this be the last one.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 202602cc25e867b448fef41aef202702, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 7d31cf3b8e438424ea3cb36cb59df404, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 15dfbdfb5227f6540a25035c2d8dfd50, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].voiceClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 488c97bab1d973140a24b81602f664c9, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: b71d9cbb13a301744b1bbee3b2a88b5f, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[2].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 98835701e62a3fb4ab5eea961a19556b, type: 3}
     - target: {fileID: 6510223521580704717, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -24963,6 +25387,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3488798597472391038, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: m_TargetMonster
+      value: 
+      objectReference: {fileID: 1715330704}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -24979,6 +25407,71 @@ PrefabInstance:
       propertyPath: saveAcrossSessions
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[0].messages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[0].voiceClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[1].voiceClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[2].voiceClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[0]'
+      value: 'What the... a laser guide?
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[1]'
+      value: 'Guess it matches that mirror pattern I saw.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[2]'
+      value: Just press E to rotate it... guide the beam to the receiver. I can do
+        this.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].messages.Array.data[0]'
+      value: Another laser puzzle. Of course. Let's try this again.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].messages.Array.data[1]'
+      value: God, please let this be the last one.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 202602cc25e867b448fef41aef202702, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 7d31cf3b8e438424ea3cb36cb59df404, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 15dfbdfb5227f6540a25035c2d8dfd50, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].voiceClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 488c97bab1d973140a24b81602f664c9, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: b71d9cbb13a301744b1bbee3b2a88b5f, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[2].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 98835701e62a3fb4ab5eea961a19556b, type: 3}
     - target: {fileID: 6510223521580704717, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -27166,6 +27659,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3488798597472391038, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: m_TargetMonster
+      value: 
+      objectReference: {fileID: 1715330704}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -27182,6 +27679,71 @@ PrefabInstance:
       propertyPath: saveAcrossSessions
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[0].messages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[0].voiceClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[1].voiceClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[2].voiceClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[0]'
+      value: 'What the... a laser guide?
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[1]'
+      value: 'Guess it matches that mirror pattern I saw.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[2]'
+      value: Just press E to rotate it... guide the beam to the receiver. I can do
+        this.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].messages.Array.data[0]'
+      value: Another laser puzzle. Of course. Let's try this again.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].messages.Array.data[1]'
+      value: God, please let this be the last one.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 202602cc25e867b448fef41aef202702, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 7d31cf3b8e438424ea3cb36cb59df404, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 15dfbdfb5227f6540a25035c2d8dfd50, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].voiceClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 488c97bab1d973140a24b81602f664c9, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: b71d9cbb13a301744b1bbee3b2a88b5f, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[2].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 98835701e62a3fb4ab5eea961a19556b, type: 3}
     - target: {fileID: 6510223521580704717, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -27583,6 +28145,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 810599409}
     m_Modifications:
+    - target: {fileID: 540528893524011904, guid: 5be7a6959bf0b31418bc0272b100f9bb, type: 3}
+      propertyPath: m_Speed
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 963927344663494039, guid: 5be7a6959bf0b31418bc0272b100f9bb, type: 3}
       propertyPath: player
       value: 
@@ -28392,6 +28958,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3488798597472391038, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: m_TargetMonster
+      value: 
+      objectReference: {fileID: 930839935}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -28408,6 +28978,71 @@ PrefabInstance:
       propertyPath: saveAcrossSessions
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[0].messages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[0].voiceClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[1].voiceClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[2].voiceClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[0]'
+      value: 'What the... a laser guide?
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[1]'
+      value: 'Guess it matches that mirror pattern I saw.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[2]'
+      value: Just press E to rotate it... guide the beam to the receiver. I can do
+        this.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].messages.Array.data[0]'
+      value: Another laser puzzle. Of course. Let's try this again.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].messages.Array.data[1]'
+      value: God, please let this be the last one.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 202602cc25e867b448fef41aef202702, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 7d31cf3b8e438424ea3cb36cb59df404, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 15dfbdfb5227f6540a25035c2d8dfd50, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].voiceClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 488c97bab1d973140a24b81602f664c9, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: b71d9cbb13a301744b1bbee3b2a88b5f, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[2].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 98835701e62a3fb4ab5eea961a19556b, type: 3}
     - target: {fileID: 6510223521580704717, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -29087,6 +29722,71 @@ PrefabInstance:
       propertyPath: saveAcrossSessions
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[0].messages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[0].voiceClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[1].voiceClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[2].voiceClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[0]'
+      value: 'What the... a laser guide?
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[1]'
+      value: 'Guess it matches that mirror pattern I saw.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[2]'
+      value: Just press E to rotate it... guide the beam to the receiver. I can do
+        this.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].messages.Array.data[0]'
+      value: Another laser puzzle. Of course. Let's try this again.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].messages.Array.data[1]'
+      value: God, please let this be the last one.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 202602cc25e867b448fef41aef202702, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 7d31cf3b8e438424ea3cb36cb59df404, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 15dfbdfb5227f6540a25035c2d8dfd50, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].voiceClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 488c97bab1d973140a24b81602f664c9, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: b71d9cbb13a301744b1bbee3b2a88b5f, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[2].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 98835701e62a3fb4ab5eea961a19556b, type: 3}
     - target: {fileID: 6510223521580704717, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -29352,6 +30052,71 @@ PrefabInstance:
       propertyPath: saveAcrossSessions
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[0].messages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[0].voiceClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[1].voiceClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[2].voiceClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[0]'
+      value: 'What the... a laser guide?
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[1]'
+      value: 'Guess it matches that mirror pattern I saw.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[2]'
+      value: Just press E to rotate it... guide the beam to the receiver. I can do
+        this.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].messages.Array.data[0]'
+      value: Another laser puzzle. Of course. Let's try this again.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].messages.Array.data[1]'
+      value: God, please let this be the last one.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 202602cc25e867b448fef41aef202702, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 7d31cf3b8e438424ea3cb36cb59df404, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 15dfbdfb5227f6540a25035c2d8dfd50, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].voiceClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 488c97bab1d973140a24b81602f664c9, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: b71d9cbb13a301744b1bbee3b2a88b5f, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[2].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 98835701e62a3fb4ab5eea961a19556b, type: 3}
     - target: {fileID: 6510223521580704717, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -32261,13 +33026,17 @@ PrefabInstance:
       propertyPath: flashlightLight
       value: 
       objectReference: {fileID: 475259255}
+    - target: {fileID: 129569163575794162, guid: f3145b5067a026847b36bf8735d81074, type: 3}
+      propertyPath: useDoorUnlockMechanism
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2875591484993647025, guid: f3145b5067a026847b36bf8735d81074, type: 3}
       propertyPath: m_Name
       value: Monster2 (3)
       objectReference: {fileID: 0}
     - target: {fileID: 6718165291927984172, guid: f3145b5067a026847b36bf8735d81074, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 67.17923
+      value: 64.14
       objectReference: {fileID: 0}
     - target: {fileID: 6718165291927984172, guid: f3145b5067a026847b36bf8735d81074, type: 3}
       propertyPath: m_LocalPosition.y
@@ -33414,21 +34183,29 @@ MonoBehaviour:
   encounterStages:
   - stageName: First
     messages:
-    - Wait, what's coming this way??
-    - NIGERUNDAYO!(Run for your lives!)
-    - 'Wait a minute! '
-    - It seems like it's okay as long as I don't shine the flashlight on it.
-    voiceClips: []
+    - Wait, the hell is that?
+    - Oh god, NOPE! NIGERUNDAYO!(Run for your lives!)
+    - Wait, wait a sec...
+    - It stopped... Okay, it's fine as long as I don't shine the flashlight on it.
+    voiceClips:
+    - {fileID: 8300000, guid: 880946f6e787fb64da9b00feddca40c3, type: 3}
+    - {fileID: 8300000, guid: 2a3806a4f7a7a904190ef4090afca844, type: 3}
+    - {fileID: 8300000, guid: 09fa08625a6c01e41a5f130921650b89, type: 3}
+    - {fileID: 8300000, guid: e24b942254663cf4bb0802c93f4efa6d, type: 3}
   - stageName: Second
     messages:
-    - Okay! It's fine as long as I don't shine the flashlight on it.
-    - Let me catch my breath.
-    voiceClips: []
+    - Okay... pitch black is good. Pitch black is safe.
+    - Just let me catch my breath...
+    voiceClips:
+    - {fileID: 8300000, guid: 8274eaf1afd83864ba1d218b8efcf9fa, type: 3}
+    - {fileID: 8300000, guid: dc3b595d10d22fc47b8e86a3bc0998de, type: 3}
   - stageName: Third
     messages:
-    - ' All right, all right, let me rest a bit more.'
-    - Quick, let me check if the flashlight is turned off.
-    voiceClips: []
+    - Alright, alright... just need to rest a bit more.
+    - Wait, did I turn the flashlight off?! Let me check!
+    voiceClips:
+    - {fileID: 8300000, guid: 70ff9fba108d09940ac0d52dfb89075c, type: 3}
+    - {fileID: 8300000, guid: 4b71275236a765f4d87f8eb76afc6165, type: 3}
   storyManager: {fileID: 288826885}
 --- !u!136 &930839931
 CapsuleCollider:
@@ -33453,6 +34230,17 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &930839935 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 129569163575794162, guid: f3145b5067a026847b36bf8735d81074, type: 3}
+  m_PrefabInstance: {fileID: 1753118943}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277760077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 730cbfaa18814864cacb1127e2cdf8a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &930993702
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39941,22 +40729,29 @@ MonoBehaviour:
   encounterStages:
   - stageName: First
     messages:
-    - Holy shit!
-    - How come I ran into it again!
-    - I remember it wouldn't move when it was exposed to light.
-    - Quickly press F to turn on the flashlight and shine it on it.
-    voiceClips: []
+    - Holy shit! Why is it always me?!
+    - Wait, light. It hates light!
+    - Press F! Flashlight, come on!
+    voiceClips:
+    - {fileID: 8300000, guid: d0828cb770c4e6446b8b6e81fdcd094a, type: 3}
+    - {fileID: 8300000, guid: 18aca4ff5c52ad64b9c933080aedc836, type: 3}
+    - {fileID: 8300000, guid: 804980375e784d643b0f2e5ad2a1ee00, type: 3}
   - stageName: Second
     messages:
     - ...
     - Monther Fu*ker!!!
-    - Get lost!
-    voiceClips: []
+    - Can you just leave me alone?!
+    voiceClips:
+    - {fileID: 0}
+    - {fileID: 8300000, guid: c49054cf7b5049b438475ebf9ba2738f, type: 3}
+    - {fileID: 8300000, guid: 2c040a8efa53b9048ac98c587aa7fc94, type: 3}
   - stageName: Third
     messages:
     - ...
-    - I really should go pay my respects.
-    voiceClips: []
+    - I seriously need to go pay my respects at a temple after this.
+    voiceClips:
+    - {fileID: 0}
+    - {fileID: 8300000, guid: a57ea6a57d282844288fcb0ee1d7d83c, type: 3}
   storyManager: {fileID: 288826885}
 --- !u!136 &1136504740
 CapsuleCollider:
@@ -41549,6 +42344,71 @@ PrefabInstance:
       propertyPath: saveAcrossSessions
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[0].messages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[0].voiceClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[1].voiceClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[2].voiceClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[0]'
+      value: 'What the... a laser guide?
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[1]'
+      value: 'Guess it matches that mirror pattern I saw.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[2]'
+      value: Just press E to rotate it... guide the beam to the receiver. I can do
+        this.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].messages.Array.data[0]'
+      value: Another laser puzzle. Of course. Let's try this again.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].messages.Array.data[1]'
+      value: God, please let this be the last one.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 202602cc25e867b448fef41aef202702, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 7d31cf3b8e438424ea3cb36cb59df404, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 15dfbdfb5227f6540a25035c2d8dfd50, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].voiceClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 488c97bab1d973140a24b81602f664c9, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: b71d9cbb13a301744b1bbee3b2a88b5f, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[2].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 98835701e62a3fb4ab5eea961a19556b, type: 3}
     - target: {fileID: 6510223521580704717, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -42489,6 +43349,71 @@ PrefabInstance:
       propertyPath: saveAcrossSessions
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[0].messages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[0].voiceClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[1].voiceClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[2].voiceClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[0]'
+      value: 'What the... a laser guide?
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[1]'
+      value: 'Guess it matches that mirror pattern I saw.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[2]'
+      value: Just press E to rotate it... guide the beam to the receiver. I can do
+        this.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].messages.Array.data[0]'
+      value: Another laser puzzle. Of course. Let's try this again.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].messages.Array.data[1]'
+      value: God, please let this be the last one.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 202602cc25e867b448fef41aef202702, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 7d31cf3b8e438424ea3cb36cb59df404, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 15dfbdfb5227f6540a25035c2d8dfd50, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].voiceClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 488c97bab1d973140a24b81602f664c9, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: b71d9cbb13a301744b1bbee3b2a88b5f, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[2].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 98835701e62a3fb4ab5eea961a19556b, type: 3}
     - target: {fileID: 6510223521580704717, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -45025,22 +45950,30 @@ MonoBehaviour:
   encounterStages:
   - stageName: First
     messages:
-    - Holy shit!
-    - How come I ran into it again!
-    - I remember it wouldn't move when it was exposed to light.
+    - Holy shit! Why is it always me?!
+    - Wait, light. It hates light!
+    - Press F! Flashlight, come on!
     - Quickly press F to turn on the flashlight and shine it on it.
-    voiceClips: []
+    voiceClips:
+    - {fileID: 8300000, guid: d0828cb770c4e6446b8b6e81fdcd094a, type: 3}
+    - {fileID: 8300000, guid: 18aca4ff5c52ad64b9c933080aedc836, type: 3}
+    - {fileID: 8300000, guid: 804980375e784d643b0f2e5ad2a1ee00, type: 3}
   - stageName: Second
     messages:
     - ...
     - Monther Fu*ker!!!
-    - Get lost!
-    voiceClips: []
+    - Can you just leave me alone?!
+    voiceClips:
+    - {fileID: 0}
+    - {fileID: 8300000, guid: c49054cf7b5049b438475ebf9ba2738f, type: 3}
+    - {fileID: 8300000, guid: 2c040a8efa53b9048ac98c587aa7fc94, type: 3}
   - stageName: Third
     messages:
     - ...
-    - I really should go pay my respects.
-    voiceClips: []
+    - I seriously need to go pay my respects at a temple after this.
+    voiceClips:
+    - {fileID: 0}
+    - {fileID: 8300000, guid: a57ea6a57d282844288fcb0ee1d7d83c, type: 3}
   storyManager: {fileID: 288826885}
 --- !u!136 &1292526172
 CapsuleCollider:
@@ -46567,21 +47500,29 @@ MonoBehaviour:
   encounterStages:
   - stageName: First
     messages:
-    - Wait, what's coming this way??
-    - NIGERUNDAYO!(Run for your lives!)
-    - 'Wait a minute! '
-    - It seems like it's okay as long as I don't shine the flashlight on it.
-    voiceClips: []
+    - Wait, the hell is that?
+    - Oh god, NOPE! NIGERUNDAYO!(Run for your lives!)
+    - Wait, wait a sec...
+    - It stopped... Okay, it's fine as long as I don't shine the flashlight on it.
+    voiceClips:
+    - {fileID: 8300000, guid: 880946f6e787fb64da9b00feddca40c3, type: 3}
+    - {fileID: 8300000, guid: 2a3806a4f7a7a904190ef4090afca844, type: 3}
+    - {fileID: 8300000, guid: 09fa08625a6c01e41a5f130921650b89, type: 3}
+    - {fileID: 8300000, guid: e24b942254663cf4bb0802c93f4efa6d, type: 3}
   - stageName: Second
     messages:
-    - Okay! It's fine as long as I don't shine the flashlight on it.
-    - Let me catch my breath.
-    voiceClips: []
+    - Okay... pitch black is good. Pitch black is safe.
+    - Just let me catch my breath...
+    voiceClips:
+    - {fileID: 8300000, guid: 8274eaf1afd83864ba1d218b8efcf9fa, type: 3}
+    - {fileID: 8300000, guid: dc3b595d10d22fc47b8e86a3bc0998de, type: 3}
   - stageName: Third
     messages:
-    - ' All right, all right, let me rest a bit more.'
-    - Quick, let me check if the flashlight is turned off.
-    voiceClips: []
+    - Alright, alright... just need to rest a bit more.
+    - Wait, did I turn the flashlight off?! Let me check!
+    voiceClips:
+    - {fileID: 8300000, guid: 70ff9fba108d09940ac0d52dfb89075c, type: 3}
+    - {fileID: 8300000, guid: 4b71275236a765f4d87f8eb76afc6165, type: 3}
   storyManager: {fileID: 288826885}
 --- !u!136 &1338919971
 CapsuleCollider:
@@ -46606,6 +47547,17 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1338919975 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 129569163575794162, guid: f3145b5067a026847b36bf8735d81074, type: 3}
+  m_PrefabInstance: {fileID: 538938865}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408683573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 730cbfaa18814864cacb1127e2cdf8a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1340469205 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5928300009178751915, guid: a57680777d3403843b1e6d4a5b05e5fd, type: 3}
@@ -49121,6 +50073,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 810599409}
     m_Modifications:
+    - target: {fileID: 540528893524011904, guid: 5be7a6959bf0b31418bc0272b100f9bb, type: 3}
+      propertyPath: m_Speed
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 963927344663494039, guid: 5be7a6959bf0b31418bc0272b100f9bb, type: 3}
       propertyPath: player
       value: 
@@ -51271,6 +52227,71 @@ PrefabInstance:
       propertyPath: saveAcrossSessions
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[0].messages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[0].voiceClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[1].voiceClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[2].voiceClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[0]'
+      value: 'What the... a laser guide?
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[1]'
+      value: 'Guess it matches that mirror pattern I saw.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[2]'
+      value: Just press E to rotate it... guide the beam to the receiver. I can do
+        this.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].messages.Array.data[0]'
+      value: Another laser puzzle. Of course. Let's try this again.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].messages.Array.data[1]'
+      value: God, please let this be the last one.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 202602cc25e867b448fef41aef202702, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 7d31cf3b8e438424ea3cb36cb59df404, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 15dfbdfb5227f6540a25035c2d8dfd50, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].voiceClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 488c97bab1d973140a24b81602f664c9, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: b71d9cbb13a301744b1bbee3b2a88b5f, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[2].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 98835701e62a3fb4ab5eea961a19556b, type: 3}
     - target: {fileID: 6510223521580704717, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -54241,6 +55262,71 @@ PrefabInstance:
       propertyPath: saveAcrossSessions
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[0].messages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[0].voiceClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[1].voiceClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[2].voiceClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[0]'
+      value: 'What the... a laser guide?
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[1]'
+      value: 'Guess it matches that mirror pattern I saw.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[2]'
+      value: Just press E to rotate it... guide the beam to the receiver. I can do
+        this.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].messages.Array.data[0]'
+      value: Another laser puzzle. Of course. Let's try this again.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].messages.Array.data[1]'
+      value: God, please let this be the last one.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 202602cc25e867b448fef41aef202702, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 7d31cf3b8e438424ea3cb36cb59df404, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 15dfbdfb5227f6540a25035c2d8dfd50, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].voiceClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 488c97bab1d973140a24b81602f664c9, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: b71d9cbb13a301744b1bbee3b2a88b5f, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[2].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 98835701e62a3fb4ab5eea961a19556b, type: 3}
     - target: {fileID: 6510223521580704717, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -54487,21 +55573,29 @@ MonoBehaviour:
   encounterStages:
   - stageName: First
     messages:
-    - Wait, what's coming this way??
-    - NIGERUNDAYO!(Run for your lives!)
-    - 'Wait a minute! '
-    - It seems like it's okay as long as I don't shine the flashlight on it.
-    voiceClips: []
+    - Wait, the hell is that?
+    - Oh god, NOPE! NIGERUNDAYO!(Run for your lives!)
+    - Wait, wait a sec...
+    - It stopped... Okay, it's fine as long as I don't shine the flashlight on it.
+    voiceClips:
+    - {fileID: 8300000, guid: 880946f6e787fb64da9b00feddca40c3, type: 3}
+    - {fileID: 8300000, guid: 2a3806a4f7a7a904190ef4090afca844, type: 3}
+    - {fileID: 8300000, guid: 09fa08625a6c01e41a5f130921650b89, type: 3}
+    - {fileID: 8300000, guid: e24b942254663cf4bb0802c93f4efa6d, type: 3}
   - stageName: Second
     messages:
-    - Okay! It's fine as long as I don't shine the flashlight on it.
-    - Let me catch my breath.
-    voiceClips: []
+    - Okay... pitch black is good. Pitch black is safe.
+    - Just let me catch my breath...
+    voiceClips:
+    - {fileID: 8300000, guid: 8274eaf1afd83864ba1d218b8efcf9fa, type: 3}
+    - {fileID: 8300000, guid: dc3b595d10d22fc47b8e86a3bc0998de, type: 3}
   - stageName: Third
     messages:
-    - ' All right, all right, let me rest a bit more.'
-    - Quick, let me check if the flashlight is turned off.
-    voiceClips: []
+    - Alright, alright... just need to rest a bit more.
+    - Wait, did I turn the flashlight off?! Let me check!
+    voiceClips:
+    - {fileID: 8300000, guid: 70ff9fba108d09940ac0d52dfb89075c, type: 3}
+    - {fileID: 8300000, guid: 4b71275236a765f4d87f8eb76afc6165, type: 3}
   storyManager: {fileID: 288826885}
 --- !u!136 &1563263878
 CapsuleCollider:
@@ -54526,6 +55620,17 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1563263882 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 129569163575794162, guid: f3145b5067a026847b36bf8735d81074, type: 3}
+  m_PrefabInstance: {fileID: 905425536}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563263870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 730cbfaa18814864cacb1127e2cdf8a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1564238574
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54826,6 +55931,71 @@ PrefabInstance:
       propertyPath: saveAcrossSessions
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[0].messages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[0].voiceClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[1].voiceClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[2].voiceClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[0]'
+      value: 'What the... a laser guide?
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[1]'
+      value: 'Guess it matches that mirror pattern I saw.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[2]'
+      value: Just press E to rotate it... guide the beam to the receiver. I can do
+        this.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].messages.Array.data[0]'
+      value: Another laser puzzle. Of course. Let's try this again.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].messages.Array.data[1]'
+      value: God, please let this be the last one.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 202602cc25e867b448fef41aef202702, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 7d31cf3b8e438424ea3cb36cb59df404, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 15dfbdfb5227f6540a25035c2d8dfd50, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].voiceClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 488c97bab1d973140a24b81602f664c9, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: b71d9cbb13a301744b1bbee3b2a88b5f, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[2].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 98835701e62a3fb4ab5eea961a19556b, type: 3}
     - target: {fileID: 6510223521580704717, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -59639,6 +60809,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3488798597472391038, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: m_TargetMonster
+      value: 
+      objectReference: {fileID: 930839935}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -59655,6 +60829,71 @@ PrefabInstance:
       propertyPath: saveAcrossSessions
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[0].messages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[0].voiceClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[1].voiceClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[2].voiceClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[0]'
+      value: 'What the... a laser guide?
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[1]'
+      value: 'Guess it matches that mirror pattern I saw.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[2]'
+      value: Just press E to rotate it... guide the beam to the receiver. I can do
+        this.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].messages.Array.data[0]'
+      value: Another laser puzzle. Of course. Let's try this again.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].messages.Array.data[1]'
+      value: God, please let this be the last one.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 202602cc25e867b448fef41aef202702, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 7d31cf3b8e438424ea3cb36cb59df404, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 15dfbdfb5227f6540a25035c2d8dfd50, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].voiceClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 488c97bab1d973140a24b81602f664c9, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: b71d9cbb13a301744b1bbee3b2a88b5f, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[2].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 98835701e62a3fb4ab5eea961a19556b, type: 3}
     - target: {fileID: 6510223521580704717, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -59895,21 +61134,29 @@ MonoBehaviour:
   encounterStages:
   - stageName: First
     messages:
-    - Wait, what's coming this way??
-    - NIGERUNDAYO!(Run for your lives!)
-    - 'Wait a minute! '
-    - It seems like it's okay as long as I don't shine the flashlight on it.
-    voiceClips: []
+    - Wait, the hell is that?
+    - Oh god, NOPE! NIGERUNDAYO!(Run for your lives!)
+    - Wait, wait a sec...
+    - It stopped... Okay, it's fine as long as I don't shine the flashlight on it.
+    voiceClips:
+    - {fileID: 8300000, guid: 880946f6e787fb64da9b00feddca40c3, type: 3}
+    - {fileID: 8300000, guid: 2a3806a4f7a7a904190ef4090afca844, type: 3}
+    - {fileID: 8300000, guid: 09fa08625a6c01e41a5f130921650b89, type: 3}
+    - {fileID: 8300000, guid: e24b942254663cf4bb0802c93f4efa6d, type: 3}
   - stageName: Second
     messages:
-    - Okay! It's fine as long as I don't shine the flashlight on it.
-    - Let me catch my breath.
-    voiceClips: []
+    - Okay... pitch black is good. Pitch black is safe.
+    - Just let me catch my breath...
+    voiceClips:
+    - {fileID: 8300000, guid: 8274eaf1afd83864ba1d218b8efcf9fa, type: 3}
+    - {fileID: 8300000, guid: dc3b595d10d22fc47b8e86a3bc0998de, type: 3}
   - stageName: Third
     messages:
-    - ' All right, all right, let me rest a bit more.'
-    - Quick, let me check if the flashlight is turned off.
-    voiceClips: []
+    - Alright, alright... just need to rest a bit more.
+    - Wait, did I turn the flashlight off?! Let me check!
+    voiceClips:
+    - {fileID: 8300000, guid: 70ff9fba108d09940ac0d52dfb89075c, type: 3}
+    - {fileID: 8300000, guid: 4b71275236a765f4d87f8eb76afc6165, type: 3}
   storyManager: {fileID: 288826885}
 --- !u!136 &1715330700
 CapsuleCollider:
@@ -59934,6 +61181,17 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1715330704 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 129569163575794162, guid: f3145b5067a026847b36bf8735d81074, type: 3}
+  m_PrefabInstance: {fileID: 425820106}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715330692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 730cbfaa18814864cacb1127e2cdf8a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1715378643
 GameObject:
   m_ObjectHideFlags: 0
@@ -61830,6 +63088,10 @@ PrefabInstance:
       propertyPath: flashlightLight
       value: 
       objectReference: {fileID: 475259255}
+    - target: {fileID: 129569163575794162, guid: f3145b5067a026847b36bf8735d81074, type: 3}
+      propertyPath: useDoorUnlockMechanism
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2875591484993647025, guid: f3145b5067a026847b36bf8735d81074, type: 3}
       propertyPath: m_Name
       value: Monster2 (1)
@@ -63516,6 +64778,71 @@ PrefabInstance:
       propertyPath: saveAcrossSessions
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[0].messages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[0].voiceClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[1].voiceClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[2].voiceClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[0]'
+      value: 'What the... a laser guide?
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[1]'
+      value: 'Guess it matches that mirror pattern I saw.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[2]'
+      value: Just press E to rotate it... guide the beam to the receiver. I can do
+        this.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].messages.Array.data[0]'
+      value: Another laser puzzle. Of course. Let's try this again.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].messages.Array.data[1]'
+      value: God, please let this be the last one.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 202602cc25e867b448fef41aef202702, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 7d31cf3b8e438424ea3cb36cb59df404, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 15dfbdfb5227f6540a25035c2d8dfd50, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].voiceClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 488c97bab1d973140a24b81602f664c9, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: b71d9cbb13a301744b1bbee3b2a88b5f, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[2].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 98835701e62a3fb4ab5eea961a19556b, type: 3}
     - target: {fileID: 6510223521580704717, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -64997,22 +66324,30 @@ MonoBehaviour:
   encounterStages:
   - stageName: First
     messages:
-    - Holy shit!
-    - How come I ran into it again!
-    - I remember it wouldn't move when it was exposed to light.
+    - Holy shit! Why is it always me?!
+    - Wait, light. It hates light!
+    - Press F! Flashlight, come on!
     - Quickly press F to turn on the flashlight and shine it on it.
-    voiceClips: []
+    voiceClips:
+    - {fileID: 8300000, guid: d0828cb770c4e6446b8b6e81fdcd094a, type: 3}
+    - {fileID: 8300000, guid: 18aca4ff5c52ad64b9c933080aedc836, type: 3}
+    - {fileID: 8300000, guid: 804980375e784d643b0f2e5ad2a1ee00, type: 3}
   - stageName: Second
     messages:
     - ...
     - Monther Fu*ker!!!
-    - Get lost!
-    voiceClips: []
+    - Can you just leave me alone?!
+    voiceClips:
+    - {fileID: 0}
+    - {fileID: 8300000, guid: c49054cf7b5049b438475ebf9ba2738f, type: 3}
+    - {fileID: 8300000, guid: 2c040a8efa53b9048ac98c587aa7fc94, type: 3}
   - stageName: Third
     messages:
     - ...
-    - I really should go pay my respects.
-    voiceClips: []
+    - I seriously need to go pay my respects at a temple after this.
+    voiceClips:
+    - {fileID: 0}
+    - {fileID: 8300000, guid: a57ea6a57d282844288fcb0ee1d7d83c, type: 3}
   storyManager: {fileID: 288826885}
 --- !u!136 &1852813578
 CapsuleCollider:
@@ -65264,22 +66599,30 @@ MonoBehaviour:
   encounterStages:
   - stageName: First
     messages:
-    - Holy shit!
-    - How come I ran into it again!
-    - I remember it wouldn't move when it was exposed to light.
+    - Holy shit! Why is it always me?!
+    - Wait, light. It hates light!
+    - Press F! Flashlight, come on!
     - Quickly press F to turn on the flashlight and shine it on it.
-    voiceClips: []
+    voiceClips:
+    - {fileID: 8300000, guid: d0828cb770c4e6446b8b6e81fdcd094a, type: 3}
+    - {fileID: 8300000, guid: 18aca4ff5c52ad64b9c933080aedc836, type: 3}
+    - {fileID: 8300000, guid: 804980375e784d643b0f2e5ad2a1ee00, type: 3}
   - stageName: Second
     messages:
     - ...
     - Monther Fu*ker!!!
-    - Get lost!
-    voiceClips: []
+    - Can you just leave me alone?!
+    voiceClips:
+    - {fileID: 0}
+    - {fileID: 8300000, guid: c49054cf7b5049b438475ebf9ba2738f, type: 3}
+    - {fileID: 8300000, guid: 2c040a8efa53b9048ac98c587aa7fc94, type: 3}
   - stageName: Third
     messages:
     - ...
-    - I really should go pay my respects.
-    voiceClips: []
+    - I seriously need to go pay my respects at a temple after this.
+    voiceClips:
+    - {fileID: 0}
+    - {fileID: 8300000, guid: a57ea6a57d282844288fcb0ee1d7d83c, type: 3}
   storyManager: {fileID: 288826885}
 --- !u!136 &1859611216
 CapsuleCollider:
@@ -67154,6 +68497,71 @@ PrefabInstance:
       propertyPath: saveAcrossSessions
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[0].messages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[0].voiceClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[1].voiceClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[2].voiceClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[0]'
+      value: 'What the... a laser guide?
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[1]'
+      value: 'Guess it matches that mirror pattern I saw.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[2]'
+      value: Just press E to rotate it... guide the beam to the receiver. I can do
+        this.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].messages.Array.data[0]'
+      value: Another laser puzzle. Of course. Let's try this again.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].messages.Array.data[1]'
+      value: God, please let this be the last one.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 202602cc25e867b448fef41aef202702, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 7d31cf3b8e438424ea3cb36cb59df404, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 15dfbdfb5227f6540a25035c2d8dfd50, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].voiceClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 488c97bab1d973140a24b81602f664c9, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: b71d9cbb13a301744b1bbee3b2a88b5f, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[2].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 98835701e62a3fb4ab5eea961a19556b, type: 3}
     - target: {fileID: 6510223521580704717, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -68892,6 +70300,71 @@ PrefabInstance:
       propertyPath: saveAcrossSessions
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[0].messages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[0].voiceClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[1].voiceClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.data[2].voiceClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[0]'
+      value: 'What the... a laser guide?
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[1]'
+      value: 'Guess it matches that mirror pattern I saw.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].messages.Array.data[2]'
+      value: Just press E to rotate it... guide the beam to the receiver. I can do
+        this.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].messages.Array.data[0]'
+      value: Another laser puzzle. Of course. Let's try this again.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].messages.Array.data[1]'
+      value: God, please let this be the last one.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 202602cc25e867b448fef41aef202702, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 7d31cf3b8e438424ea3cb36cb59df404, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[0].voiceClips.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 15dfbdfb5227f6540a25035c2d8dfd50, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].voiceClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 488c97bab1d973140a24b81602f664c9, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[1].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: b71d9cbb13a301744b1bbee3b2a88b5f, type: 3}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: 'encounterStages.Array.data[2].voiceClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 98835701e62a3fb4ab5eea961a19556b, type: 3}
     - target: {fileID: 6510223521580704717, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -69809,6 +71282,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 810599409}
     m_Modifications:
+    - target: {fileID: 540528893524011904, guid: 5be7a6959bf0b31418bc0272b100f9bb, type: 3}
+      propertyPath: m_Speed
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 963927344663494039, guid: 5be7a6959bf0b31418bc0272b100f9bb, type: 3}
       propertyPath: player
       value: 

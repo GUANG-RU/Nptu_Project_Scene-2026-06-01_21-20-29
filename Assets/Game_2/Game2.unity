@@ -7448,11 +7448,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
   puzzleTypeID: Monster3
+  priority: 0
   saveAcrossSessions: 0
+  monster3Instance: {fileID: 0}
+  monster3InterferenceMessages: []
   encounterStages:
   - stageName: First
     messages:
-    - It seems like shining a flashlight on this monster wouldn't do any good
+    - It seems like shining a flashlight on this monster wouldn't do any good.
     - After all, it doesn't appear to have any eyes.
     - It looks like we can try approaching it first, then stay still and see how
       it reacts.
@@ -7482,6 +7485,17 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &183276519 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7800025947095299670, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
+  m_PrefabInstance: {fileID: 803615007}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183276509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 259fd3d4e4764aa4b91fc5eb9405a876, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoundMonsterAI2
 --- !u!1001 &183730975
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16829,7 +16843,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
   puzzleTypeID: LaserPuzzle3D
+  priority: 0
   saveAcrossSessions: 0
+  monster3Instance: {fileID: 183276519}
+  monster3InterferenceMessages:
+  - This monster is crazy
   encounterStages:
   - stageName: First
     messages:
@@ -33286,7 +33304,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
   puzzleTypeID: Monster2
+  priority: 1
   saveAcrossSessions: 0
+  monster3Instance: {fileID: 0}
+  monster3InterferenceMessages: []
   encounterStages:
   - stageName: First
     messages:
@@ -39808,7 +39829,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
   puzzleTypeID: Monster1
+  priority: 1
   saveAcrossSessions: 0
+  monster3Instance: {fileID: 0}
+  monster3InterferenceMessages: []
   encounterStages:
   - stageName: First
     messages:
@@ -44884,7 +44908,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
   puzzleTypeID: Monster1
+  priority: 1
   saveAcrossSessions: 0
+  monster3Instance: {fileID: 0}
+  monster3InterferenceMessages: []
   encounterStages:
   - stageName: First
     messages:
@@ -46421,7 +46448,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
   puzzleTypeID: Monster2
+  priority: 1
   saveAcrossSessions: 0
+  monster3Instance: {fileID: 0}
+  monster3InterferenceMessages: []
   encounterStages:
   - stageName: First
     messages:
@@ -54336,7 +54366,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
   puzzleTypeID: Monster2
+  priority: 1
   saveAcrossSessions: 0
+  monster3Instance: {fileID: 0}
+  monster3InterferenceMessages: []
   encounterStages:
   - stageName: First
     messages:
@@ -59718,7 +59751,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
   puzzleTypeID: Monster2
+  priority: 1
   saveAcrossSessions: 0
+  monster3Instance: {fileID: 0}
+  monster3InterferenceMessages: []
   encounterStages:
   - stageName: First
     messages:
@@ -64815,7 +64851,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
   puzzleTypeID: Monster1
+  priority: 1
   saveAcrossSessions: 0
+  monster3Instance: {fileID: 0}
+  monster3InterferenceMessages: []
   encounterStages:
   - stageName: First
     messages:
@@ -65077,7 +65116,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
   puzzleTypeID: Monster1
+  priority: 1
   saveAcrossSessions: 0
+  monster3Instance: {fileID: 0}
+  monster3InterferenceMessages: []
   encounterStages:
   - stageName: First
     messages:
@@ -72507,6 +72549,7 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+  muteWhileUsingMirror: 1
   lastIntensity: 0
   lastType: '-'
 --- !u!4 &2090435194 stripped

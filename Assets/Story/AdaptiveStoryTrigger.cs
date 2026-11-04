@@ -2,116 +2,106 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// 劇情對話的單一階段設定
-/// </summary>
 [Serializable]
 public class StoryEncounterStage
 {
-    [Tooltip("階段說明 (僅在 Inspector 方便辨識，例如：第 1 次-教學、第 3 次-抱怨)")]
-    public string stageName = "對話階段";
+    [Tooltip("階段標籤 (僅在 Inspector 方便辨識)")]
+    public string stageName = "第 1 次遇到";
 
-    [Header("此階段播放的文字對話")]
+    [Header("此階段播放的對話文字清單")]
     [TextArea(2, 5)]
     public string[] messages;
 }
 
-/// <summary>
-/// 具備跨存檔 (PlayerPrefs) 與 Inspector 無限階段自訂功能的劇情觸發器
-/// </summary>
 public class AdaptiveStoryTrigger : MonoBehaviour
 {
-    [Header("謎題/事件分類")]
-    [Tooltip("分類 ID (相同 ID 會共用遇到次數，例如：LaserPuzzle, MirrorPuzzle)")]
+    [Header("1. 分類與優先級")]
+    [Tooltip("事件 ID：Monster1, Monster2, Monster3, LaserPuzzle, LaserPuzzle3D")]
     public string puzzleTypeID = "LaserPuzzle";
+    [Tooltip("High (怪物/故事): 可打斷低優先\nLow (謎題教學): 遇高優先暫緩播放")]
+    public StoryPriority priority = StoryPriority.Low;
 
-    [Header("跨關卡/重啟存檔設定")]
-    [Tooltip("勾選後，遊戲關掉重開依然會記住遇到次數 (使用 PlayerPrefs)")]
+    [Header("2. 存檔設定")]
+    [Tooltip("勾選後，遊戲關掉重開依然會記憶 encounters 次數")]
     public bool saveAcrossSessions = true;
 
-    [Header("各次遇到的對話階段清單 (按順序排列)")]
-    [Tooltip("第 1 個代表第 1 次遇到、第 2 個代表第 2 次遇到...以此類推。若次數超過清單長度則自動保持安靜。")]
+    [Header("3. Monster 3 特殊干擾 (直接對接現有的 SoundMonsterAI2)")]
+    [Tooltip("拖入場景中的 Monster 3 (聽力型怪物)")]
+    public SoundMonsterAI2 monster3Instance;
+
+    [Tooltip("當 Monster 3 處於警戒/追擊/攻擊狀態時要播放的干擾對話 (可選)")]
+    [TextArea(2, 5)]
+    public string[] monster3InterferenceMessages;
+
+    [Header("4. 各階段對話清單 (按次數順序)")]
+    [Tooltip("Element 0 = 第 1 次, Element 1 = 第 2 次... 超過清單長度則自動保持安靜")]
     public List<StoryEncounterStage> encounterStages = new List<StoryEncounterStage>();
 
-    [Header("顯示設定")]
-    [Tooltip("每段文字顯示後自動留存的時間")]
+    [Header("5. 顯示與系統引用")]
     public float displayTime = 3f;
-
-    [Tooltip("關卡中的 StoryManager 引用")]
     public StoryManager storyManager;
 
-    // 防止玩家在同一地點重複踩踏觸發
     private bool hasTriggeredThisLocation = false;
-
-    // 暫存於記憶體中的計數器 (當 saveAcrossSessions 未勾選時使用)
     private static Dictionary<string, int> s_SessionCounts = new Dictionary<string, int>();
 
     private void OnTriggerEnter(Collider other)
     {
-        if (hasTriggeredThisLocation) return;
-        if (!other.CompareTag("Player")) return;
+        if (hasTriggeredThisLocation || !other.CompareTag("Player") || storyManager == null) return;
 
-        if (storyManager == null)
+        // 若目前正播放 High Priority，且自己是 Low Priority，先不觸發，留待玩家下次回頭重踩
+        if (storyManager.IsPlayingStory && 
+            storyManager.CurrentPriority == StoryPriority.High && 
+            priority == StoryPriority.Low)
         {
-            Debug.LogWarning($"[{gameObject.name}] 上的 AdaptiveStoryTrigger 尚未指定 StoryManager！");
+            return;
+        }
+
+        // 檢查 Monster 3 是否處於 Alert (警戒)、Chase (追擊) 或 Attack (攻擊) 的主動干擾狀態
+        if (monster3Instance != null && 
+            monster3Instance.currentState != SoundMonsterAI2.State.Patrol && 
+            monster3InterferenceMessages != null && 
+            monster3InterferenceMessages.Length > 0 &&
+            !string.IsNullOrWhiteSpace(monster3InterferenceMessages[0]))
+        {
+            hasTriggeredThisLocation = true;
+            storyManager.ShowStories(monster3InterferenceMessages, displayTime, StoryPriority.High);
             return;
         }
 
         hasTriggeredThisLocation = true;
 
-        // 1. 取得並增加此 ID 的累計次數
         int currentCount = GetAndIncreaseEncounterCount(puzzleTypeID);
-
-        // 2. 計算對應的 List 索引 (第 1 次對應 index 0, 第 2 次對應 index 1...)
         int stageIndex = currentCount - 1;
 
-        // 3. 檢查是否有設定該階段的對話
         if (stageIndex >= 0 && stageIndex < encounterStages.Count)
         {
             string[] selectedMessages = encounterStages[stageIndex].messages;
-
             if (selectedMessages != null && selectedMessages.Length > 0 && !string.IsNullOrWhiteSpace(selectedMessages[0]))
             {
-                Debug.Log($"[AdaptiveStoryTrigger] 謎題 [{puzzleTypeID}] 第 {currentCount} 次觸發，播放階段：{encounterStages[stageIndex].stageName}");
-                storyManager.ShowStories(selectedMessages, displayTime);
-                return;
+                storyManager.ShowStories(selectedMessages, displayTime, priority);
             }
         }
-
-        // 4. 若次數已超過設定的階段數，或該階段未填寫文字，則保持安靜
-        Debug.Log($"[AdaptiveStoryTrigger] 謎題 [{puzzleTypeID}] 第 {currentCount} 次觸發，已無後續對話（保持安靜）。");
     }
 
-    /// <summary>
-    /// 讀取並增加計數器
-    /// </summary>
     private int GetAndIncreaseEncounterCount(string id)
     {
         int count = 0;
-
         if (saveAcrossSessions)
         {
             string key = "EncounterCount_" + id;
             count = PlayerPrefs.GetInt(key, 0) + 1;
             PlayerPrefs.SetInt(key, count);
-            PlayerPrefs.Save(); // 立即寫入存檔
+            PlayerPrefs.Save();
         }
         else
         {
-            if (!s_SessionCounts.ContainsKey(id))
-            {
-                s_SessionCounts[id] = 0;
-            }
+            if (!s_SessionCounts.ContainsKey(id)) s_SessionCounts[id] = 0;
             s_SessionCounts[id]++;
             count = s_SessionCounts[id];
         }
-
         return count;
     }
 
-    /// <summary>
-    /// 在 Unity Editor 中右鍵此元件即可一鍵重置次數 (方便測試)
-    /// </summary>
     [ContextMenu("重置此 Puzzle ID 的遇到次數")]
     public void ResetEncounterCount()
     {

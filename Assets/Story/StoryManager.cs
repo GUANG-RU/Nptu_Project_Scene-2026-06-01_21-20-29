@@ -4,8 +4,8 @@ using TMPro;
 
 public enum StoryPriority
 {
-    Low = 0,   // 謎題教學、環境提示 (會被高優先級打斷，或在忙碌時暫緩)
-    High = 1   // 怪物登場、怪物行為警告、關鍵故事片段 (可打斷 Low)
+    Low = 0,   // 謎題教學、環境思考 (可被 High 打斷，或在忙碌時暫緩)
+    High = 1   // 怪物登場、危機警告、劇情高潮 (可強制打斷 Low)
 }
 
 public class StoryManager : MonoBehaviour

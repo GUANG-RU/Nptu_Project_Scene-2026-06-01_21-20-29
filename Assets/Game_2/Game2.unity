@@ -7448,10 +7448,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
   puzzleTypeID: Monster3
-  priority: 0
   saveAcrossSessions: 0
   monster3Instance: {fileID: 0}
   monster3InterferenceMessages: []
+  monster3InterferenceVoices: []
   encounterStages:
   - stageName: First
     messages:
@@ -7460,7 +7460,7 @@ MonoBehaviour:
     - It looks like we can try approaching it first, then stay still and see how
       it reacts.
     - ' If it doesn''t attack us when we stay still, that means it''s guided by sound.'
-  displayTime: 3
+    voiceClips: []
   storyManager: {fileID: 288826885}
 --- !u!136 &183276517
 CapsuleCollider:
@@ -11406,6 +11406,7 @@ GameObject:
   m_Component:
   - component: {fileID: 288826886}
   - component: {fileID: 288826885}
+  - component: {fileID: 288826887}
   m_Layer: 0
   m_Name: StoryManager
   m_TagString: Untagged
@@ -11427,8 +11428,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StoryManager
   storyPanel: {fileID: 152853499}
   storyText: {fileID: 150811704}
-  typingSpeed: 0.05
+  voiceAudioSource: {fileID: 0}
   allowMouseSkip: 1
+  postVoiceHoldTime: 1.5
 --- !u!4 &288826886
 Transform:
   m_ObjectHideFlags: 0
@@ -11444,6 +11446,103 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &288826887
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288826884}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &289826896 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8730245854331329977, guid: b2452a5c2cd649a4db9eebcd16f7b155, type: 3}
@@ -16843,11 +16942,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
   puzzleTypeID: LaserPuzzle3D
-  priority: 0
   saveAcrossSessions: 0
   monster3Instance: {fileID: 183276519}
   monster3InterferenceMessages:
   - This monster is crazy
+  monster3InterferenceVoices: []
   encounterStages:
   - stageName: First
     messages:
@@ -16857,7 +16956,7 @@ MonoBehaviour:
       of the light sensors. '
     - I have to get close, press E, and use the WASD keys to adjust the mirrors while
       dodging the monster's attacks.
-  displayTime: 3
+    voiceClips: []
   storyManager: {fileID: 288826885}
 --- !u!136 &416953897
 CapsuleCollider:
@@ -33304,10 +33403,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
   puzzleTypeID: Monster2
-  priority: 1
   saveAcrossSessions: 0
   monster3Instance: {fileID: 0}
   monster3InterferenceMessages: []
+  monster3InterferenceVoices: []
   encounterStages:
   - stageName: First
     messages:
@@ -33315,15 +33414,17 @@ MonoBehaviour:
     - NIGERUNDAYO!(Run for your lives!)
     - 'Wait a minute! '
     - It seems like it's okay as long as I don't shine the flashlight on it.
+    voiceClips: []
   - stageName: Second
     messages:
     - Okay! It's fine as long as I don't shine the flashlight on it.
     - Let me catch my breath.
+    voiceClips: []
   - stageName: Third
     messages:
     - ' All right, all right, let me rest a bit more.'
     - Quick, let me check if the flashlight is turned off.
-  displayTime: 3
+    voiceClips: []
   storyManager: {fileID: 288826885}
 --- !u!136 &930839931
 CapsuleCollider:
@@ -39829,10 +39930,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
   puzzleTypeID: Monster1
-  priority: 1
   saveAcrossSessions: 0
   monster3Instance: {fileID: 0}
   monster3InterferenceMessages: []
+  monster3InterferenceVoices: []
   encounterStages:
   - stageName: First
     messages:
@@ -39840,16 +39941,18 @@ MonoBehaviour:
     - How come I ran into it again!
     - I remember it wouldn't move when it was exposed to light.
     - Quickly press F to turn on the flashlight and shine it on it.
+    voiceClips: []
   - stageName: Second
     messages:
     - ...
     - Monther Fu*ker!!!
     - Get lost!
+    voiceClips: []
   - stageName: Third
     messages:
     - ...
     - I really should go pay my respects.
-  displayTime: 3
+    voiceClips: []
   storyManager: {fileID: 288826885}
 --- !u!136 &1136504740
 CapsuleCollider:
@@ -40259,6 +40362,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6257800485735965347, guid: cf8443763fc34314490f8a3e2f94dd37, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1625584036}
+    - targetCorrespondingSourceObject: {fileID: 6257800485735965347, guid: cf8443763fc34314490f8a3e2f94dd37, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1625584040}
   m_SourcePrefab: {fileID: 100100000, guid: cf8443763fc34314490f8a3e2f94dd37, type: 3}
 --- !u!4 &1150546773 stripped
 Transform:
@@ -44908,10 +45014,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
   puzzleTypeID: Monster1
-  priority: 1
   saveAcrossSessions: 0
   monster3Instance: {fileID: 0}
   monster3InterferenceMessages: []
+  monster3InterferenceVoices: []
   encounterStages:
   - stageName: First
     messages:
@@ -44919,16 +45025,18 @@ MonoBehaviour:
     - How come I ran into it again!
     - I remember it wouldn't move when it was exposed to light.
     - Quickly press F to turn on the flashlight and shine it on it.
+    voiceClips: []
   - stageName: Second
     messages:
     - ...
     - Monther Fu*ker!!!
     - Get lost!
+    voiceClips: []
   - stageName: Third
     messages:
     - ...
     - I really should go pay my respects.
-  displayTime: 3
+    voiceClips: []
   storyManager: {fileID: 288826885}
 --- !u!136 &1292526172
 CapsuleCollider:
@@ -46448,10 +46556,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
   puzzleTypeID: Monster2
-  priority: 1
   saveAcrossSessions: 0
   monster3Instance: {fileID: 0}
   monster3InterferenceMessages: []
+  monster3InterferenceVoices: []
   encounterStages:
   - stageName: First
     messages:
@@ -46459,15 +46567,17 @@ MonoBehaviour:
     - NIGERUNDAYO!(Run for your lives!)
     - 'Wait a minute! '
     - It seems like it's okay as long as I don't shine the flashlight on it.
+    voiceClips: []
   - stageName: Second
     messages:
     - Okay! It's fine as long as I don't shine the flashlight on it.
     - Let me catch my breath.
+    voiceClips: []
   - stageName: Third
     messages:
     - ' All right, all right, let me rest a bit more.'
     - Quick, let me check if the flashlight is turned off.
-  displayTime: 3
+    voiceClips: []
   storyManager: {fileID: 288826885}
 --- !u!136 &1338919971
 CapsuleCollider:
@@ -54366,10 +54476,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
   puzzleTypeID: Monster2
-  priority: 1
   saveAcrossSessions: 0
   monster3Instance: {fileID: 0}
   monster3InterferenceMessages: []
+  monster3InterferenceVoices: []
   encounterStages:
   - stageName: First
     messages:
@@ -54377,15 +54487,17 @@ MonoBehaviour:
     - NIGERUNDAYO!(Run for your lives!)
     - 'Wait a minute! '
     - It seems like it's okay as long as I don't shine the flashlight on it.
+    voiceClips: []
   - stageName: Second
     messages:
     - Okay! It's fine as long as I don't shine the flashlight on it.
     - Let me catch my breath.
+    voiceClips: []
   - stageName: Third
     messages:
     - ' All right, all right, let me rest a bit more.'
     - Quick, let me check if the flashlight is turned off.
-  displayTime: 3
+    voiceClips: []
   storyManager: {fileID: 288826885}
 --- !u!136 &1563263878
 CapsuleCollider:
@@ -56433,7 +56545,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1625584031}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 551ff52d88667464ba18c5314cde0555, type: 3}
   m_Name: 
@@ -56466,6 +56578,36 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 6.000002, y: 0.25, z: 6.000001}
   m_Center: {x: 3, y: -0.12499809, z: 3}
+--- !u!114 &1625584040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625584031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca9942d112bfbd8449dea4ccc1003922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
+  puzzleTypeID: EnterGame2
+  saveAcrossSessions: 0
+  monster3Instance: {fileID: 0}
+  monster3InterferenceMessages: []
+  monster3InterferenceVoices: []
+  encounterStages:
+  - stageName: Intro
+    messages:
+    - Ugh... FUCK. Where the hell am I?
+    - Seriously, when will I be able to leave this awful place?
+    - Okay... I'll just keep searching for a way out.
+    - Hopefully, I can finally get out of this hellish place.
+    voiceClips:
+    - {fileID: 8300000, guid: f827d581161c97a4c8ba2b07d3dde887, type: 3}
+    - {fileID: 8300000, guid: ee195e3c6dfa4c94ba1aeb272441794f, type: 3}
+    - {fileID: 8300000, guid: 6860df5b67350b0448e66005d0298e5a, type: 3}
+    - {fileID: 8300000, guid: 3dd9046daf4a0a445862d4380a5a4960, type: 3}
+  storyManager: {fileID: 288826885}
 --- !u!1001 &1627180711
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59751,10 +59893,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
   puzzleTypeID: Monster2
-  priority: 1
   saveAcrossSessions: 0
   monster3Instance: {fileID: 0}
   monster3InterferenceMessages: []
+  monster3InterferenceVoices: []
   encounterStages:
   - stageName: First
     messages:
@@ -59762,15 +59904,17 @@ MonoBehaviour:
     - NIGERUNDAYO!(Run for your lives!)
     - 'Wait a minute! '
     - It seems like it's okay as long as I don't shine the flashlight on it.
+    voiceClips: []
   - stageName: Second
     messages:
     - Okay! It's fine as long as I don't shine the flashlight on it.
     - Let me catch my breath.
+    voiceClips: []
   - stageName: Third
     messages:
     - ' All right, all right, let me rest a bit more.'
     - Quick, let me check if the flashlight is turned off.
-  displayTime: 3
+    voiceClips: []
   storyManager: {fileID: 288826885}
 --- !u!136 &1715330700
 CapsuleCollider:
@@ -64851,10 +64995,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
   puzzleTypeID: Monster1
-  priority: 1
   saveAcrossSessions: 0
   monster3Instance: {fileID: 0}
   monster3InterferenceMessages: []
+  monster3InterferenceVoices: []
   encounterStages:
   - stageName: First
     messages:
@@ -64862,16 +65006,18 @@ MonoBehaviour:
     - How come I ran into it again!
     - I remember it wouldn't move when it was exposed to light.
     - Quickly press F to turn on the flashlight and shine it on it.
+    voiceClips: []
   - stageName: Second
     messages:
     - ...
     - Monther Fu*ker!!!
     - Get lost!
+    voiceClips: []
   - stageName: Third
     messages:
     - ...
     - I really should go pay my respects.
-  displayTime: 3
+    voiceClips: []
   storyManager: {fileID: 288826885}
 --- !u!136 &1852813578
 CapsuleCollider:
@@ -65116,10 +65262,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
   puzzleTypeID: Monster1
-  priority: 1
   saveAcrossSessions: 0
   monster3Instance: {fileID: 0}
   monster3InterferenceMessages: []
+  monster3InterferenceVoices: []
   encounterStages:
   - stageName: First
     messages:
@@ -65127,16 +65273,18 @@ MonoBehaviour:
     - How come I ran into it again!
     - I remember it wouldn't move when it was exposed to light.
     - Quickly press F to turn on the flashlight and shine it on it.
+    voiceClips: []
   - stageName: Second
     messages:
     - ...
     - Monther Fu*ker!!!
     - Get lost!
+    voiceClips: []
   - stageName: Third
     messages:
     - ...
     - I really should go pay my respects.
-  displayTime: 3
+    voiceClips: []
   storyManager: {fileID: 288826885}
 --- !u!136 &1859611216
 CapsuleCollider:

@@ -5,40 +5,37 @@ using UnityEngine;
 [Serializable]
 public class StoryEncounterStage
 {
-    [Tooltip("階段標籤 (僅在 Inspector 方便辨識)")]
-    public string stageName = "第 1 次遇到";
+    [Tooltip("階段標籤 (First / Second / Third)")]
+    public string stageName = "First";
 
-    [Header("此階段播放的對話文字清單")]
+    [Header("此階段播放的對話文字與對應配音")]
     [TextArea(2, 5)]
     public string[] messages;
+
+    [Tooltip("對應上述字幕的 AI 配音檔 (數量與順序須與 Messages 一致)")]
+    public AudioClip[] voiceClips;
 }
 
 public class AdaptiveStoryTrigger : MonoBehaviour
 {
-    [Header("1. 分類與優先級")]
+    [Header("1. 分類 ID")]
     [Tooltip("事件 ID：Monster1, Monster2, Monster3, LaserPuzzle, LaserPuzzle3D")]
     public string puzzleTypeID = "LaserPuzzle";
-    [Tooltip("High (怪物/故事): 可打斷低優先\nLow (謎題教學): 遇高優先暫緩播放")]
-    public StoryPriority priority = StoryPriority.Low;
 
     [Header("2. 存檔設定")]
-    [Tooltip("勾選後，遊戲關掉重開依然會記憶 encounters 次數")]
+    [Tooltip("勾選後，關掉遊戲重開依然記憶 encounters 次數")]
     public bool saveAcrossSessions = true;
 
-    [Header("3. Monster 3 特殊干擾 (直接對接現有的 SoundMonsterAI2)")]
-    [Tooltip("拖入場景中的 Monster 3 (聽力型怪物)")]
+    [Header("3. Monster 3 特殊干擾 (選擇性)")]
     public SoundMonsterAI2 monster3Instance;
-
-    [Tooltip("當 Monster 3 處於警戒/追擊/攻擊狀態時要播放的干擾對話 (可選)")]
     [TextArea(2, 5)]
     public string[] monster3InterferenceMessages;
+    public AudioClip[] monster3InterferenceVoices;
 
-    [Header("4. 各階段對話清單 (按次數順序)")]
-    [Tooltip("Element 0 = 第 1 次, Element 1 = 第 2 次... 超過清單長度則自動保持安靜")]
+    [Header("4. 各階段對話清單 (Element 0 = First, Element 1 = Second, Element 2 = Third)")]
     public List<StoryEncounterStage> encounterStages = new List<StoryEncounterStage>();
 
-    [Header("5. 顯示與系統引用")]
-    public float displayTime = 3f;
+    [Header("5. 系統引用")]
     public StoryManager storyManager;
 
     private bool hasTriggeredThisLocation = false;
@@ -48,15 +45,14 @@ public class AdaptiveStoryTrigger : MonoBehaviour
     {
         if (hasTriggeredThisLocation || !other.CompareTag("Player") || storyManager == null) return;
 
-        // 若目前正播放 High Priority，且自己是 Low Priority，先不觸發，留待玩家下次回頭重踩
-        if (storyManager.IsPlayingStory && 
-            storyManager.CurrentPriority == StoryPriority.High && 
-            priority == StoryPriority.Low)
-        {
-            return;
-        }
+        // 計算目前遇到的階段 (0 = First, 1 = Second, 2 = Third)
+        int currentCount = GetAndIncreaseEncounterCount(puzzleTypeID);
+        int stageIndex = currentCount - 1;
 
-        // 檢查 Monster 3 是否處於 Alert (警戒)、Chase (追擊) 或 Attack (攻擊) 的主動干擾狀態
+        // 計算階段優先度：First (stageIndex 0) = 優先度 3, Second = 2, Third = 1
+        int stagePriority = Mathf.Max(1, 3 - stageIndex);
+
+        // 檢查 Monster 3 是否處於 Alert/Chase/Attack 干擾狀態
         if (monster3Instance != null && 
             monster3Instance.currentState != SoundMonsterAI2.State.Patrol && 
             monster3InterferenceMessages != null && 
@@ -64,21 +60,19 @@ public class AdaptiveStoryTrigger : MonoBehaviour
             !string.IsNullOrWhiteSpace(monster3InterferenceMessages[0]))
         {
             hasTriggeredThisLocation = true;
-            storyManager.ShowStories(monster3InterferenceMessages, displayTime, StoryPriority.High);
+            // 干擾緊急對話一律視為最高優先度 (3)
+            storyManager.ShowStories(monster3InterferenceMessages, monster3InterferenceVoices, 3);
             return;
         }
 
         hasTriggeredThisLocation = true;
 
-        int currentCount = GetAndIncreaseEncounterCount(puzzleTypeID);
-        int stageIndex = currentCount - 1;
-
         if (stageIndex >= 0 && stageIndex < encounterStages.Count)
         {
-            string[] selectedMessages = encounterStages[stageIndex].messages;
-            if (selectedMessages != null && selectedMessages.Length > 0 && !string.IsNullOrWhiteSpace(selectedMessages[0]))
+            StoryEncounterStage stage = encounterStages[stageIndex];
+            if (stage.messages != null && stage.messages.Length > 0 && !string.IsNullOrWhiteSpace(stage.messages[0]))
             {
-                storyManager.ShowStories(selectedMessages, displayTime, priority);
+                storyManager.ShowStories(stage.messages, stage.voiceClips, stagePriority);
             }
         }
     }

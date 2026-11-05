@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,16 +17,19 @@ public class StoryManager : MonoBehaviour
     public TMP_Text storyText;
     public AudioSource voiceAudioSource; // 用於播放 AI 語音的 AudioSource
 
-    [Header("系統設定")]
-    [Tooltip("是否允許配音播完後按滑鼠左鍵跳過")]
+    [Header("系統與快對話設定")]
+    [Tooltip("是否允許滑鼠跳過/快進")]
     public bool allowMouseSkip = true;
+
+    [Tooltip("獨立控管快進對話的滑鼠按鈕 (0 = 左鍵, 1 = 右鍵)")]
+    public int skipMouseButton = 0; // 0 = 滑鼠左鍵
+
     [Tooltip("無配音檔時，或配音播完後的預設停留時間（秒）")]
     public float postVoiceHoldTime = 1.5f;
 
     private Coroutine storyCoroutine;
-    private bool skipCurrentMessage = false;
+    private bool skipCurrentMessage = false; // 無條件直接跳過當前整句，切至下一句
     private bool isPlayingStory = false;
-    private bool canSkip = false; // 只有配音完全播完後才會變為 true
 
     // 目前正在播放的遭遇階段優先級：First = 3, Second = 2, Third = 1, 無 = 0
     private int currentPriorityLevel = 0;
@@ -43,19 +47,23 @@ public class StoryManager : MonoBehaviour
     {
         if (!isPlayingStory || !allowMouseSkip) return;
 
-        // 只有當 canSkip == true (配音已完整播完) 且按下左鍵時，才允許切換到下一句
-        if (canSkip && Input.GetMouseButtonDown(0))
+        // 按下左鍵 (skipMouseButton = 0) -> 無條件觸發「跳過當前這句」
+        if (Input.GetMouseButtonDown(skipMouseButton))
         {
             skipCurrentMessage = true;
         }
     }
 
     // ==========================================
-    // 【核心方法】：支援語音檔與階梯優先度 (First=3, Second=2, Third=1)
+    // 【核心方法】：支援對話結束 Callback 回傳 (用於解鎖定格)
     // ==========================================
-    public void ShowStories(string[] messages, AudioClip[] voiceClips, int stagePriority)
+    public void ShowStories(string[] messages, AudioClip[] voiceClips, int stagePriority, Action onComplete = null)
     {
-        if (storyPanel == null || storyText == null || messages == null || messages.Length == 0) return;
+        if (storyPanel == null || storyText == null || messages == null || messages.Length == 0)
+        {
+            onComplete?.Invoke();
+            return;
+        }
 
         // 優先度判定：若新事件優先度 <= 當前播放中的優先度，則不打斷，以先遇到的為主
         if (isPlayingStory && stagePriority <= currentPriorityLevel)
@@ -64,7 +72,7 @@ public class StoryManager : MonoBehaviour
             return;
         }
 
-        // 新事件優先度更高 (例如 First 打斷 Second)，停止上一段語音與字串顯示
+        // 新事件優先度更高，停止上一段語音與字串顯示
         if (storyCoroutine != null)
         {
             StopCoroutine(storyCoroutine);
@@ -78,39 +86,39 @@ public class StoryManager : MonoBehaviour
 
         currentPriorityLevel = stagePriority;
         skipCurrentMessage = false;
-        canSkip = false;
         isPlayingStory = true;
 
-        storyCoroutine = StartCoroutine(ShowStoriesRoutine(messages, voiceClips));
+        storyCoroutine = StartCoroutine(ShowStoriesRoutine(messages, voiceClips, onComplete));
     }
 
     // ==========================================
-    // 【向下相容過渡方法】：完全相容 StoryTrigger.cs 與舊版呼叫
+    // 【向下相容過渡方法】
     // ==========================================
-    
-    // 相容 StoryTrigger.cs (string[], float) 的呼叫
+    public void ShowStories(string[] messages, AudioClip[] voiceClips, int stagePriority)
+    {
+        ShowStories(messages, voiceClips, stagePriority, null);
+    }
+
     public void ShowStories(string[] messages, float duration)
     {
-        ShowStories(messages, null, 1);
+        ShowStories(messages, null, 1, null);
     }
 
-    // 相容舊版 (string[], float, StoryPriority) 的呼叫
     public void ShowStories(string[] messages, float duration, StoryPriority priority)
     {
         int pLevel = (priority == StoryPriority.High) ? 3 : 1;
-        ShowStories(messages, null, pLevel);
+        ShowStories(messages, null, pLevel, null);
     }
 
-    // 相容舊版單句 ShowStory
     public void ShowStory(string message, float duration = 3f)
     {
-        ShowStories(new string[] { message }, null, 1);
+        ShowStories(new string[] { message }, null, 1, null);
     }
 
     // ==========================================
-    // 【打字機與語音同步 Routine】
+    // 【無條件左鍵快照/跳過 Routine】
     // ==========================================
-    private IEnumerator ShowStoriesRoutine(string[] messages, AudioClip[] voiceClips)
+    private IEnumerator ShowStoriesRoutine(string[] messages, AudioClip[] voiceClips, Action onComplete)
     {
         storyPanel.SetActive(true);
 
@@ -121,8 +129,7 @@ public class StoryManager : MonoBehaviour
 
             AudioClip clip = (voiceClips != null && index < voiceClips.Length) ? voiceClips[index] : null;
 
-            skipCurrentMessage = false;
-            canSkip = false; // 語音播報期間鎖定，無法快轉
+            skipCurrentMessage = false; // 每句開始前重置跳過旗標
 
             storyText.text = message;
             storyText.ForceMeshUpdate();
@@ -130,7 +137,7 @@ public class StoryManager : MonoBehaviour
             int totalCharacters = storyText.textInfo.characterCount;
             storyText.maxVisibleCharacters = 0;
 
-            // 計算逐字印出速度：若有 Audio 則完全對齊音訊總秒數，若無則使用預設率 (每字 0.05 秒)
+            // 計算逐字印出速度
             float audioDuration = (clip != null) ? clip.length : (totalCharacters * 0.05f);
             float delayPerChar = (totalCharacters > 0) ? (audioDuration / totalCharacters) : 0f;
 
@@ -141,29 +148,55 @@ public class StoryManager : MonoBehaviour
                 voiceAudioSource.Play();
             }
 
-            // 打字機階段 (對齊語音長度)
+            // --- 1. 打字機階段 (若中途按左鍵，立即停止配音並跳出打字機) ---
             for (int i = 0; i < totalCharacters; i++)
             {
+                if (skipCurrentMessage)
+                {
+                    if (voiceAudioSource != null && voiceAudioSource.isPlaying)
+                    {
+                        voiceAudioSource.Stop();
+                    }
+                    break;
+                }
+
                 storyText.maxVisibleCharacters = i + 1;
                 if (delayPerChar > 0f) yield return new WaitForSeconds(delayPerChar);
                 else yield return null;
             }
 
+            // 🚨 若在打字階段按了左鍵：直接跳過等待階段，立即進入迴圈的下一句！
+            if (skipCurrentMessage)
+            {
+                if (voiceAudioSource != null && voiceAudioSource.isPlaying)
+                {
+                    voiceAudioSource.Stop();
+                }
+                continue;
+            }
+
+            // 確保正常播放時全字顯示
             storyText.maxVisibleCharacters = totalCharacters;
 
-            // 等待 Audio 實體播放完畢 (確保音效無殘音)
+            // --- 2. 配音播報等待階段 ---
             if (voiceAudioSource != null && clip != null)
             {
-                while (voiceAudioSource.isPlaying)
+                while (voiceAudioSource.isPlaying && !skipCurrentMessage)
                 {
                     yield return null;
                 }
             }
 
-            // 配音完全播完，解鎖快轉跳過功能！
-            canSkip = true;
+            if (skipCurrentMessage)
+            {
+                if (voiceAudioSource != null && voiceAudioSource.isPlaying)
+                {
+                    voiceAudioSource.Stop();
+                }
+                continue;
+            }
 
-            // 留存停留階段 (玩家此時可按左鍵手動跳下一句，或等待停留時間結束)
+            // --- 3. 停留時間階段 ---
             float timer = 0f;
             while (!skipCurrentMessage && timer < postVoiceHoldTime)
             {
@@ -175,9 +208,11 @@ public class StoryManager : MonoBehaviour
         // 全對話結束，重置 UI 與狀態
         storyPanel.SetActive(false);
         skipCurrentMessage = false;
-        canSkip = false;
         isPlayingStory = false;
         currentPriorityLevel = 0;
         storyCoroutine = null;
+
+        // 觸發 Callback，解鎖玩家與怪物定格
+        onComplete?.Invoke();
     }
 }

@@ -73,6 +73,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
   puzzleTypeID: LaserPuzzle
   saveAcrossSessions: 1
+  triggerOncePerID: 1
+  targetToLookAt: {fileID: 0}
+  maxFacingAngle: 40
+  targetMonster: {fileID: 0}
+  monster3Instance: {fileID: 0}
+  monster3InterferenceMessages: []
+  monster3InterferenceVoices: []
   encounterStages:
   - stageName: First
     messages:
@@ -80,16 +87,19 @@ MonoBehaviour:
     - It looks like a laser guide device.
     - 'And it seems to match the pattern I need to create for mirrored light guiding. '
     - Let's try pressing E to rotate the mirror and guide the light to the receiver!
+    voiceClips: []
   - stageName: Second
     messages:
     - Another laser puzzle, let's try again!
     - I hope this is the last time.
+    voiceClips: []
   - stageName: Third
     messages:
     - ...
     - FU*O*K
-  displayTime: 3
+    voiceClips: []
   storyManager: {fileID: 0}
+  partnerTrigger: {fileID: 0}
 --- !u!1 &4239413524770478473
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,6 +431,7 @@ MonoBehaviour:
   m_LinkedTablets:
   - {fileID: 1797793914675187217}
   - {fileID: 4189800555274191573}
+  m_TargetMonster: {fileID: 0}
   m_OpenHeight: 5
   m_OpenSpeed: 3
 --- !u!1 &7535785993015532991
@@ -597,7 +608,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5933712166879197852, guid: 4a571a4b881286d4a833f6e31c9d3c46, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.3999958
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 5933712166879197852, guid: 4a571a4b881286d4a833f6e31c9d3c46, type: 3}
       propertyPath: m_LocalPosition.z
@@ -638,14 +649,17 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7834571826751699449, guid: 4a571a4b881286d4a833f6e31c9d3c46, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2635882806691457128}
   m_SourcePrefab: {fileID: 100100000, guid: 4a571a4b881286d4a833f6e31c9d3c46, type: 3}
 --- !u!114 &1797793914675187217 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1221388100137670464, guid: 4a571a4b881286d4a833f6e31c9d3c46, type: 3}
   m_PrefabInstance: {fileID: 576515778586253649}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 7258060538622238888}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f7c901fe5d23b414bad8fd34ef1ab335, type: 3}
@@ -656,6 +670,62 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5933712166879197852, guid: 4a571a4b881286d4a833f6e31c9d3c46, type: 3}
   m_PrefabInstance: {fileID: 576515778586253649}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7258060538622238888 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7834571826751699449, guid: 4a571a4b881286d4a833f6e31c9d3c46, type: 3}
+  m_PrefabInstance: {fileID: 576515778586253649}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2635882806691457128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7258060538622238888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca9942d112bfbd8449dea4ccc1003922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
+  puzzleTypeID: LaserPuzzle_01
+  saveAcrossSessions: 0
+  triggerOncePerID: 1
+  targetToLookAt: {fileID: 6510223521580704717}
+  maxFacingAngle: 40
+  targetMonster: {fileID: 0}
+  monster3Instance: {fileID: 0}
+  monster3InterferenceMessages: []
+  monster3InterferenceVoices: []
+  encounterStages:
+  - stageName: First
+    messages:
+    - 'What the... a laser guide?
+
+'
+    - 'Guess it matches that mirror pattern I saw.
+
+'
+    - Just press E to rotate it... guide the beam to the receiver. I can do this.
+    voiceClips:
+    - {fileID: 8300000, guid: 202602cc25e867b448fef41aef202702, type: 3}
+    - {fileID: 8300000, guid: 7d31cf3b8e438424ea3cb36cb59df404, type: 3}
+    - {fileID: 8300000, guid: 15dfbdfb5227f6540a25035c2d8dfd50, type: 3}
+  - stageName: Second
+    messages:
+    - Another laser puzzle. Of course. Let's try this again.
+    - God, please let this be the last one.
+    voiceClips:
+    - {fileID: 8300000, guid: 488c97bab1d973140a24b81602f664c9, type: 3}
+    - {fileID: 8300000, guid: b71d9cbb13a301744b1bbee3b2a88b5f, type: 3}
+  - stageName: Third
+    messages:
+    - ...
+    - FU*O*K
+    voiceClips:
+    - {fileID: 0}
+    - {fileID: 8300000, guid: 98835701e62a3fb4ab5eea961a19556b, type: 3}
+  storyManager: {fileID: 0}
+  partnerTrigger: {fileID: 7690218565446734047}
 --- !u!1001 &2636658681800106155
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -756,7 +826,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 690562261663448245, guid: d37c84bfb8ca47345bab04e1a6c622c5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.3999958
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 690562261663448245, guid: d37c84bfb8ca47345bab04e1a6c622c5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -829,6 +899,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6456363405161935073, guid: d37c84bfb8ca47345bab04e1a6c622c5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1284992294135625430}
+    - targetCorrespondingSourceObject: {fileID: 6456363405161935073, guid: d37c84bfb8ca47345bab04e1a6c622c5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7690218565446734047}
   m_SourcePrefab: {fileID: 100100000, guid: d37c84bfb8ca47345bab04e1a6c622c5, type: 3}
 --- !u!1 &3400215570035489746 stripped
 GameObject:
@@ -876,6 +949,57 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7690218565446734047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3400215570035489746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca9942d112bfbd8449dea4ccc1003922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
+  puzzleTypeID: LaserPuzzle_01
+  saveAcrossSessions: 0
+  triggerOncePerID: 1
+  targetToLookAt: {fileID: 9161233082173945734}
+  maxFacingAngle: 40
+  targetMonster: {fileID: 0}
+  monster3Instance: {fileID: 0}
+  monster3InterferenceMessages: []
+  monster3InterferenceVoices: []
+  encounterStages:
+  - stageName: First
+    messages:
+    - 'What the... a laser guide?
+
+'
+    - 'Guess it matches that mirror pattern I saw.
+
+'
+    - Just press E to rotate it... guide the beam to the receiver. I can do this.
+    voiceClips:
+    - {fileID: 8300000, guid: 202602cc25e867b448fef41aef202702, type: 3}
+    - {fileID: 8300000, guid: 7d31cf3b8e438424ea3cb36cb59df404, type: 3}
+    - {fileID: 8300000, guid: 15dfbdfb5227f6540a25035c2d8dfd50, type: 3}
+  - stageName: Second
+    messages:
+    - Another laser puzzle. Of course. Let's try this again.
+    - God, please let this be the last one.
+    voiceClips:
+    - {fileID: 8300000, guid: 488c97bab1d973140a24b81602f664c9, type: 3}
+    - {fileID: 8300000, guid: b71d9cbb13a301744b1bbee3b2a88b5f, type: 3}
+  - stageName: Third
+    messages:
+    - ...
+    - FU*O*K
+    voiceClips:
+    - {fileID: 0}
+    - {fileID: 8300000, guid: 98835701e62a3fb4ab5eea961a19556b, type: 3}
+  storyManager: {fileID: 0}
+  partnerTrigger: {fileID: 2635882806691457128}
 --- !u!4 &9161233082173945734 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 690562261663448245, guid: d37c84bfb8ca47345bab04e1a6c622c5, type: 3}

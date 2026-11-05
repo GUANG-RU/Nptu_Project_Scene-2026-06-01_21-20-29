@@ -3476,6 +3476,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleType
+      value: LaserPuzzle2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleTypeID
+      value: LaserPuzzle_07
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 288826885}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -3483,6 +3495,10 @@ PrefabInstance:
     - target: {fileID: 5334092972248085864, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: storyManager
@@ -3561,11 +3577,24 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.6
       objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleType
+      value: LaserPuzzle2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleTypeID
+      value: LaserPuzzle_07
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 288826885}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -5464,6 +5493,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleType
+      value: LaserPuzzle2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleTypeID
+      value: LaserPuzzle_18
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 288826885}
     - target: {fileID: 3488798597472391038, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_TargetMonster
       value: 
@@ -5475,6 +5516,10 @@ PrefabInstance:
     - target: {fileID: 5334092972248085864, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: storyManager
@@ -5553,11 +5598,24 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.6
       objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleType
+      value: LaserPuzzle2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleTypeID
+      value: LaserPuzzle_18
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 288826885}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -6823,7 +6881,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5708847785946672294, guid: de6b562675bc0914ab8871f08fba7398, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.88
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5708847785946672294, guid: de6b562675bc0914ab8871f08fba7398, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6831,7 +6889,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5708847785946672294, guid: de6b562675bc0914ab8871f08fba7398, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.97
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5708847785946672294, guid: de6b562675bc0914ab8871f08fba7398, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7577,70 +7635,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2659587548486903517, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
   m_PrefabInstance: {fileID: 803615007}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &183276516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 183276509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca9942d112bfbd8449dea4ccc1003922, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
-  puzzleTypeID: Monster3
-  saveAcrossSessions: 0
-  monster3Instance: {fileID: 0}
-  monster3InterferenceMessages: []
-  monster3InterferenceVoices: []
-  encounterStages:
-  - stageName: First
-    messages:
-    - Great, the flashlight is completely useless.
-    - And it doesn't even have eyes. What an absolute unit.
-    - ' Okay... let''s try inching closer, then freeze.'
-    - If it doesn't attack me when I'm still... it must be hunting by sound.
-    voiceClips:
-    - {fileID: 8300000, guid: c365bab10e7237e46ac78d7c44d4f143, type: 3}
-    - {fileID: 8300000, guid: 159398ce589adbc4abb0fd03cf9d4e83, type: 3}
-    - {fileID: 8300000, guid: 8d26ff55102bab6459cd65b1b542abf8, type: 3}
-    - {fileID: 8300000, guid: 2637524cfa16802419442c95f7e048f2, type: 3}
-  storyManager: {fileID: 288826885}
---- !u!136 &183276517
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 183276509}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 10
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &183276519 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7800025947095299670, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
-  m_PrefabInstance: {fileID: 803615007}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 183276509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 259fd3d4e4764aa4b91fc5eb9405a876, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SoundMonsterAI2
 --- !u!1001 &183730975
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10589,6 +10583,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleType
+      value: LaserPuzzle2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleTypeID
+      value: LaserPuzzle_16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 288826885}
     - target: {fileID: 3488798597472391038, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_TargetMonster
       value: 
@@ -10600,6 +10606,10 @@ PrefabInstance:
     - target: {fileID: 5334092972248085864, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: storyManager
@@ -10678,11 +10688,24 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.6
       objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleType
+      value: LaserPuzzle2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleTypeID
+      value: LaserPuzzle_16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 288826885}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -11644,6 +11667,7 @@ MonoBehaviour:
   storyText: {fileID: 150811704}
   voiceAudioSource: {fileID: 0}
   allowMouseSkip: 1
+  skipMouseButton: 0
   postVoiceHoldTime: 1.5
 --- !u!4 &288826886
 Transform:
@@ -11902,6 +11926,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleType
+      value: LaserPuzzle2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleTypeID
+      value: LaserPuzzle_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 288826885}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -11909,6 +11945,10 @@ PrefabInstance:
     - target: {fileID: 5334092972248085864, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: storyManager
@@ -11987,11 +12027,24 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.6
       objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleType
+      value: LaserPuzzle2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleTypeID
+      value: LaserPuzzle_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 288826885}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -13349,6 +13402,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleType
+      value: LaserPuzzle2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleTypeID
+      value: LaserPuzzle_17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 288826885}
     - target: {fileID: 3488798597472391038, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_TargetMonster
       value: 
@@ -13360,6 +13425,10 @@ PrefabInstance:
     - target: {fileID: 5334092972248085864, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: storyManager
@@ -13438,11 +13507,24 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.6
       objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleType
+      value: LaserPuzzle2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleTypeID
+      value: LaserPuzzle_17
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 288826885}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -17289,25 +17371,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca9942d112bfbd8449dea4ccc1003922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
-  puzzleTypeID: LaserPuzzle3D
+  puzzleType: LaserPuzzle3D
   saveAcrossSessions: 0
-  monster3Instance: {fileID: 183276519}
-  monster3InterferenceMessages:
-  - This monster is crazy
-  monster3InterferenceVoices: []
+  requireFacingTarget: 1
+  targetToLookAt: {fileID: 0}
+  maxFacingAngle: 40
+  targetMonsters:
+  - {fileID: 183276509}
+  - {fileID: 1789998611}
+  startMonsterAIOnComplete: 1
+  partnerTrigger: {fileID: 0}
   encounterStages:
-  - stageName: First
+  - stageName: IntroPuzzle
     messages:
     - Wait a minute... is that the Neo Armstrong Cyclone Jet Armstrong Cannon?
     - Damn, it actually has a really high-quality finish!
     - Focus, man. I need to adjust these mirrors to hit all the sensors.
     - So I gotta get close, press E, and use W, A, S, D, to rotate them......all
       while dodging that thing's attacks. Perfect
+    - Great, the flashlight is completely useless.
+    - And it doesn't even have eyes. What an absolute unit.
+    - ' Okay... let''s try inching closer, then freeze.'
+    - If it doesn't attack me when I'm still... it must be hunting by sound.
     voiceClips:
     - {fileID: 8300000, guid: 00c0af0e48403364491ae4b93e0a4bdb, type: 3}
     - {fileID: 8300000, guid: dad05b4c01ff3cf41bcbd081c4d66987, type: 3}
     - {fileID: 8300000, guid: cd38bfb0a89716143b349d757d25d1d8, type: 3}
     - {fileID: 8300000, guid: dedf6715ab386644093e53792272885c, type: 3}
+    - {fileID: 8300000, guid: c365bab10e7237e46ac78d7c44d4f143, type: 3}
+    - {fileID: 8300000, guid: 159398ce589adbc4abb0fd03cf9d4e83, type: 3}
+    - {fileID: 8300000, guid: 8d26ff55102bab6459cd65b1b542abf8, type: 3}
+    - {fileID: 8300000, guid: 2637524cfa16802419442c95f7e048f2, type: 3}
   storyManager: {fileID: 288826885}
 --- !u!136 &416953897
 CapsuleCollider:
@@ -17328,7 +17422,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 10
+  m_Radius: 4.5
   m_Height: 1
   m_Direction: 1
   m_Center: {x: -0.00000023841858, y: 0, z: 0.0000023841858}
@@ -23571,6 +23665,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleType
+      value: LaserPuzzle2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleTypeID
+      value: LaserPuzzle_15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 288826885}
     - target: {fileID: 3488798597472391038, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_TargetMonster
       value: 
@@ -23582,6 +23688,10 @@ PrefabInstance:
     - target: {fileID: 5334092972248085864, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: storyManager
@@ -23660,11 +23770,24 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.6
       objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleType
+      value: LaserPuzzle2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleTypeID
+      value: LaserPuzzle_15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 288826885}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -25387,6 +25510,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleType
+      value: LaserPuzzle2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleTypeID
+      value: LaserPuzzle_20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 288826885}
     - target: {fileID: 3488798597472391038, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_TargetMonster
       value: 
@@ -25398,6 +25533,10 @@ PrefabInstance:
     - target: {fileID: 5334092972248085864, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: storyManager
@@ -25476,11 +25615,24 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.6
       objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleType
+      value: LaserPuzzle2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleTypeID
+      value: LaserPuzzle_20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 288826885}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -27659,6 +27811,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleType
+      value: LaserPuzzle2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleTypeID
+      value: LaserPuzzle_19
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 288826885}
     - target: {fileID: 3488798597472391038, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_TargetMonster
       value: 
@@ -27670,6 +27834,10 @@ PrefabInstance:
     - target: {fileID: 5334092972248085864, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: storyManager
@@ -27748,11 +27916,24 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.6
       objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleType
+      value: LaserPuzzle2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleTypeID
+      value: LaserPuzzle_19
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 288826885}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -28958,6 +29139,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleType
+      value: LaserPuzzle2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleTypeID
+      value: LaserPuzzle_13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 288826885}
     - target: {fileID: 3488798597472391038, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_TargetMonster
       value: 
@@ -28969,6 +29162,10 @@ PrefabInstance:
     - target: {fileID: 5334092972248085864, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: storyManager
@@ -29047,11 +29244,24 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.6
       objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleType
+      value: LaserPuzzle2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleTypeID
+      value: LaserPuzzle_13
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 288826885}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -29126,7 +29336,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2192808870029682403, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.39545304
+      value: 6.69
       objectReference: {fileID: 0}
     - target: {fileID: 2192808870029682403, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -29134,23 +29344,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2192808870029682403, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -110.77418
+      value: -102.03
       objectReference: {fileID: 0}
     - target: {fileID: 2192808870029682403, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.38268343
       objectReference: {fileID: 0}
     - target: {fileID: 2192808870029682403, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2192808870029682403, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.92387956
       objectReference: {fileID: 0}
     - target: {fileID: 2192808870029682403, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2192808870029682403, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -29158,7 +29368,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2192808870029682403, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 135
       objectReference: {fileID: 0}
     - target: {fileID: 2192808870029682403, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -29175,13 +29385,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2659587548486903517, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 183276517}
-    - targetCorrespondingSourceObject: {fileID: 2659587548486903517, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 183276516}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
 --- !u!1001 &805156974
 PrefabInstance:
@@ -29465,6 +29669,7 @@ Transform:
   - {fileID: 734981636}
   - {fileID: 1852813570}
   - {fileID: 166736383}
+  - {fileID: 1789998610}
   m_Father: {fileID: 1449017837}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &811078067 stripped
@@ -29706,6 +29911,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleType
+      value: LaserPuzzle2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleTypeID
+      value: LaserPuzzle_10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 288826885}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -29713,6 +29930,10 @@ PrefabInstance:
     - target: {fileID: 5334092972248085864, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: storyManager
@@ -29791,11 +30012,24 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.6
       objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleType
+      value: LaserPuzzle2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleTypeID
+      value: LaserPuzzle_10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 288826885}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -30036,6 +30270,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleType
+      value: LaserPuzzle2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 288826885}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -30043,6 +30285,10 @@ PrefabInstance:
     - target: {fileID: 5334092972248085864, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: storyManager
@@ -30121,11 +30367,20 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.6
       objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleType
+      value: LaserPuzzle2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 288826885}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -34175,11 +34430,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca9942d112bfbd8449dea4ccc1003922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
-  puzzleTypeID: Monster2
+  puzzleType: Monster2
   saveAcrossSessions: 0
-  monster3Instance: {fileID: 0}
-  monster3InterferenceMessages: []
-  monster3InterferenceVoices: []
+  requireFacingTarget: 1
+  targetToLookAt: {fileID: 930839923}
+  maxFacingAngle: 40
+  targetMonsters: []
+  startMonsterAIOnComplete: 0
+  partnerTrigger: {fileID: 0}
   encounterStages:
   - stageName: First
     messages:
@@ -40721,11 +40979,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca9942d112bfbd8449dea4ccc1003922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
-  puzzleTypeID: Monster1
+  puzzleType: Monster1
   saveAcrossSessions: 0
-  monster3Instance: {fileID: 0}
-  monster3InterferenceMessages: []
-  monster3InterferenceVoices: []
+  requireFacingTarget: 1
+  targetToLookAt: {fileID: 1098148315}
+  maxFacingAngle: 40
+  targetMonsters: []
+  startMonsterAIOnComplete: 1
+  partnerTrigger: {fileID: 0}
   encounterStages:
   - stageName: First
     messages:
@@ -40772,7 +41033,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 10
+  m_Radius: 8
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -41104,6 +41365,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 1715378644}
     m_Modifications:
     - target: {fileID: 2240568445028064769, guid: cf8443763fc34314490f8a3e2f94dd37, type: 3}
+      propertyPath: m_Size.y
+      value: 0.9212022
+      objectReference: {fileID: 0}
+    - target: {fileID: 2240568445028064769, guid: cf8443763fc34314490f8a3e2f94dd37, type: 3}
+      propertyPath: m_Center.y
+      value: 0.21060109
+      objectReference: {fileID: 0}
+    - target: {fileID: 2240568445028064769, guid: cf8443763fc34314490f8a3e2f94dd37, type: 3}
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
@@ -41155,9 +41424,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6257800485735965347, guid: cf8443763fc34314490f8a3e2f94dd37, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1625584032}
     - targetCorrespondingSourceObject: {fileID: 6257800485735965347, guid: cf8443763fc34314490f8a3e2f94dd37, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1625584036}
@@ -42328,6 +42594,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleType
+      value: LaserPuzzle2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleTypeID
+      value: LaserPuzzle_12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 288826885}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -42335,6 +42613,10 @@ PrefabInstance:
     - target: {fileID: 5334092972248085864, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: storyManager
@@ -42413,11 +42695,24 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.6
       objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleType
+      value: LaserPuzzle2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleTypeID
+      value: LaserPuzzle_12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 288826885}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -43333,6 +43628,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleType
+      value: LaserPuzzle2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleTypeID
+      value: LaserPuzzle_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 288826885}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -43340,6 +43647,14 @@ PrefabInstance:
     - target: {fileID: 5334092972248085864, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleTypeID
+      value: LaserPuzzle_03
       objectReference: {fileID: 0}
     - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: storyManager
@@ -43418,11 +43733,24 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.6
       objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleType
+      value: LaserPuzzle2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleTypeID
+      value: LaserPuzzle_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 288826885}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -45942,11 +46270,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca9942d112bfbd8449dea4ccc1003922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
-  puzzleTypeID: Monster1
+  puzzleType: Monster1
   saveAcrossSessions: 0
-  monster3Instance: {fileID: 0}
-  monster3InterferenceMessages: []
-  monster3InterferenceVoices: []
+  requireFacingTarget: 1
+  targetToLookAt: {fileID: 874092575}
+  maxFacingAngle: 40
+  targetMonsters: []
+  startMonsterAIOnComplete: 1
+  partnerTrigger: {fileID: 0}
   encounterStages:
   - stageName: First
     messages:
@@ -45994,7 +46325,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 10
+  m_Radius: 8
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -47492,11 +47823,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca9942d112bfbd8449dea4ccc1003922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
-  puzzleTypeID: Monster2
+  puzzleType: Monster2
   saveAcrossSessions: 0
-  monster3Instance: {fileID: 0}
-  monster3InterferenceMessages: []
-  monster3InterferenceVoices: []
+  requireFacingTarget: 1
+  targetToLookAt: {fileID: 0}
+  maxFacingAngle: 40
+  targetMonsters: []
+  startMonsterAIOnComplete: 0
+  partnerTrigger: {fileID: 0}
   encounterStages:
   - stageName: First
     messages:
@@ -52211,6 +52545,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleType
+      value: LaserPuzzle2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleTypeID
+      value: LaserPuzzle_11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 288826885}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -52218,6 +52564,10 @@ PrefabInstance:
     - target: {fileID: 5334092972248085864, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: storyManager
@@ -52296,11 +52646,24 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.6
       objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleType
+      value: LaserPuzzle2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleTypeID
+      value: LaserPuzzle_11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 288826885}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -55246,6 +55609,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleType
+      value: LaserPuzzle2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleTypeID
+      value: LaserPuzzle_06
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 288826885}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -55253,6 +55628,10 @@ PrefabInstance:
     - target: {fileID: 5334092972248085864, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: storyManager
@@ -55331,11 +55710,24 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.6
       objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleType
+      value: LaserPuzzle2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleTypeID
+      value: LaserPuzzle_06
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 288826885}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -55565,11 +55957,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca9942d112bfbd8449dea4ccc1003922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
-  puzzleTypeID: Monster2
+  puzzleType: Monster2
   saveAcrossSessions: 0
-  monster3Instance: {fileID: 0}
-  monster3InterferenceMessages: []
-  monster3InterferenceVoices: []
+  requireFacingTarget: 1
+  targetToLookAt: {fileID: 501650860}
+  maxFacingAngle: 40
+  targetMonsters: []
+  startMonsterAIOnComplete: 0
+  partnerTrigger: {fileID: 0}
   encounterStages:
   - stageName: First
     messages:
@@ -55915,6 +56310,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleType
+      value: LaserPuzzle2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleTypeID
+      value: LaserPuzzle_08
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 288826885}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -55922,6 +56329,10 @@ PrefabInstance:
     - target: {fileID: 5334092972248085864, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: storyManager
@@ -56000,11 +56411,24 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.6
       objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleType
+      value: LaserPuzzle2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleTypeID
+      value: LaserPuzzle_08
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 288826885}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -57703,25 +58127,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6257800485735965347, guid: cf8443763fc34314490f8a3e2f94dd37, type: 3}
   m_PrefabInstance: {fileID: 1150546772}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1625584032
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1625584031}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 551ff52d88667464ba18c5314cde0555, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::StoryTrigger
-  storyMessage: 'FU*K, Where am I? '
-  followingMessages:
-  - When will I be able to leave this awful place?
-  - Okay, I'll keep searching for a way out.
-  - Hopefully, I can finally get out of this hellish place.
-  displayTime: 3
-  storyManager: {fileID: 288826885}
 --- !u!65 &1625584036
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -57755,11 +58160,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca9942d112bfbd8449dea4ccc1003922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
-  puzzleTypeID: EnterGame2
+  puzzleType: EnterGame2
   saveAcrossSessions: 0
-  monster3Instance: {fileID: 0}
-  monster3InterferenceMessages: []
-  monster3InterferenceVoices: []
+  requireFacingTarget: 0
+  targetToLookAt: {fileID: 0}
+  maxFacingAngle: 40
+  targetMonsters: []
+  startMonsterAIOnComplete: 1
+  partnerTrigger: {fileID: 0}
   encounterStages:
   - stageName: Intro
     messages:
@@ -60809,6 +61217,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleType
+      value: LaserPuzzle2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleTypeID
+      value: LaserPuzzle_14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 288826885}
     - target: {fileID: 3488798597472391038, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_TargetMonster
       value: 
@@ -60820,6 +61240,10 @@ PrefabInstance:
     - target: {fileID: 5334092972248085864, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: storyManager
@@ -60898,11 +61322,24 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.6
       objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleType
+      value: LaserPuzzle2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleTypeID
+      value: LaserPuzzle_14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 288826885}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -61126,11 +61563,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca9942d112bfbd8449dea4ccc1003922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
-  puzzleTypeID: Monster2
+  puzzleType: Monster2
   saveAcrossSessions: 0
-  monster3Instance: {fileID: 0}
-  monster3InterferenceMessages: []
-  monster3InterferenceVoices: []
+  requireFacingTarget: 1
+  targetToLookAt: {fileID: 1031198539}
+  maxFacingAngle: 40
+  targetMonsters: []
+  startMonsterAIOnComplete: 0
+  partnerTrigger: {fileID: 0}
   encounterStages:
   - stageName: First
     messages:
@@ -64445,6 +64885,77 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3452931867044665262, guid: 32467b8dc355cd04da356b17dbac4f29, type: 3}
   m_PrefabInstance: {fileID: 1786380448}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1789998609
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 810599409}
+    m_Modifications:
+    - target: {fileID: 2192808870029682403, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 2192808870029682403, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 17.30275
+      objectReference: {fileID: 0}
+    - target: {fileID: 2192808870029682403, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -96.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 2192808870029682403, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.92387956
+      objectReference: {fileID: 0}
+    - target: {fileID: 2192808870029682403, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2192808870029682403, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: 2192808870029682403, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2192808870029682403, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2192808870029682403, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -45
+      objectReference: {fileID: 0}
+    - target: {fileID: 2192808870029682403, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2659587548486903517, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
+      propertyPath: m_Name
+      value: Creep2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800025947095299670, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1977697779}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
+--- !u!4 &1789998610 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2192808870029682403, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
+  m_PrefabInstance: {fileID: 1789998609}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1789998611 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2659587548486903517, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
+  m_PrefabInstance: {fileID: 1789998609}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1791465578
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64762,6 +65273,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleType
+      value: LaserPuzzle2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleTypeID
+      value: LaserPuzzle_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 288826885}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -64769,6 +65292,10 @@ PrefabInstance:
     - target: {fileID: 5334092972248085864, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: storyManager
@@ -64847,11 +65374,24 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.6
       objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleType
+      value: LaserPuzzle2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleTypeID
+      value: LaserPuzzle_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 288826885}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -66316,11 +66856,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca9942d112bfbd8449dea4ccc1003922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
-  puzzleTypeID: Monster1
+  puzzleType: Monster1
   saveAcrossSessions: 0
-  monster3Instance: {fileID: 0}
-  monster3InterferenceMessages: []
-  monster3InterferenceVoices: []
+  requireFacingTarget: 1
+  targetToLookAt: {fileID: 1852813570}
+  maxFacingAngle: 40
+  targetMonsters: []
+  startMonsterAIOnComplete: 1
+  partnerTrigger: {fileID: 0}
   encounterStages:
   - stageName: First
     messages:
@@ -66368,7 +66911,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 10
+  m_Radius: 8
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -66591,11 +67134,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca9942d112bfbd8449dea4ccc1003922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
-  puzzleTypeID: Monster1
+  puzzleType: Monster1
   saveAcrossSessions: 0
-  monster3Instance: {fileID: 0}
-  monster3InterferenceMessages: []
-  monster3InterferenceVoices: []
+  requireFacingTarget: 1
+  targetToLookAt: {fileID: 734981636}
+  maxFacingAngle: 40
+  targetMonsters: []
+  startMonsterAIOnComplete: 1
+  partnerTrigger: {fileID: 0}
   encounterStages:
   - stageName: First
     messages:
@@ -66643,7 +67189,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 10
+  m_Radius: 8
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -68481,6 +69027,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleType
+      value: LaserPuzzle2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleTypeID
+      value: LaserPuzzle_09
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 288826885}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -68488,6 +69046,10 @@ PrefabInstance:
     - target: {fileID: 5334092972248085864, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: storyManager
@@ -68566,11 +69128,24 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.6
       objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleType
+      value: LaserPuzzle2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleTypeID
+      value: LaserPuzzle_09
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 288826885}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -70284,6 +70859,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleType
+      value: LaserPuzzle2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleTypeID
+      value: LaserPuzzle_05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 288826885}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -70291,6 +70878,14 @@ PrefabInstance:
     - target: {fileID: 5334092972248085864, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleTypeID
+      value: LaserPuzzle_03
       objectReference: {fileID: 0}
     - target: {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: storyManager
@@ -70369,11 +70964,24 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.6
       objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleType
+      value: LaserPuzzle2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: puzzleTypeID
+      value: LaserPuzzle_05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 288826885}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5337678721361912993, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

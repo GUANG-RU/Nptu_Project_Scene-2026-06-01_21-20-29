@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement; 
 
 public class HateLightMonster_AI : MonoBehaviour {
     private Animator anim;
@@ -9,17 +10,17 @@ public class HateLightMonster_AI : MonoBehaviour {
     [Header("門解鎖機制設定")]
     [Tooltip("勾選：遊戲開始時怪物原地待命，等待大門升起完成呼叫 UnlockMonster() 才開始移動。\n不勾選：維持原本設定（遊戲一開始就到處巡邏）。")]
     public bool useDoorUnlockMechanism = false;
-    private bool isUnlocked = false; // 紀錄怪物目前是否解鎖行動
+    private bool isUnlocked = false; 
 
     [Header("目標設定")]
     public Transform player;      
 
     // ====== 【手電筒自主偵測設定】 ======
     [Header("手電筒自主偵測設定")]
-    public Transform flashlight;         // 玩家的手電筒 Transform
-    public Light flashlightLight;       // 手電筒的 Light 組件
-    public float flashlightStopAngle = 20f; // 手電筒判定的光錐扇形角度
-    public LayerMask obstacleLayer;     // 阻擋視線的障礙物圖層（例如牆壁、柱子）
+    public Transform flashlight;         
+    public Light flashlightLight;       
+    public float flashlightStopAngle = 20f; 
+    public LayerMask obstacleLayer;     
 
     [Header("移動數值")]
     public float walkSpeed = 2.0f;
@@ -27,8 +28,8 @@ public class HateLightMonster_AI : MonoBehaviour {
     public float attackRange = 2f; 
 
     [Header("攻擊命中設定")]
-    public float hitRange = 2.5f;        // 真正揮爪時能打到玩家的極限距離
-    public float hitAngle = 60f;         // 真正揮爪時能打到玩家的角度扇形範圍（度）
+    public float hitRange = 2.5f;        
+    public float hitAngle = 60f;         
 
     [Header("狀態冷靜時間")]
     public float calmDownTime = 3.0f; 
@@ -36,27 +37,34 @@ public class HateLightMonster_AI : MonoBehaviour {
     private bool isDetected = false;
 
     // ====== 【鎖定玩家移動與轉向變數】 ======
-    private bool isFreezingPlayer = false; // 目前是否正在定身玩家
-    private Vector3 frozenPlayerPos;       // 被抓住時玩家的固定位置
+    private bool isFreezingPlayer = false; 
+    private Vector3 frozenPlayerPos;       
+    private bool isShakingCamera = false; // 【新增這行】專門用來控制抖動     
 
     [Header("視角對準設定")]
-    public float lookAtSpeed = 12.0f;    // 鏡頭強行轉向怪物的速度
+    public float lookAtSpeed = 12.0f;    
 
     // ====== 【鏡頭抖動設定】 ======
     [Header("玩家受撞擊抖動設定")]
-    public float shakeIntensity = 0.15f; // 抖動的劇烈程度
-    private Vector3 originalCamLocalPos;  // 記錄相機原本的局部座標
-    private bool hasSavedCamPos = false;  // 是否已經記錄相機初始位置
+    public float shakeIntensity = 0.15f; 
+    private Vector3 originalCamLocalPos;  
+    private bool hasSavedCamPos = false;  
+
+    [Header("Game Over 設定")]
+    [Tooltip("定身演出後，等待多久才跳轉結算畫面")]
+    public float gameOverDelay = 2f;
+    [Tooltip("結算畫面的場景名稱")]
+    public string gameOverSceneName = "GameOver";
 
     [Header("音效設定")]
     public AudioSource audioSource;
-    public AudioClip wanderSound;   // 走路/巡邏聲
-    public AudioClip spottedSound;  // 突然發現玩家（照到光）的叫聲
-    public AudioClip chaseSound;    // 追逐時的急促聲
-    public AudioClip attackSound;   // 攻擊聲
+    public AudioClip wanderSound;   
+    public AudioClip spottedSound;  
+    public AudioClip chaseSound;    
+    public AudioClip attackSound;   
 
-    private int lastState = -1;     // 紀錄上一個狀態，防止重複執行
-    private bool hasPlayedSpotted = false; // 確保被照到時的尖叫只播一次
+    private int lastState = -1;     
+    private bool hasPlayedSpotted = false; 
 
     // 狀態常數
     private const int IDLE = 0;
@@ -71,12 +79,9 @@ public class HateLightMonster_AI : MonoBehaviour {
 
         if (audioSource == null) audioSource = GetComponent<AudioSource>();
 
-        // ====== 門解鎖機制初始化 ======
         if (!useDoorUnlockMechanism) {
-            // 未勾選機制：預設直接解鎖，維持原本直接巡邏的行為
             isUnlocked = true;
         } else {
-            // 有勾選機制：初始鎖定，使 NavMeshAgent 暫停並保持 IDLE
             isUnlocked = false;
             if (agent != null && agent.enabled && agent.isOnNavMesh) {
                 agent.isStopped = true;
@@ -89,7 +94,6 @@ public class HateLightMonster_AI : MonoBehaviour {
     void Update () {
         if (agent == null || !agent.isOnNavMesh) return;
 
-        // ====== 門機制控管：門未開時保持原地 IDLE 並跳過所有 AI 邏輯 ======
         if (!isUnlocked) {
             agent.isStopped = true;
             agent.velocity = Vector3.zero;
@@ -97,20 +101,17 @@ public class HateLightMonster_AI : MonoBehaviour {
             return;
         }
 
-        // ====== 每幀自主檢查是否被玩家手電筒照到 ======
         if (IsHitByFlashlight()) {
-            detectTimer = calmDownTime; // 被照到就重設驚醒計時器
+            detectTimer = calmDownTime; 
         }
 
-        // 計時器與定身邏輯
         if (detectTimer > 0) {
             isDetected = true;
             detectTimer -= Time.deltaTime;
 
             if (isFreezingPlayer && player != null) {
-                // 1. 玩家位置處理：固定在原地
+                // 1. 固定玩家位置
                 player.position = frozenPlayerPos;
-
                 Camera playerCam = player.GetComponentInChildren<Camera>();
 
                 // 2. 玩家轉向處理：強迫臉朝怪物
@@ -128,12 +129,10 @@ public class HateLightMonster_AI : MonoBehaviour {
                     }
                 }
 
-                // 3. 怪物動作處理：原地停下並切換成 IDLE
+                // 3. 怪物原地停下 (已刪除 UpdateAnimation(IDLE) 避免打斷揮爪動畫)
                 agent.isStopped = true;
                 agent.velocity = Vector3.zero;
-                UpdateAnimation(IDLE);
 
-                // 確保怪物在原地也會面向玩家
                 Vector3 monsterLook = player.position - transform.position;
                 monsterLook.y = 0;
                 if (monsterLook != Vector3.zero) {
@@ -141,7 +140,7 @@ public class HateLightMonster_AI : MonoBehaviour {
                 }
 
                 // 4. 執行鏡頭隨機抖動
-                if (playerCam != null) {
+                if (isShakingCamera && playerCam != null) {
                     if (!hasSavedCamPos) {
                         originalCamLocalPos = playerCam.transform.localPosition;
                         hasSavedCamPos = true;
@@ -158,7 +157,7 @@ public class HateLightMonster_AI : MonoBehaviour {
             isDetected = false;
             hasPlayedSpotted = false;  
 
-            // 時間到了，解鎖玩家並還原鏡頭
+            // 逃過一劫後，時間歸零，解鎖玩家並還原鏡頭
             if (isFreezingPlayer) {
                 isFreezingPlayer = false;
 
@@ -175,7 +174,6 @@ public class HateLightMonster_AI : MonoBehaviour {
             }
         }
 
-        // 核心 AI 切換（非定身狀態下）
         if (!isFreezingPlayer) {
             if (isDetected) {
                 ChaseAndAttack();
@@ -185,9 +183,13 @@ public class HateLightMonster_AI : MonoBehaviour {
         }
     }
 
-    /// <summary>
-    /// 【供 DoorController 等門腳本呼叫】大門開啟完成後解鎖怪物移動
-    /// </summary>
+    void LateUpdate() {
+        // 在所有腳本都執行完位移後，強制把你拉回定身點，讓你一步都退不了
+        if (isFreezingPlayer && player != null) {
+            player.position = frozenPlayerPos;
+        }
+    }
+
     public void UnlockMonster() {
         isUnlocked = true;
         if (agent != null && agent.enabled && agent.isOnNavMesh) {
@@ -196,7 +198,6 @@ public class HateLightMonster_AI : MonoBehaviour {
         Debug.Log($"🚪 大門完全開啟，怪物 {gameObject.name} 正式解鎖開始行動！");
     }
 
-    // ====== 數學自主偵測手電筒邏輯 ======
     bool IsHitByFlashlight() {
         if (flashlight == null || flashlightLight == null) return false;
         if (!flashlightLight.enabled) return false;
@@ -242,33 +243,46 @@ public class HateLightMonster_AI : MonoBehaviour {
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(targetDir), Time.deltaTime * 10f);
         }
 
+        // 一旦到達攻擊距離，立刻定身玩家（保留手電筒操作權限）
+        if (!isFreezingPlayer) {
+            isFreezingPlayer = true;
+            frozenPlayerPos = player.position;
+            TogglePlayerController(false); 
+            Debug.Log("⚠️ 進入攻擊範圍，玩家被定身！快關掉手電筒！");
+        }
+
         UpdateAnimation(ATTACK);
     }
 
     public void OnAttackHit() {
         if (player == null) return;
 
+        // 計算你跟怪物揮爪時的實際距離
         float distance = Vector3.Distance(transform.position, player.position);
-        Vector3 dirToPlayer = (player.position - transform.position).normalized;
-        float angle = Vector3.Angle(transform.forward, dirToPlayer);
+        
+        bool isFlashlightOn = (flashlightLight != null && flashlightLight.enabled);
 
-        if (distance <= hitRange && angle <= (hitAngle / 2f)) {
+        // 【雙重判定】必須「手電筒亮著」且「沒脫離命中極限距離 (hitRange)」，兩者皆成立才會被殺
+        if (isFlashlightOn && distance <= hitRange) {
             
-            Debug.Log("💥 攻擊成功命中！啟動原地定身、強制面朝怪物與驚恐抖動機制！");
+            Debug.Log("💀 揮爪時手電筒亮著且被命中！擊殺玩家！");
 
             UltimateFlashlightController flashlightCtrl = player.GetComponentInChildren<UltimateFlashlightController>();
             if (flashlightCtrl != null) {
                 flashlightCtrl.RequestTurnOff();
             }
 
-            detectTimer = calmDownTime;
-            isFreezingPlayer = true;
-            frozenPlayerPos = player.position; 
+            detectTimer = 10f; 
+            isShakingCamera = true; 
 
-            TogglePlayerController(false);
-
+            StartCoroutine(TriggerGameOverAfterScare());
+            
         } else {
-            Debug.Log("💨 玩家成功走位，躲開了怪物的攻擊！");
+            
+            // 不管是因為你及時關了手電筒，還是你用什麼魔法逃出了攻擊範圍，都算你逃過一劫
+            Debug.Log("😌 玩家逃過一劫！");
+            detectTimer = 0f; 
+            
         }
     }
 
@@ -350,5 +364,13 @@ public class HateLightMonster_AI : MonoBehaviour {
                 audioSource.Stop();
                 break;
         }
+    }
+
+    private System.Collections.IEnumerator TriggerGameOverAfterScare()
+    {
+        yield return new WaitForSeconds(gameOverDelay);
+        PlayerPrefs.SetString("LastLevel", SceneManager.GetActiveScene().name);
+        PlayerPrefs.Save();
+        SceneManager.LoadScene(gameOverSceneName);
     }
 }

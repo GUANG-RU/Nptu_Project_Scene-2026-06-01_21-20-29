@@ -3488,6 +3488,10 @@ PrefabInstance:
       propertyPath: storyManager
       value: 
       objectReference: {fileID: 288826885}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -3589,6 +3593,10 @@ PrefabInstance:
       propertyPath: storyManager
       value: 
       objectReference: {fileID: 288826885}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -5505,10 +5513,14 @@ PrefabInstance:
       propertyPath: storyManager
       value: 
       objectReference: {fileID: 288826885}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
     - target: {fileID: 3488798597472391038, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_TargetMonster
       value: 
-      objectReference: {fileID: 1563263882}
+      objectReference: {fileID: 0}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -5610,6 +5622,10 @@ PrefabInstance:
       propertyPath: storyManager
       value: 
       objectReference: {fileID: 288826885}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -6926,6 +6942,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3685494528537717739, guid: de6b562675bc0914ab8871f08fba7398, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2089307414}
+    - targetCorrespondingSourceObject: {fileID: 3685494528537717739, guid: de6b562675bc0914ab8871f08fba7398, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2089307419}
   m_SourcePrefab: {fileID: 100100000, guid: de6b562675bc0914ab8871f08fba7398, type: 3}
 --- !u!4 &166736383 stripped
 Transform:
@@ -10595,10 +10614,14 @@ PrefabInstance:
       propertyPath: storyManager
       value: 
       objectReference: {fileID: 288826885}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
     - target: {fileID: 3488798597472391038, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_TargetMonster
       value: 
-      objectReference: {fileID: 1338919975}
+      objectReference: {fileID: 0}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -10700,6 +10723,10 @@ PrefabInstance:
       propertyPath: storyManager
       value: 
       objectReference: {fileID: 288826885}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -11938,6 +11965,10 @@ PrefabInstance:
       propertyPath: storyManager
       value: 
       objectReference: {fileID: 288826885}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -12039,6 +12070,10 @@ PrefabInstance:
       propertyPath: storyManager
       value: 
       objectReference: {fileID: 288826885}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -13414,10 +13449,14 @@ PrefabInstance:
       propertyPath: storyManager
       value: 
       objectReference: {fileID: 288826885}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
     - target: {fileID: 3488798597472391038, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_TargetMonster
       value: 
-      objectReference: {fileID: 1563263882}
+      objectReference: {fileID: 0}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -13519,6 +13558,10 @@ PrefabInstance:
       propertyPath: storyManager
       value: 
       objectReference: {fileID: 288826885}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -17609,12 +17652,20 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 129569163575794162, guid: f3145b5067a026847b36bf8735d81074, type: 3}
+      propertyPath: gameOverDelay
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 129569163575794162, guid: f3145b5067a026847b36bf8735d81074, type: 3}
+      propertyPath: shakeIntensity
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 129569163575794162, guid: f3145b5067a026847b36bf8735d81074, type: 3}
       propertyPath: flashlightLight
       value: 
       objectReference: {fileID: 475259255}
     - target: {fileID: 129569163575794162, guid: f3145b5067a026847b36bf8735d81074, type: 3}
       propertyPath: useDoorUnlockMechanism
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2875591484993647025, guid: f3145b5067a026847b36bf8735d81074, type: 3}
       propertyPath: m_Name
@@ -21186,12 +21237,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 475259254}
     - target: {fileID: 129569163575794162, guid: f3145b5067a026847b36bf8735d81074, type: 3}
+      propertyPath: gameOverDelay
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 129569163575794162, guid: f3145b5067a026847b36bf8735d81074, type: 3}
+      propertyPath: shakeIntensity
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 129569163575794162, guid: f3145b5067a026847b36bf8735d81074, type: 3}
       propertyPath: flashlightLight
       value: 
       objectReference: {fileID: 475259255}
     - target: {fileID: 129569163575794162, guid: f3145b5067a026847b36bf8735d81074, type: 3}
       propertyPath: useDoorUnlockMechanism
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2875591484993647025, guid: f3145b5067a026847b36bf8735d81074, type: 3}
       propertyPath: m_Name
@@ -23609,10 +23668,14 @@ PrefabInstance:
       propertyPath: storyManager
       value: 
       objectReference: {fileID: 288826885}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
     - target: {fileID: 3488798597472391038, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_TargetMonster
       value: 
-      objectReference: {fileID: 1338919975}
+      objectReference: {fileID: 0}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -23714,6 +23777,10 @@ PrefabInstance:
       propertyPath: storyManager
       value: 
       objectReference: {fileID: 288826885}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -25454,10 +25521,14 @@ PrefabInstance:
       propertyPath: storyManager
       value: 
       objectReference: {fileID: 288826885}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
     - target: {fileID: 3488798597472391038, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_TargetMonster
       value: 
-      objectReference: {fileID: 1715330704}
+      objectReference: {fileID: 0}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -25559,6 +25630,10 @@ PrefabInstance:
       propertyPath: storyManager
       value: 
       objectReference: {fileID: 288826885}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -27755,10 +27830,14 @@ PrefabInstance:
       propertyPath: storyManager
       value: 
       objectReference: {fileID: 288826885}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
     - target: {fileID: 3488798597472391038, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_TargetMonster
       value: 
-      objectReference: {fileID: 1715330704}
+      objectReference: {fileID: 0}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -27860,6 +27939,10 @@ PrefabInstance:
       propertyPath: storyManager
       value: 
       objectReference: {fileID: 288826885}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -29083,10 +29166,14 @@ PrefabInstance:
       propertyPath: storyManager
       value: 
       objectReference: {fileID: 288826885}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
     - target: {fileID: 3488798597472391038, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_TargetMonster
       value: 
-      objectReference: {fileID: 930839935}
+      objectReference: {fileID: 0}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -29188,6 +29275,10 @@ PrefabInstance:
       propertyPath: storyManager
       value: 
       objectReference: {fileID: 288826885}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -29855,6 +29946,10 @@ PrefabInstance:
       propertyPath: storyManager
       value: 
       objectReference: {fileID: 288826885}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -29956,6 +30051,10 @@ PrefabInstance:
       propertyPath: storyManager
       value: 
       objectReference: {fileID: 288826885}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -30210,6 +30309,10 @@ PrefabInstance:
       propertyPath: storyManager
       value: 
       objectReference: {fileID: 288826885}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -30307,6 +30410,10 @@ PrefabInstance:
       propertyPath: storyManager
       value: 
       objectReference: {fileID: 288826885}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -33210,12 +33317,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 475259254}
     - target: {fileID: 129569163575794162, guid: f3145b5067a026847b36bf8735d81074, type: 3}
+      propertyPath: gameOverDelay
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 129569163575794162, guid: f3145b5067a026847b36bf8735d81074, type: 3}
+      propertyPath: shakeIntensity
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 129569163575794162, guid: f3145b5067a026847b36bf8735d81074, type: 3}
       propertyPath: flashlightLight
       value: 
       objectReference: {fileID: 475259255}
     - target: {fileID: 129569163575794162, guid: f3145b5067a026847b36bf8735d81074, type: 3}
       propertyPath: useDoorUnlockMechanism
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2875591484993647025, guid: f3145b5067a026847b36bf8735d81074, type: 3}
       propertyPath: m_Name
@@ -34363,12 +34478,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
   puzzleType: Monster2
+  storyDatabase: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
   saveAcrossSessions: 0
   requireFacingTarget: 1
   targetToLookAt: {fileID: 930839923}
   maxFacingAngle: 40
-  targetMonsters: []
-  startMonsterAIOnComplete: 0
+  enableFreeze: 1
+  targetMonsters:
+  - {fileID: 277760077}
+  startMonsterAIOnComplete: 1
   partnerTrigger: {fileID: 0}
   encounterStages:
   - stageName: First
@@ -34420,17 +34538,6 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &930839935 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 129569163575794162, guid: f3145b5067a026847b36bf8735d81074, type: 3}
-  m_PrefabInstance: {fileID: 1753118943}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 277760077}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 730cbfaa18814864cacb1127e2cdf8a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &930993702
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40912,10 +41019,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
   puzzleType: Monster1
+  storyDatabase: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
   saveAcrossSessions: 0
   requireFacingTarget: 1
   targetToLookAt: {fileID: 1098148315}
   maxFacingAngle: 40
+  enableFreeze: 1
   targetMonsters: []
   startMonsterAIOnComplete: 1
   partnerTrigger: {fileID: 0}
@@ -42538,6 +42647,10 @@ PrefabInstance:
       propertyPath: storyManager
       value: 
       objectReference: {fileID: 288826885}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -42639,6 +42752,10 @@ PrefabInstance:
       propertyPath: storyManager
       value: 
       objectReference: {fileID: 288826885}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -43485,10 +43602,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
   puzzleType: LaserPuzzle3D
+  storyDatabase: {fileID: 0}
   saveAcrossSessions: 0
   requireFacingTarget: 1
   targetToLookAt: {fileID: 0}
   maxFacingAngle: 40
+  enableFreeze: 1
   targetMonsters:
   - {fileID: 183276509}
   - {fileID: 1789998611}
@@ -43672,6 +43791,10 @@ PrefabInstance:
       propertyPath: storyManager
       value: 
       objectReference: {fileID: 288826885}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -43777,6 +43900,10 @@ PrefabInstance:
       propertyPath: storyManager
       value: 
       objectReference: {fileID: 288826885}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -46303,10 +46430,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
   puzzleType: Monster1
+  storyDatabase: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
   saveAcrossSessions: 0
   requireFacingTarget: 1
   targetToLookAt: {fileID: 874092575}
   maxFacingAngle: 40
+  enableFreeze: 1
   targetMonsters: []
   startMonsterAIOnComplete: 1
   partnerTrigger: {fileID: 0}
@@ -47856,12 +47985,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
   puzzleType: Monster2
+  storyDatabase: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
   saveAcrossSessions: 0
   requireFacingTarget: 1
   targetToLookAt: {fileID: 0}
   maxFacingAngle: 40
-  targetMonsters: []
-  startMonsterAIOnComplete: 0
+  enableFreeze: 1
+  targetMonsters:
+  - {fileID: 408683573}
+  startMonsterAIOnComplete: 1
   partnerTrigger: {fileID: 0}
   encounterStages:
   - stageName: First
@@ -47913,17 +48045,6 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1338919975 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 129569163575794162, guid: f3145b5067a026847b36bf8735d81074, type: 3}
-  m_PrefabInstance: {fileID: 538938865}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 408683573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 730cbfaa18814864cacb1127e2cdf8a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1340469205 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5928300009178751915, guid: a57680777d3403843b1e6d4a5b05e5fd, type: 3}
@@ -52589,6 +52710,10 @@ PrefabInstance:
       propertyPath: storyManager
       value: 
       objectReference: {fileID: 288826885}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -52690,6 +52815,10 @@ PrefabInstance:
       propertyPath: storyManager
       value: 
       objectReference: {fileID: 288826885}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -55653,6 +55782,10 @@ PrefabInstance:
       propertyPath: storyManager
       value: 
       objectReference: {fileID: 288826885}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -55754,6 +55887,10 @@ PrefabInstance:
       propertyPath: storyManager
       value: 
       objectReference: {fileID: 288826885}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -55990,12 +56127,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
   puzzleType: Monster2
+  storyDatabase: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
   saveAcrossSessions: 0
   requireFacingTarget: 1
   targetToLookAt: {fileID: 501650860}
   maxFacingAngle: 40
-  targetMonsters: []
-  startMonsterAIOnComplete: 0
+  enableFreeze: 1
+  targetMonsters:
+  - {fileID: 1563263870}
+  startMonsterAIOnComplete: 1
   partnerTrigger: {fileID: 0}
   encounterStages:
   - stageName: First
@@ -56047,17 +56187,6 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1563263882 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 129569163575794162, guid: f3145b5067a026847b36bf8735d81074, type: 3}
-  m_PrefabInstance: {fileID: 905425536}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1563263870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 730cbfaa18814864cacb1127e2cdf8a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1564238574
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56354,6 +56483,10 @@ PrefabInstance:
       propertyPath: storyManager
       value: 
       objectReference: {fileID: 288826885}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -56455,6 +56588,10 @@ PrefabInstance:
       propertyPath: storyManager
       value: 
       objectReference: {fileID: 288826885}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -58193,10 +58330,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
   puzzleType: EnterGame2
+  storyDatabase: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
   saveAcrossSessions: 0
   requireFacingTarget: 0
   targetToLookAt: {fileID: 0}
   maxFacingAngle: 40
+  enableFreeze: 1
   targetMonsters: []
   startMonsterAIOnComplete: 1
   partnerTrigger: {fileID: 0}
@@ -61261,10 +61400,14 @@ PrefabInstance:
       propertyPath: storyManager
       value: 
       objectReference: {fileID: 288826885}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
     - target: {fileID: 3488798597472391038, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_TargetMonster
       value: 
-      objectReference: {fileID: 930839935}
+      objectReference: {fileID: 0}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -61366,6 +61509,10 @@ PrefabInstance:
       propertyPath: storyManager
       value: 
       objectReference: {fileID: 288826885}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -61596,12 +61743,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
   puzzleType: Monster2
+  storyDatabase: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
   saveAcrossSessions: 0
   requireFacingTarget: 1
   targetToLookAt: {fileID: 1031198539}
   maxFacingAngle: 40
-  targetMonsters: []
-  startMonsterAIOnComplete: 0
+  enableFreeze: 1
+  targetMonsters:
+  - {fileID: 1715330692}
+  startMonsterAIOnComplete: 1
   partnerTrigger: {fileID: 0}
   encounterStages:
   - stageName: First
@@ -61653,17 +61803,6 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1715330704 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 129569163575794162, guid: f3145b5067a026847b36bf8735d81074, type: 3}
-  m_PrefabInstance: {fileID: 425820106}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1715330692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 730cbfaa18814864cacb1127e2cdf8a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1715378643
 GameObject:
   m_ObjectHideFlags: 0
@@ -61819,6 +61958,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -63557,12 +63700,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 475259254}
     - target: {fileID: 129569163575794162, guid: f3145b5067a026847b36bf8735d81074, type: 3}
+      propertyPath: gameOverDelay
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 129569163575794162, guid: f3145b5067a026847b36bf8735d81074, type: 3}
+      propertyPath: shakeIntensity
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 129569163575794162, guid: f3145b5067a026847b36bf8735d81074, type: 3}
       propertyPath: flashlightLight
       value: 
       objectReference: {fileID: 475259255}
     - target: {fileID: 129569163575794162, guid: f3145b5067a026847b36bf8735d81074, type: 3}
       propertyPath: useDoorUnlockMechanism
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2875591484993647025, guid: f3145b5067a026847b36bf8735d81074, type: 3}
       propertyPath: m_Name
@@ -65317,6 +65468,10 @@ PrefabInstance:
       propertyPath: storyManager
       value: 
       objectReference: {fileID: 288826885}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -65418,6 +65573,10 @@ PrefabInstance:
       propertyPath: storyManager
       value: 
       objectReference: {fileID: 288826885}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -66889,10 +67048,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
   puzzleType: Monster1
+  storyDatabase: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
   saveAcrossSessions: 0
   requireFacingTarget: 1
   targetToLookAt: {fileID: 1852813570}
   maxFacingAngle: 40
+  enableFreeze: 1
   targetMonsters: []
   startMonsterAIOnComplete: 1
   partnerTrigger: {fileID: 0}
@@ -67167,10 +67328,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
   puzzleType: Monster1
+  storyDatabase: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
   saveAcrossSessions: 0
   requireFacingTarget: 1
   targetToLookAt: {fileID: 734981636}
   maxFacingAngle: 40
+  enableFreeze: 1
   targetMonsters: []
   startMonsterAIOnComplete: 1
   partnerTrigger: {fileID: 0}
@@ -69071,6 +69234,10 @@ PrefabInstance:
       propertyPath: storyManager
       value: 
       objectReference: {fileID: 288826885}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -69172,6 +69339,10 @@ PrefabInstance:
       propertyPath: storyManager
       value: 
       objectReference: {fileID: 288826885}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -70903,6 +71074,10 @@ PrefabInstance:
       propertyPath: storyManager
       value: 
       objectReference: {fileID: 288826885}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -71008,6 +71183,10 @@ PrefabInstance:
       propertyPath: storyManager
       value: 
       objectReference: {fileID: 288826885}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: storyDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -74812,6 +74991,20 @@ MonoBehaviour:
   muteWhileUsingMirror: 1
   lastIntensity: 0
   lastType: '-'
+--- !u!114 &2089307419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089307409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a74e2037620c31c4da3610d484b769ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueInputBlocker
+  allowedDialogueKey: 323
+  scriptsToDisableDuringDialogue: []
 --- !u!4 &2090435194 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6954531691785998512, guid: cf8443763fc34314490f8a3e2f94dd37, type: 3}

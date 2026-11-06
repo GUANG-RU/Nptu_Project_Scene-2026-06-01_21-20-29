@@ -8443,7 +8443,7 @@ MonoBehaviour:
   m_AnimateOpen: 1
   m_OpenSpeed: 3
   m_EnableAutoOpenTimer: 1
-  m_AutoOpenDelaySeconds: 10
+  m_AutoOpenDelaySeconds: 480
 --- !u!4 &222484817
 Transform:
   m_ObjectHideFlags: 0
@@ -17227,8 +17227,6 @@ GameObject:
   - component: {fileID: 416953892}
   - component: {fileID: 416953891}
   - component: {fileID: 416953895}
-  - component: {fileID: 416953897}
-  - component: {fileID: 416953896}
   m_Layer: 0
   m_Name: Prism
   m_TagString: Untagged
@@ -17330,6 +17328,7 @@ Transform:
   - {fileID: 862476758}
   - {fileID: 1118000522}
   - {fileID: 1719931140}
+  - {fileID: 1216283928}
   m_Father: {fileID: 2068639784}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &416953895
@@ -17359,73 +17358,6 @@ MonoBehaviour:
   - {r: 0, g: 1, b: 0, a: 1}
   - {r: 0, g: 0, b: 1, a: 1}
   laserWidth: 0.25
---- !u!114 &416953896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 416953890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca9942d112bfbd8449dea4ccc1003922, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
-  puzzleType: LaserPuzzle3D
-  saveAcrossSessions: 0
-  requireFacingTarget: 1
-  targetToLookAt: {fileID: 0}
-  maxFacingAngle: 40
-  targetMonsters:
-  - {fileID: 183276509}
-  - {fileID: 1789998611}
-  startMonsterAIOnComplete: 1
-  partnerTrigger: {fileID: 0}
-  encounterStages:
-  - stageName: IntroPuzzle
-    messages:
-    - Wait a minute... is that the Neo Armstrong Cyclone Jet Armstrong Cannon?
-    - Damn, it actually has a really high-quality finish!
-    - Focus, man. I need to adjust these mirrors to hit all the sensors.
-    - So I gotta get close, press E, and use W, A, S, D, to rotate them......all
-      while dodging that thing's attacks. Perfect
-    - Great, the flashlight is completely useless.
-    - And it doesn't even have eyes. What an absolute unit.
-    - ' Okay... let''s try inching closer, then freeze.'
-    - If it doesn't attack me when I'm still... it must be hunting by sound.
-    voiceClips:
-    - {fileID: 8300000, guid: 00c0af0e48403364491ae4b93e0a4bdb, type: 3}
-    - {fileID: 8300000, guid: dad05b4c01ff3cf41bcbd081c4d66987, type: 3}
-    - {fileID: 8300000, guid: cd38bfb0a89716143b349d757d25d1d8, type: 3}
-    - {fileID: 8300000, guid: dedf6715ab386644093e53792272885c, type: 3}
-    - {fileID: 8300000, guid: c365bab10e7237e46ac78d7c44d4f143, type: 3}
-    - {fileID: 8300000, guid: 159398ce589adbc4abb0fd03cf9d4e83, type: 3}
-    - {fileID: 8300000, guid: 8d26ff55102bab6459cd65b1b542abf8, type: 3}
-    - {fileID: 8300000, guid: 2637524cfa16802419442c95f7e048f2, type: 3}
-  storyManager: {fileID: 288826885}
---- !u!136 &416953897
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 416953890}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 4.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: -0.00000023841858, y: 0, z: 0.0000023841858}
 --- !u!4 &417423161 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6954531691785998512, guid: cf8443763fc34314490f8a3e2f94dd37, type: 3}
@@ -43484,6 +43416,106 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5928300009178751915, guid: a57680777d3403843b1e6d4a5b05e5fd, type: 3}
   m_PrefabInstance: {fileID: 305337035}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1216283927
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1216283928}
+  - component: {fileID: 1216283930}
+  - component: {fileID: 1216283929}
+  m_Layer: 2
+  m_Name: DialogueTriggerZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1216283928
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216283927}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 416953894}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1216283929
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216283927}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 4.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: -0.00000023841858, y: 0, z: 0.0000023841858}
+--- !u!114 &1216283930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216283927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca9942d112bfbd8449dea4ccc1003922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
+  puzzleType: LaserPuzzle3D
+  saveAcrossSessions: 0
+  requireFacingTarget: 1
+  targetToLookAt: {fileID: 0}
+  maxFacingAngle: 40
+  targetMonsters:
+  - {fileID: 183276509}
+  - {fileID: 1789998611}
+  startMonsterAIOnComplete: 1
+  partnerTrigger: {fileID: 0}
+  encounterStages:
+  - stageName: IntroPuzzle
+    messages:
+    - Wait a minute... is that the Neo Armstrong Cyclone Jet Armstrong Cannon?
+    - Damn, it actually has a really high-quality finish!
+    - Focus, man. I need to adjust these mirrors to hit all the sensors.
+    - So I gotta get close, press E, and use W, A, S, D, to rotate them......all
+      while dodging that thing's attacks. Perfect
+    - Great, the flashlight is completely useless.
+    - And it doesn't even have eyes. What an absolute unit.
+    - ' Okay... let''s try inching closer, then freeze.'
+    - If it doesn't attack me when I'm still... it must be hunting by sound.
+    voiceClips:
+    - {fileID: 8300000, guid: 00c0af0e48403364491ae4b93e0a4bdb, type: 3}
+    - {fileID: 8300000, guid: dad05b4c01ff3cf41bcbd081c4d66987, type: 3}
+    - {fileID: 8300000, guid: cd38bfb0a89716143b349d757d25d1d8, type: 3}
+    - {fileID: 8300000, guid: dedf6715ab386644093e53792272885c, type: 3}
+    - {fileID: 8300000, guid: c365bab10e7237e46ac78d7c44d4f143, type: 3}
+    - {fileID: 8300000, guid: 159398ce589adbc4abb0fd03cf9d4e83, type: 3}
+    - {fileID: 8300000, guid: 8d26ff55102bab6459cd65b1b542abf8, type: 3}
+    - {fileID: 8300000, guid: 2637524cfa16802419442c95f7e048f2, type: 3}
+  storyManager: {fileID: 288826885}
 --- !u!1001 &1216319165
 PrefabInstance:
   m_ObjectHideFlags: 0

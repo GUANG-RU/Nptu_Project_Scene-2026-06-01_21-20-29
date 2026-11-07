@@ -46,6 +46,15 @@ public class AdaptiveStoryTrigger : MonoBehaviour
 
     private static Dictionary<string, int> s_SessionCounts = new Dictionary<string, int>();
 
+    // 🚨 新增 Awake 函式：在遊戲第一幀初始化前就將怪物鎖定
+    private void Awake()
+    {
+        if (startMonsterAIOnComplete && targetMonsters != null)
+        {
+            SetAllMonstersAIState(false);
+        }
+    }
+
     private void Start()
     {
         if (targetToLookAt == null && requireFacingTarget)
@@ -53,10 +62,7 @@ public class AdaptiveStoryTrigger : MonoBehaviour
             targetToLookAt = transform;
         }
 
-        if (startMonsterAIOnComplete && targetMonsters != null)
-        {
-            SetAllMonstersAIState(false);
-        }
+        // (原 Start 內的 SetAllMonstersAIState 已移至 Awake)
     }
 
     private void OnTriggerEnter(Collider other)
@@ -191,16 +197,36 @@ public class AdaptiveStoryTrigger : MonoBehaviour
         {
             if (monster == null) continue;
 
+            // 1. 停用/啟用怪物 C# AI 腳本 (包含 SoundMonsterAI2, MonsterHearing2)
             MonoBehaviour[] monsterScripts = monster.GetComponents<MonoBehaviour>();
             foreach (var script in monsterScripts)
             {
-                if (script == null) continue;
+                if (script == null || script == this) continue;
                 string sName = script.GetType().Name.ToLower();
 
                 if (sName.Contains("ai") || sName.Contains("monster") || sName.Contains("hearing") || sName.Contains("sound"))
                 {
                     script.enabled = enable;
                 }
+            }
+
+            // 2. 🚨 關鍵：徹底清空並阻斷底層 NavMeshAgent 尋路
+            UnityEngine.AI.NavMeshAgent agent = monster.GetComponent<UnityEngine.AI.NavMeshAgent>();
+            if (agent != null && agent.enabled && agent.isOnNavMesh)
+            {
+                agent.isStopped = !enable;
+                if (!enable)
+                {
+                    agent.velocity = Vector3.zero; // 速度歸零
+                    agent.ResetPath();             // 清空巡邏路徑
+                }
+            }
+
+            // 3. 凍結/恢復怪物的動畫狀態
+            Animator monsterAnim = monster.GetComponentInChildren<Animator>();
+            if (monsterAnim != null)
+            {
+                monsterAnim.speed = enable ? 1f : 0f;
             }
         }
     }

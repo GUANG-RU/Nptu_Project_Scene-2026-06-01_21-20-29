@@ -26,8 +26,9 @@ public class ScrollPuzzleUI : MonoBehaviour
     [SerializeField] private Color lineColor     = new Color(0.40f, 0.20f, 0.05f, 1f);
     [SerializeField] private Color runeHitColor  = new Color(1.00f, 0.80f, 0.10f, 1f);
 
-    [Header("符文圖示（可留空）")]
-    [SerializeField] private Sprite runeSprite;
+    [Header("符文圖示")]
+    [Tooltip("Resources/runes 資料夾內的符文數量（rune_white1 ~ rune_whiteN）")]
+    [SerializeField] private int runeCount = 99;   // 實際有幾張就填幾
 
     [Header("粒子")]
     [SerializeField] private float particleSpeed = 400f;
@@ -161,10 +162,24 @@ public class ScrollPuzzleUI : MonoBehaviour
         go.transform.SetParent(parent, false);
         var rt = go.GetComponent<RectTransform>();
         rt.anchorMin = rt.anchorMax = rt.pivot = new Vector2(0.5f, 0.5f);
-        rt.sizeDelta        = new Vector2(cellSize * 0.45f, cellSize * 0.45f);
+        rt.sizeDelta        = new Vector2(cellSize * 0.55f, cellSize * 0.55f);
         rt.anchoredPosition = Vector2.zero;
         var img = go.GetComponent<Image>();
-        img.sprite = runeSprite;
+
+        // 從 Resources/runes 隨機載入一張符文
+        int    idx    = Random.Range(1, runeCount + 1);
+        Sprite loaded = Resources.Load<Sprite>($"runes/rune_white{idx}");
+        // 若載入失敗則嘗試 1~10 循環，最多找 10 次
+        if (loaded == null)
+        {
+            for (int i = 1; i <= 10; i++)
+            {
+                loaded = Resources.Load<Sprite>($"runes/rune_white{i}");
+                if (loaded != null) break;
+                Debug.Log("Fail to load rune png");
+            }
+        }
+        img.sprite = loaded;
         img.color  = runeColor;
     }
 
@@ -356,13 +371,35 @@ public class ScrollPuzzleUI : MonoBehaviour
         foreach (var go in rayObjects) if (go) Destroy(go);
         rayObjects.Clear();
 
-        // 只從 entryRow 出發
-        var segments = GetRaySegments(data.entryRow);
+        // 先把所有符文重設為暗色
+        if (data.runes != null)
+            foreach (var rv in data.runes)
+                SetRuneIconColor(rv.x, rv.y, runeColor);
+
+        // 收集光線路徑上的格子，讓被打到的符文亮起
+        var hitCells = new HashSet<Vector2Int>();
+        var segments = GetRaySegments(data.entryRow, hitCells);
         for (int i = 0; i < segments.Count - 1; i++)
             DrawRaySegment(segments[i], segments[i + 1]);
+
+        // 被光線打到的符文顯示亮色
+        if (data.runes != null)
+            foreach (var rv in data.runes)
+                if (hitCells.Contains(rv))
+                    SetRuneIconColor(rv.x, rv.y, runeHitColor);
     }
 
-    List<Vector2> GetRaySegments(int startRow)
+    void SetRuneIconColor(int c, int r, Color color)
+    {
+        var rt = cellRects[c, r];
+        for (int i = 0; i < rt.childCount; i++)
+        {
+            var img = rt.GetChild(i).GetComponent<Image>();
+            if (img) img.color = color;
+        }
+    }
+
+    List<Vector2> GetRaySegments(int startRow, HashSet<Vector2Int> hitCells = null)
     {
         var pts = new List<Vector2>();
         int cx = 0, cy = startRow, dx = 1, dy = 0;
@@ -379,14 +416,12 @@ public class ScrollPuzzleUI : MonoBehaviour
             if (grid[cx, cy] == -1) break;
 
             pts.Add(CellCenter(cx, cy));
+            hitCells?.Add(new Vector2Int(cx, cy));  // 記錄被光線打到的格子
 
             int cell = grid[cx, cy];
-            if (cell == 0)
-            {
-                // 空白格：光線直走，不反射
-            }
-            else if (cell == 1) { int t = dx; dx = dy;  dy = t;  }  // / 反射: (dx,dy)→(dy,dx)
-            else                { int t = dx; dx = -dy; dy = -t; }  // \ 反射: (dx,dy)→(-dy,-dx)
+            if (cell == 0)      { /* 空白格：光線直走 */ }
+            else if (cell == 1) { int t = dx; dx = dy;  dy = t;  }  // / 反射
+            else                { int t = dx; dx = -dy; dy = -t; }  // \ 反射
 
             cx += dx; cy += dy;
         }

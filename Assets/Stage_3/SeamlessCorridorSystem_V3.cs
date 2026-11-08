@@ -141,7 +141,7 @@ public class SeamlessCorridorSystem_V3 : MonoBehaviour
         activePath = null;
         activeDoor = null;
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0f);
         foreach (var d in doors) d.ResetDoor();
         Debug.Log("[System] ResetDoor all done");
 

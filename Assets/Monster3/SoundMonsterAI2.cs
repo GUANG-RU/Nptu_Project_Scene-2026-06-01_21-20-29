@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -16,7 +17,7 @@ public class SoundMonsterAI2 : MonoBehaviour
     [Header("目標")]
     public Transform player;
 
-    [Header("狀態")]
+    [Header("目前狀態")]
     public State currentState = State.Patrol;
 
     [Header("移動速度")]
@@ -32,42 +33,62 @@ public class SoundMonsterAI2 : MonoBehaviour
     public float chaseDistance = 30f;
     public float disengageDistance = 50f;
 
-    [Header("攻擊 / 停止距離")]
-    public float attackRange = 1.5f;
+    [Header("攻擊設定")]
+    public float attackRange = 3f;
     public float attackCooldown = 1.2f;
 
     [Header("追擊放棄設定")]
-    public float losePlayerAfterNoSound = 1f;
+    public float losePlayerAfterNoSound = 0.3f;
 
-    [Tooltip("只有大於這個強度的聲音，才會刷新追擊時間。建議比 Breath Intensity 大。")]
+    [Tooltip("大於此強度的聲音才會刷新追擊時間")]
     public float chaseKeepIntensity = 3f;
 
-    [Tooltip("大於這個強度時，怪物會直接進入追擊。")]
+    [Tooltip("達到此強度的聲音會觸發追擊")]
     public float chaseTriggerIntensity = 5f;
 
-    [Header("警戒逾時")]
+    [Header("警戒時間")]
     public float alertTimeout = 3f;
 
-    [Header("動畫狀態名稱")]
+    [Header("Animator")]
+    public Animator animator;
+
+    [Header("動畫名稱")]
     public string idleAnim = "Idle";
     public string walk1Anim = "Walk1";
     public string walk2Anim = "Walk2";
     public string biteAnim = "Bite";
 
-    [Header("動畫切換設定")]
-    [Tooltip("速度大於這個值才算有移動")]
+    [Header("動畫移動判斷")]
     public float moveAnimThreshold = 0.02f;
-
-    [Tooltip("停住多久後才切回 Idle，避免走路時瞬間跳 Idle")]
     public float idleDelay = 0.45f;
-
-    [Tooltip("只要還離目的地超過這個距離，就視為正在移動，避免遠距離追擊時平移")]
     public float movingDistanceBuffer = 0.2f;
+
+    [Header("動畫速度同步")]
+    public bool syncAnimationSpeed = true;
+
+    [Tooltip("Walk1 動畫在 1 倍速時對應的移動速度")]
+    public float walk1ReferenceSpeed = 2f;
+
+    [Tooltip("Walk2 動畫在 1 倍速時對應的移動速度")]
+    public float walk2ReferenceSpeed = 3f;
+
+    [Tooltip("走路動畫最低播放倍率")]
+    public float minAnimationSpeed = 0.5f;
+
+    [Tooltip("走路動畫最高播放倍率")]
+    public float maxAnimationSpeed = 2.5f;
+
+    [Tooltip("動畫速度變化平滑程度")]
+    public float animationSpeedSmooth = 10f;
+
+    [Header("Debug")]
+    public bool showDebugLog = true;
 
     NavMeshAgent agent;
     MonsterHearing2 hearing;
     Renderer rend;
-    Animator animator;
+
+    PlayerSoundEmitter2 playerSound;
 
     Vector3 lastSoundPos;
     bool hasLastSoundPos;
@@ -82,16 +103,41 @@ public class SoundMonsterAI2 : MonoBehaviour
     string currentAnim = "";
     float idleTimer = 0f;
 
+    float currentAnimationSpeed = 1f;
+
     void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         hearing = GetComponent<MonsterHearing2>();
+
         rend = GetComponentInChildren<Renderer>();
-        animator = GetComponentInChildren<Animator>();
+
+        if (animator == null)
+        {
+            animator = GetComponentInChildren<Animator>();
+        }
     }
 
     void Start()
     {
+        if (animator != null)
+        {
+            animator.applyRootMotion = false;
+            animator.speed = 1f;
+        }
+
+        if (player != null)
+        {
+            playerSound =
+                player.GetComponent<PlayerSoundEmitter2>();
+
+            if (playerSound == null)
+            {
+                playerSound =
+                    player.GetComponentInChildren<PlayerSoundEmitter2>();
+            }
+        }
+
         if (agent != null)
         {
             agent.stoppingDistance = attackRange;
@@ -102,7 +148,10 @@ public class SoundMonsterAI2 : MonoBehaviour
 
     void Update()
     {
-        bool heard = hearing.HasHeardSound(out float intensity, out Vector3 soundPos);
+        bool heard = hearing.HasHeardSound(
+            out float intensity,
+            out Vector3 soundPos
+        );
 
         if (heard)
         {
@@ -114,7 +163,12 @@ public class SoundMonsterAI2 : MonoBehaviour
                 lastStrongSoundTime = Time.time;
             }
 
-            Debug.Log($"[MONSTER] Heard sound intensity:{intensity:F1} pos:{soundPos}");
+            if (showDebugLog)
+            {
+                Debug.Log(
+                    $"[MONSTER] Heard sound {intensity:F1}"
+                );
+            }
 
             HandleSoundInput(intensity, soundPos);
         }
@@ -137,11 +191,17 @@ public class SoundMonsterAI2 : MonoBehaviour
                 UpdateAttack();
                 break;
         }
+
+        // 每幀同步走路動畫速度
+        UpdateAnimationSpeed();
     }
 
     void HandleSoundInput(float intensity, Vector3 soundPos)
     {
-        float distToSound = Vector3.Distance(transform.position, soundPos);
+        float distToSound = Vector3.Distance(
+            transform.position,
+            soundPos
+        );
 
         if (currentState == State.Patrol)
         {
@@ -181,7 +241,8 @@ public class SoundMonsterAI2 : MonoBehaviour
             return true;
         }
 
-        if (distToSound <= chaseDistance && intensity >= chaseKeepIntensity)
+        if (distToSound <= chaseDistance &&
+            intensity >= chaseKeepIntensity)
         {
             return true;
         }
@@ -194,7 +255,9 @@ public class SoundMonsterAI2 : MonoBehaviour
         agent.speed = patrolSpeed;
         agent.stoppingDistance = 0f;
 
-        if (!hasPatrolTarget || (!agent.pathPending && agent.remainingDistance <= waypointArriveDistance))
+        if (!hasPatrolTarget ||
+            (!agent.pathPending &&
+             agent.remainingDistance <= waypointArriveDistance))
         {
             SetRandomPatrolPoint();
         }
@@ -222,7 +285,9 @@ public class SoundMonsterAI2 : MonoBehaviour
             }
         }
 
-        if (hasLastSoundPos && !agent.pathPending && agent.remainingDistance <= waypointArriveDistance)
+        if (hasLastSoundPos &&
+            !agent.pathPending &&
+            agent.remainingDistance <= waypointArriveDistance)
         {
             agent.ResetPath();
         }
@@ -235,25 +300,38 @@ public class SoundMonsterAI2 : MonoBehaviour
         agent.speed = chaseSpeed;
         agent.stoppingDistance = attackRange;
 
-        if (Time.time - lastStrongSoundTime >= losePlayerAfterNoSound)
+        // 玩家停止移動時立即放棄追擊
+        if (playerSound != null &&
+            !playerSound.IsMovingInput)
         {
-            Debug.Log("[MONSTER] Lost player: no strong sound for 1 second.");
-            EnterAlert(lastSoundPos);
+            GiveUpChase();
+            return;
+        }
+
+        // 太久沒有強聲音也放棄追擊
+        if (Time.time - lastStrongSoundTime >=
+            losePlayerAfterNoSound)
+        {
+            GiveUpChase();
             return;
         }
 
         if (player == null)
         {
-            if (hasLastSoundPos)
-            {
-                agent.SetDestination(lastSoundPos);
-            }
-
-            UpdateMoveAnimation();
+            GiveUpChase();
             return;
         }
 
-        float distToPlayer = Vector3.Distance(transform.position, player.position);
+        float distToPlayer = Vector3.Distance(
+            transform.position,
+            player.position
+        );
+
+        if (distToPlayer > disengageDistance)
+        {
+            GiveUpChase();
+            return;
+        }
 
         if (distToPlayer <= attackRange)
         {
@@ -262,14 +340,10 @@ public class SoundMonsterAI2 : MonoBehaviour
         }
 
         agent.SetDestination(player.position);
+
         FacePlayerSoft();
 
         UpdateMoveAnimation();
-
-        if (distToPlayer > disengageDistance)
-        {
-            EnterAlert(lastSoundPos);
-        }
     }
 
     void UpdateAttack()
@@ -279,33 +353,58 @@ public class SoundMonsterAI2 : MonoBehaviour
 
         FacePlayer();
 
+        // 玩家停止移動就放棄攻擊
+        if (playerSound != null &&
+            !playerSound.IsMovingInput)
+        {
+            GiveUpChase();
+            return;
+        }
+
         attackTimer += Time.deltaTime;
+
+        if (Time.time - lastStrongSoundTime >=
+            losePlayerAfterNoSound)
+        {
+            GiveUpChase();
+            return;
+        }
+
+        if (player == null)
+        {
+            GiveUpChase();
+            return;
+        }
+
+        float distToPlayer = Vector3.Distance(
+            transform.position,
+            player.position
+        );
+
+        if (distToPlayer > attackRange)
+        {
+            EnterChase();
+            return;
+        }
 
         if (attackTimer >= attackCooldown)
         {
             attackTimer = 0f;
 
-            if (Time.time - lastStrongSoundTime >= losePlayerAfterNoSound)
-            {
-                EnterAlert(lastSoundPos);
-                return;
-            }
+            PlayAnim(biteAnim, true);
+        }
+    }
 
-            if (player == null)
-            {
-                EnterAlert(lastSoundPos);
-                return;
-            }
+    void GiveUpChase()
+    {
+        // 放棄追擊後立即回到白色
+        EnterPatrol();
 
-            float distToPlayer = Vector3.Distance(transform.position, player.position);
-
-            if (distToPlayer > attackRange)
-            {
-                EnterChase();
-                return;
-            }
-
-            PlayAnim(biteAnim);
+        if (showDebugLog)
+        {
+            Debug.Log(
+                "[MONSTER] Give up chase, return to white."
+            );
         }
     }
 
@@ -322,15 +421,14 @@ public class SoundMonsterAI2 : MonoBehaviour
 
         SetRandomPatrolPoint();
 
-        // 不直接播放 Walk1，避免剛進巡邏但還沒移動時播錯
         PlayAnim(idleAnim);
 
-        if (rend != null)
-        {
-            rend.material.color = Color.white;
-        }
+        SetMonsterColor(Color.white);
 
-        Debug.Log("[MONSTER] State = Patrol");
+        if (showDebugLog)
+        {
+            Debug.Log("[MONSTER] State = Patrol");
+        }
     }
 
     void EnterAlert(Vector3 target)
@@ -350,12 +448,14 @@ public class SoundMonsterAI2 : MonoBehaviour
 
         PlayAnim(idleAnim);
 
-        if (rend != null)
-        {
-            rend.material.color = new Color(1f, 0.5f, 0f);
-        }
+        SetMonsterColor(
+            new Color(1f, 0.5f, 0f)
+        );
 
-        Debug.Log("[MONSTER] State = Alert");
+        if (showDebugLog)
+        {
+            Debug.Log("[MONSTER] State = Alert");
+        }
     }
 
     void EnterChase()
@@ -363,11 +463,10 @@ public class SoundMonsterAI2 : MonoBehaviour
         currentState = State.Chase;
 
         idleTimer = 0f;
+        lastStrongSoundTime = Time.time;
 
         agent.speed = chaseSpeed;
         agent.stoppingDistance = attackRange;
-
-        lastStrongSoundTime = Time.time;
 
         if (player != null)
         {
@@ -378,15 +477,14 @@ public class SoundMonsterAI2 : MonoBehaviour
             agent.SetDestination(lastSoundPos);
         }
 
-        // 追擊開始時先播 Walk2，避免遠距離剛開始追時平移
         PlayAnim(walk2Anim);
 
-        if (rend != null)
-        {
-            rend.material.color = Color.red;
-        }
+        SetMonsterColor(Color.red);
 
-        Debug.Log("[MONSTER] State = Chase");
+        if (showDebugLog)
+        {
+            Debug.Log("[MONSTER] State = Chase");
+        }
     }
 
     void EnterAttack()
@@ -400,28 +498,38 @@ public class SoundMonsterAI2 : MonoBehaviour
         idleTimer = 0f;
 
         FacePlayer();
-        PlayAnim(biteAnim);
 
-        if (rend != null)
+        PlayAnim(biteAnim, true);
+
+        SetMonsterColor(
+            new Color(0.4f, 0f, 0f)
+        );
+
+        if (showDebugLog)
         {
-            rend.material.color = new Color(0.4f, 0f, 0f);
+            Debug.Log("[MONSTER] State = Attack");
         }
-
-        Debug.Log("[MONSTER] State = Attack");
     }
 
     void SetRandomPatrolPoint()
     {
         for (int i = 0; i < 10; i++)
         {
-            Vector3 randomDir = Random.insideUnitSphere * patrolRadius;
+            Vector3 randomDir =
+                Random.insideUnitSphere * patrolRadius;
+
             randomDir += transform.position;
             randomDir.y = transform.position.y;
 
-            if (NavMesh.SamplePosition(randomDir, out NavMeshHit hit, patrolRadius, NavMesh.AllAreas))
+            if (NavMesh.SamplePosition(
+                randomDir,
+                out NavMeshHit hit,
+                patrolRadius,
+                NavMesh.AllAreas))
             {
                 patrolTarget = hit.position;
                 hasPatrolTarget = true;
+
                 agent.SetDestination(patrolTarget);
                 return;
             }
@@ -433,26 +541,28 @@ public class SoundMonsterAI2 : MonoBehaviour
 
     void UpdateMoveAnimation()
     {
-        if (animator == null) return;
-        if (currentState == State.Attack) return;
-        if (agent == null || !agent.enabled) return;
+        if (animator == null)
+            return;
+
+        if (currentState == State.Attack)
+            return;
 
         bool hasValidPath =
             agent.hasPath &&
             !agent.pathPending &&
-            agent.remainingDistance > agent.stoppingDistance + movingDistanceBuffer;
+            agent.remainingDistance >
+            agent.stoppingDistance + movingDistanceBuffer;
 
-        bool isCalculatingPath =
-            agent.pathPending;
+        bool isCalculatingPath = agent.pathPending;
 
         bool hasVelocity =
             agent.velocity.magnitude > moveAnimThreshold ||
             agent.desiredVelocity.magnitude > moveAnimThreshold;
 
-        // 重點：
-        // 只要有路徑還沒到，或正在算路，或有速度，都視為正在走
-        // 這樣遠距離追玩家時不會變成平移
-        bool shouldPlayWalk = hasValidPath || isCalculatingPath || hasVelocity;
+        bool shouldPlayWalk =
+            hasValidPath ||
+            isCalculatingPath ||
+            hasVelocity;
 
         if (shouldPlayWalk)
         {
@@ -462,7 +572,7 @@ public class SoundMonsterAI2 : MonoBehaviour
             {
                 PlayAnim(walk1Anim);
             }
-            else if (currentState == State.Alert || currentState == State.Chase)
+            else
             {
                 PlayAnim(walk2Anim);
             }
@@ -478,29 +588,87 @@ public class SoundMonsterAI2 : MonoBehaviour
         }
     }
 
+    // ==================================
+    // 動畫播放速度同步
+    // ==================================
+
+    void UpdateAnimationSpeed()
+    {
+        if (animator == null)
+            return;
+
+        float targetSpeed = 1f;
+
+        if (syncAnimationSpeed &&
+            currentState != State.Attack &&
+            (currentAnim == walk1Anim ||
+             currentAnim == walk2Anim))
+        {
+            // 使用實際移動速度，而不是 Inspector 設定速度
+            float actualSpeed =
+                agent.velocity.magnitude;
+
+            float referenceSpeed =
+                currentAnim == walk1Anim
+                ? walk1ReferenceSpeed
+                : walk2ReferenceSpeed;
+
+            referenceSpeed = Mathf.Max(
+                0.01f,
+                referenceSpeed
+            );
+
+            targetSpeed =
+                actualSpeed / referenceSpeed;
+
+            targetSpeed = Mathf.Clamp(
+                targetSpeed,
+                minAnimationSpeed,
+                maxAnimationSpeed
+            );
+        }
+
+        currentAnimationSpeed = Mathf.Lerp(
+            currentAnimationSpeed,
+            targetSpeed,
+            Time.deltaTime * animationSpeedSmooth
+        );
+
+        animator.speed = currentAnimationSpeed;
+    }
+
     void FacePlayer()
     {
-        if (player == null) return;
+        if (player == null)
+            return;
 
-        Vector3 dir = player.position - transform.position;
+        Vector3 dir =
+            player.position - transform.position;
+
         dir.y = 0f;
 
-        if (dir.sqrMagnitude <= 0.001f) return;
+        if (dir.sqrMagnitude <= 0.001f)
+            return;
 
-        Quaternion lookRotation = Quaternion.LookRotation(dir);
-        transform.rotation = lookRotation;
+        transform.rotation =
+            Quaternion.LookRotation(dir);
     }
 
     void FacePlayerSoft()
     {
-        if (player == null) return;
+        if (player == null)
+            return;
 
-        Vector3 dir = player.position - transform.position;
+        Vector3 dir =
+            player.position - transform.position;
+
         dir.y = 0f;
 
-        if (dir.sqrMagnitude <= 0.001f) return;
+        if (dir.sqrMagnitude <= 0.001f)
+            return;
 
-        Quaternion lookRotation = Quaternion.LookRotation(dir);
+        Quaternion lookRotation =
+            Quaternion.LookRotation(dir);
 
         transform.rotation = Quaternion.Slerp(
             transform.rotation,
@@ -509,37 +677,89 @@ public class SoundMonsterAI2 : MonoBehaviour
         );
     }
 
-    void PlayAnim(string animName)
+    void PlayAnim(string animName, bool forceRestart = false)
     {
-        if (animator == null) return;
-        if (string.IsNullOrEmpty(animName)) return;
-        if (currentAnim == animName) return;
+        if (animator == null)
+            return;
+
+        if (string.IsNullOrEmpty(animName))
+            return;
+
+        if (!forceRestart && currentAnim == animName)
+            return;
 
         currentAnim = animName;
-        animator.CrossFade(animName, 0.15f);
 
-        Debug.Log("[ANIM] Play " + animName);
+        // 非走路動畫立即恢復正常播放速度
+        if (animName == idleAnim ||
+            animName == biteAnim)
+        {
+            currentAnimationSpeed = 1f;
+            animator.speed = 1f;
+        }
+
+        animator.CrossFade(
+            animName,
+            0.15f,
+            0,
+            0f
+        );
+
+        if (showDebugLog)
+        {
+            Debug.Log(
+                "[ANIM] Play " + animName
+            );
+        }
+    }
+
+    void SetMonsterColor(Color color)
+    {
+        if (rend != null)
+        {
+            rend.material.color = color;
+        }
     }
 
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, patrolRadius);
+        Gizmos.DrawWireSphere(
+            transform.position,
+            patrolRadius
+        );
 
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, chaseDistance);
+        Gizmos.DrawWireSphere(
+            transform.position,
+            chaseDistance
+        );
 
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, disengageDistance);
+        Gizmos.DrawWireSphere(
+            transform.position,
+            disengageDistance
+        );
 
         Gizmos.color = Color.cyan;
-        Gizmos.DrawWireSphere(transform.position, attackRange);
+        Gizmos.DrawWireSphere(
+            transform.position,
+            attackRange
+        );
 
         if (hasLastSoundPos)
         {
             Gizmos.color = Color.magenta;
-            Gizmos.DrawSphere(lastSoundPos, 0.4f);
-            Gizmos.DrawLine(transform.position, lastSoundPos);
+
+            Gizmos.DrawSphere(
+                lastSoundPos,
+                0.4f
+            );
+
+            Gizmos.DrawLine(
+                transform.position,
+                lastSoundPos
+            );
         }
     }
 }

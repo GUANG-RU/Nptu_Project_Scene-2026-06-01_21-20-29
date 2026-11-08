@@ -6897,15 +6897,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5708847785946672294, guid: de6b562675bc0914ab8871f08fba7398, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5708847785946672294, guid: de6b562675bc0914ab8871f08fba7398, type: 3}
-      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5708847785946672294, guid: de6b562675bc0914ab8871f08fba7398, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5708847785946672294, guid: de6b562675bc0914ab8871f08fba7398, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5708847785946672294, guid: de6b562675bc0914ab8871f08fba7398, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6945,7 +6945,43 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3685494528537717739, guid: de6b562675bc0914ab8871f08fba7398, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2089307424}
+    - targetCorrespondingSourceObject: {fileID: 3685494528537717739, guid: de6b562675bc0914ab8871f08fba7398, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2089307431}
+    - targetCorrespondingSourceObject: {fileID: 7207869892688458406, guid: de6b562675bc0914ab8871f08fba7398, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 166701424}
   m_SourcePrefab: {fileID: 100100000, guid: de6b562675bc0914ab8871f08fba7398, type: 3}
+--- !u!20 &166701422 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 7515342267723427028, guid: de6b562675bc0914ab8871f08fba7398, type: 3}
+  m_PrefabInstance: {fileID: 166701421}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &166701423 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7207869892688458406, guid: de6b562675bc0914ab8871f08fba7398, type: 3}
+  m_PrefabInstance: {fileID: 166701421}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &166701424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166701423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0501b703752d1cc4eb2ca14dead546ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GhostVisionEffect2
+  effectDuration: 2.5
+  ghostAlpha: 0.55
+  ghostOffset: 22
+  enableGhostMovement: 1
+  movementAmount: 5
+  movementSpeed: 8
+  fadeOutTime: 0.8
+  resolutionScale: 0.75
 --- !u!4 &166736383 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2192808870029682403, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
@@ -7654,6 +7690,24 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2659587548486903517, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
   m_PrefabInstance: {fileID: 803615007}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &183276510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183276509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cdcb6c0f8a3c9c429658665ae49eb4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoundMonsterGhostAttack2
+  playerCamera: {fileID: 166701422}
+  playerMovementScript: {fileID: 2089307427}
+  effectDuration: 2.5
+  freezeDuration: 2.5
+  effectCooldown: 5
+  showDebugLog: 1
 --- !u!1001 &183730975
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29405,10 +29459,29 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1977697779}
+    - target: {fileID: 7800025947095299670, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
+      propertyPath: alertSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800025947095299670, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
+      propertyPath: chaseSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800025947095299670, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
+      propertyPath: attackRange
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800025947095299670, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
+      propertyPath: attackCooldown
+      value: 1.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2659587548486903517, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 183276510}
   m_SourcePrefab: {fileID: 100100000, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
 --- !u!1001 &805156974
 PrefabInstance:
@@ -65124,10 +65197,29 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1977697779}
+    - target: {fileID: 7800025947095299670, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
+      propertyPath: alertSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800025947095299670, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
+      propertyPath: chaseSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800025947095299670, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
+      propertyPath: attackRange
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800025947095299670, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
+      propertyPath: attackCooldown
+      value: 1.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2659587548486903517, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1789998612}
   m_SourcePrefab: {fileID: 100100000, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
 --- !u!4 &1789998610 stripped
 Transform:
@@ -65139,6 +65231,24 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2659587548486903517, guid: d34ee4af9dbd0b44781b2b5d6640b2e9, type: 3}
   m_PrefabInstance: {fileID: 1789998609}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1789998612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789998611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cdcb6c0f8a3c9c429658665ae49eb4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoundMonsterGhostAttack2
+  playerCamera: {fileID: 166701422}
+  playerMovementScript: {fileID: 2089307427}
+  effectDuration: 2.5
+  freezeDuration: 2.5
+  effectCooldown: 5
+  showDebugLog: 1
 --- !u!1001 &1791465578
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -75005,6 +75115,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueInputBlocker
   allowedDialogueKey: 323
   scriptsToDisableDuringDialogue: []
+--- !u!114 &2089307427 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5562368642549645459, guid: de6b562675bc0914ab8871f08fba7398, type: 3}
+  m_PrefabInstance: {fileID: 166701421}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089307409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05ec5cf00ca181d45a42ba1870e148c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2089307431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089307409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1958d06252ae49468938b0b963f67fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerFreezeController2
+  playerMovementScript: {fileID: 2089307427}
+  defaultFreezeDuration: 2.5
+  defaultCooldown: 5
+  isFrozen: 0
+  remainingTime: 0
+  cooldownRemaining: 0
 --- !u!4 &2090435194 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6954531691785998512, guid: cf8443763fc34314490f8a3e2f94dd37, type: 3}

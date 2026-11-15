@@ -6901,7 +6901,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5708847785946672294, guid: de6b562675bc0914ab8871f08fba7398, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5708847785946672294, guid: de6b562675bc0914ab8871f08fba7398, type: 3}
       propertyPath: m_LocalPosition.z
@@ -47802,6 +47802,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1453485022173259434, guid: eb4b38db67a56dc469a2c2aafcc36add, type: 3}
   m_PrefabInstance: {fileID: 1305208357}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1325972337 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4276715602927904241, guid: de6b562675bc0914ab8871f08fba7398, type: 3}
+  m_PrefabInstance: {fileID: 166701421}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fd36970902aafb439e8b4196ddc26c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UltimateFlashlightController
 --- !u!1001 &1328294901
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -75114,7 +75125,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueInputBlocker
   allowedDialogueKey: 323
-  scriptsToDisableDuringDialogue: []
+  scriptsToDisableDuringDialogue:
+  - {fileID: 1325972337}
 --- !u!114 &2089307427 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5562368642549645459, guid: de6b562675bc0914ab8871f08fba7398, type: 3}

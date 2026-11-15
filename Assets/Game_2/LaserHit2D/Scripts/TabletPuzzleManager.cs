@@ -72,6 +72,9 @@ public class TabletPuzzleManager : MonoBehaviour
 
     void Update()
     {
+        // 🚨 對話定格期間，忽略所有 E / Esc 互動按鍵（全場景雷射平板同步生效）
+        if (AdaptiveStoryTrigger.IsDialoguePlaying) return;
+
         if (m_IsCleared && !m_IsInteracting) return;
 
         if (m_IsInteracting)

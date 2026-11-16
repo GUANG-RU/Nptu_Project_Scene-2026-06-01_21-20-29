@@ -21,7 +21,7 @@ namespace LaserHit2D
         private bool m_IsUpdatingUI = false;
 
         [Header("UI 按鈕旋轉速度")]
-        [SerializeField] private float m_ButtonRotateStep = 10f;
+        [SerializeField] private float m_ButtonRotateStep = 5f;
 
         [Header("圖形比對器（僅玩家左邊發射器需要綁定）")]
         [SerializeField] private PatternMatcher m_PatternMatcher;
@@ -32,13 +32,15 @@ namespace LaserHit2D
         {
             if (m_IsRandomAngle)
             {
-                int min = Mathf.RoundToInt(m_MinAngle);
-                int max = Mathf.RoundToInt(m_MaxAngle);
+                // 依照按鈕每次旋轉的度數 (預設 5 度) 來抽取倍數，確保玩家用按鈕一定轉得出來
+                int step = Mathf.Max(1, Mathf.RoundToInt(m_ButtonRotateStep));
+                int minStep = Mathf.RoundToInt(m_MinAngle / step);
+                int maxStep = Mathf.RoundToInt(m_MaxAngle / step);
 
-                // 🌟 使用 do-while 迴圈，確保開局隨機出來的角度絕對不為 0 度
+                // 🌟 確保開局隨機出來的角度絕對不為 0 度
                 do
                 {
-                    m_CurrentAngle = Random.Range(min, max + 1);
+                    m_CurrentAngle = Random.Range(minStep, maxStep + 1) * step;
                 } 
                 while (Mathf.Approximately(m_CurrentAngle, 0f) || m_CurrentAngle == 0);
             }

@@ -9,14 +9,14 @@ EditorBuildSettings:
     path: Assets/Scenes/StartMenu/StartMenu.unity
     guid: d276f5f5b7ef63841a4f08250df9d05b
   - enabled: 1
+    path: Assets/Scenes/IntroScene/IntroScene.unity
+    guid: f5846e5515458dc4aa0c46eba7706c31
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
     path: Assets/Scenes/GameOver/GameOver.unity
     guid: ee5e78442654d0e4e9cf91d0bf215435
-  - enabled: 1
-    path: Assets/Scenes/GameClear/GameClear.unity
-    guid: 5c040bd301981104182c7e152f7d1463
   - enabled: 1
     path: Assets/Game_2/Game2.unity
     guid: 188f8f27128a6c1449fa3a0a1dcb7b3e
@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Stage_3/SceneStage3.unity
     guid: 34631fd42a4fd874cbfd60e5feb2ccbe
+  - enabled: 0
+    path: Assets/Scenes/GameClear/GameClear.unity
+    guid: 5c040bd301981104182c7e152f7d1463
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

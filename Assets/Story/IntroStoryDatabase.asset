@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b5213f75801e214d8fb9ad8f5b8cac8, type: 3}
+  m_Name: IntroStoryDatabase
+  m_EditorClassIdentifier: Assembly-CSharp::StoryDatabaseSO
+  eventConfigs:
+  - eventTypeKey: Intro
+    encounterStages:
+    - stageName: First
+      messages:
+      - 'Light was once meant to guide us through the darkness.
+
+
+        But in
+        one forgotten place, it became the source of fear.
+
+        (Left-click to
+        skip)'
+      - "Deep within the shadows stood the \"Lightwave Research Institute\" \u2014
+        a secret facility dedicated to the study of light and human consciousness."
+      - 'Until one day, an experiment went terribly wrong.
+
+
+        Space began
+        to distort, and light no longer followed the laws of nature.'
+      - 'The institute was abandoned.
+
+
+        Yet something unnatural still wanders
+        within its walls...'
+      - 'Years passed...
+
+
+        You slowly open your eyes on the cold floor of
+        an unfamiliar place.'
+      - 'Your memories are gone.
+
+
+        You cannot remember who you are, or why
+        you are here.'
+      - 'A strange sound echoes from somewhere in the distance.
+
+
+        What secrets
+        lie hidden within this forgotten facility?'
+      - 'For now, there is only one thing you can do...
+
+
+        Find a way out.
+
+
+        Before
+        it''s too late.'
+      voiceClips:
+      - {fileID: 8300000, guid: 3d7a739c1e603144cbb319cf44e2d59c, type: 3}
+      - {fileID: 8300000, guid: 2006a0771270f174bb1f6c4f6c4b2ee3, type: 3}
+      - {fileID: 8300000, guid: a7f99474c3b78ec47a7da2170f376e8e, type: 3}
+      - {fileID: 8300000, guid: 3a5b6451110a715448a19c80902c0af7, type: 3}
+      - {fileID: 8300000, guid: 1f32534216be94940bf0b23ff39a436a, type: 3}
+      - {fileID: 8300000, guid: 05d79e903699c8e45adec9fec32ba308, type: 3}
+      - {fileID: 8300000, guid: b937d703fea3c0f48ab0bb1bca7dfe40, type: 3}
+      - {fileID: 8300000, guid: a3707d63f68d50c4e8f3b27b4c7b1b3b, type: 3}

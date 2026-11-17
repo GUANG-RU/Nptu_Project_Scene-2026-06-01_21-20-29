@@ -2751,6 +2751,7 @@ GameObject:
   m_Component:
   - component: {fileID: 604931616}
   - component: {fileID: 604931615}
+  - component: {fileID: 604931617}
   m_Layer: 0
   m_Name: StoryManager
   m_TagString: Untagged
@@ -2772,8 +2773,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StoryManager
   storyPanel: {fileID: 1842997474}
   storyText: {fileID: 1530191220}
-  typingSpeed: 0.05
+  voiceAudioSource: {fileID: 604931617}
   allowMouseSkip: 1
+  skipMouseButton: 0
+  postVoiceHoldTime: 1.5
 --- !u!4 &604931616
 Transform:
   m_ObjectHideFlags: 0
@@ -2789,6 +2792,103 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &604931617
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604931614}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &610437691 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2303921294396319335, guid: b47bdf1669865c841ace96330ee3d7ec, type: 3}
@@ -5362,14 +5462,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 551ff52d88667464ba18c5314cde0555, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StoryTrigger
-  storyMessage: Hello, Cate! Welcome to the Light Maze(Left-click to skip)
+  useDatabase: 1
+  storyDatabase: {fileID: 11400000, guid: 5dc986ea2d6b6a24cad06f59886f9125, type: 2}
+  eventTypeKey: Intro
+  stageName: First
+  storyMessage: ???:Hello, Welcome to the Light Maze(Left-click to skip)
   followingMessages:
-  - There are many fantastical creatures here, and they're aggressive.
-  - However, each of them has its own unique traits.
-  - Try to find the hidden rooms while dodging their attacks.
-  - Then solve the puzzles to open the gate. Good luck!
+  - ???:There are many fantastical creatures here, and they're aggressive.
+  - ???:However, each of them has its own unique traits.
+  - ???:Try to find the hidden rooms while dodging their attacks.
+  - ???:Then solve the puzzles to open the gate. Good luck!
   displayTime: 3
   storyManager: {fileID: 604931615}
+  stagePriority: 1
+  triggerOnce: 1
 --- !u!4 &1422947359
 Transform:
   m_ObjectHideFlags: 0
@@ -8116,7 +8222,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 1.902, y: 0, z: 6.75845}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.6}
+  m_LocalScale: {x: 0.5, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1224482842}

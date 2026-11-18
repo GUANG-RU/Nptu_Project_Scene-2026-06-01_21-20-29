@@ -17,21 +17,21 @@ MonoBehaviour:
     encounterStages:
     - stageName: First
       messages:
-      - Holy shit! Why is it always me?!
+      - Holy crap! Why is it always me?!
       - Wait, light. It hates light!
       - Press F! Flashlight, come on!
       voiceClips:
-      - {fileID: 8300000, guid: d0828cb770c4e6446b8b6e81fdcd094a, type: 3}
+      - {fileID: 8300000, guid: ced124d3fb490f545b0b920944b2eab0, type: 3}
       - {fileID: 8300000, guid: 18aca4ff5c52ad64b9c933080aedc836, type: 3}
       - {fileID: 8300000, guid: 804980375e784d643b0f2e5ad2a1ee00, type: 3}
     - stageName: Second
       messages:
       - ...
-      - Motherfucker!
+      - ARE YOU KIDDING ME?!
       - Can you just leave me alone?!
       voiceClips:
       - {fileID: 0}
-      - {fileID: 8300000, guid: c49054cf7b5049b438475ebf9ba2738f, type: 3}
+      - {fileID: 8300000, guid: 92a62f5b23c566b48b889c55c5ac4b55, type: 3}
       - {fileID: 8300000, guid: 2c040a8efa53b9048ac98c587aa7fc94, type: 3}
     - stageName: Third
       messages:
@@ -44,13 +44,13 @@ MonoBehaviour:
     encounterStages:
     - stageName: First
       messages:
-      - Wait, the hell is that?
+      - Wait, what is that?!
       - Oh god, NOPE! NIGERUNDAYO!
       - Wait, wait a sec...
       - It stopped... Okay, it's fine as long as I don't shine the flashlight on
         it.
       voiceClips:
-      - {fileID: 8300000, guid: 880946f6e787fb64da9b00feddca40c3, type: 3}
+      - {fileID: 8300000, guid: a58f8f21a8bc46643a36eca386e22918, type: 3}
       - {fileID: 8300000, guid: 2a3806a4f7a7a904190ef4090afca844, type: 3}
       - {fileID: 8300000, guid: 09fa08625a6c01e41a5f130921650b89, type: 3}
       - {fileID: 8300000, guid: e24b942254663cf4bb0802c93f4efa6d, type: 3}
@@ -89,37 +89,40 @@ MonoBehaviour:
     - stageName: 'Third '
       messages:
       - ...
-      - FUCK.
+      - ...UNBELIEVABLE.
       voiceClips:
       - {fileID: 0}
-      - {fileID: 8300000, guid: 98835701e62a3fb4ab5eea961a19556b, type: 3}
+      - {fileID: 8300000, guid: 82ab849dc0a9fc544a0e2cbb13c54ca8, type: 3}
   - eventTypeKey: LaserPuzzle3D
     encounterStages:
     - stageName: Intro
       messages:
       - Wait a minute... is that the Neo Armstrong Cyclone Jet Armstrong Cannon?
       - Damn, it actually has a really high-quality finish!
-      - Focus, man. I need to adjust these mirrors to hit all the sensors.
-      - So I gotta get close, press E, and use W, A, S, D, to rotate them......all
-        while dodging that thing's attacks. Perfect
-      - Great, the flashlight is completely useless.
-      - And it doesn't even have eyes. What an absolute unit.
-      - Okay... let's try inching closer, then freeze.
-      - If it doesn't attack me when I'm still... it must be hunting by sound.
+      - Wait... what is THAT thing doing here?
+      - Great, the flashlight is completely useless on it.
+      - And it has no eyes... Okay, let's try freezing.
+      - It stopped... it must be hunting by sound.
+      - Let me get this straight...
+      - So I gotta get close, press E, and use W, A, S, D, to rotate them...
+      - ...all while playing red-light-green-light with a blind monster.
+      - Perfect. Just perfect.
       voiceClips:
       - {fileID: 8300000, guid: 00c0af0e48403364491ae4b93e0a4bdb, type: 3}
       - {fileID: 8300000, guid: dad05b4c01ff3cf41bcbd081c4d66987, type: 3}
-      - {fileID: 8300000, guid: cd38bfb0a89716143b349d757d25d1d8, type: 3}
-      - {fileID: 8300000, guid: dedf6715ab386644093e53792272885c, type: 3}
-      - {fileID: 8300000, guid: c365bab10e7237e46ac78d7c44d4f143, type: 3}
-      - {fileID: 8300000, guid: 159398ce589adbc4abb0fd03cf9d4e83, type: 3}
-      - {fileID: 8300000, guid: 8d26ff55102bab6459cd65b1b542abf8, type: 3}
-      - {fileID: 8300000, guid: 2637524cfa16802419442c95f7e048f2, type: 3}
+      - {fileID: 8300000, guid: a58f8f21a8bc46643a36eca386e22918, type: 3}
+      - {fileID: 8300000, guid: c596552b6e4af444696b082617bcafa3, type: 3}
+      - {fileID: 8300000, guid: ec95f41f8ce55de48a9bbaa324ac79c9, type: 3}
+      - {fileID: 8300000, guid: b0808ddfdb63bc04e936eff4acea4c84, type: 3}
+      - {fileID: 8300000, guid: 3777eb9f951affd46b2277777f0fc0a8, type: 3}
+      - {fileID: 8300000, guid: baaae15b5cb22d84e8ecac73e57c2c29, type: 3}
+      - {fileID: 8300000, guid: f4cf7410620c965408f13d44967292b5, type: 3}
+      - {fileID: 8300000, guid: 6317ca1931b83904b874ebddf4b71c6e, type: 3}
   - eventTypeKey: EnterGame2
     encounterStages:
     - stageName: Intro
       messages:
-      - Ugh... FUCK. Where the hell am I?
+      - Ugh... CRAP. Where am I?
       - Seriously, when will I be able to leave this awful place?
       - Okay... I'll just keep searching for a way out.
       - Hopefully, I can finally get out of this hellish place.

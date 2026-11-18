@@ -3492,6 +3492,10 @@ PrefabInstance:
       propertyPath: storyDatabase
       value: 
       objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -3597,6 +3601,10 @@ PrefabInstance:
       propertyPath: storyDatabase
       value: 
       objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -5517,6 +5525,10 @@ PrefabInstance:
       propertyPath: storyDatabase
       value: 
       objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3488798597472391038, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_TargetMonster
       value: 
@@ -5626,6 +5638,10 @@ PrefabInstance:
       propertyPath: storyDatabase
       value: 
       objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -10672,6 +10688,10 @@ PrefabInstance:
       propertyPath: storyDatabase
       value: 
       objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3488798597472391038, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_TargetMonster
       value: 
@@ -10781,6 +10801,10 @@ PrefabInstance:
       propertyPath: storyDatabase
       value: 
       objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -12023,6 +12047,10 @@ PrefabInstance:
       propertyPath: storyDatabase
       value: 
       objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -12128,6 +12156,10 @@ PrefabInstance:
       propertyPath: storyDatabase
       value: 
       objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -13507,6 +13539,10 @@ PrefabInstance:
       propertyPath: storyDatabase
       value: 
       objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3488798597472391038, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_TargetMonster
       value: 
@@ -13616,6 +13652,10 @@ PrefabInstance:
       propertyPath: storyDatabase
       value: 
       objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -23726,6 +23766,10 @@ PrefabInstance:
       propertyPath: storyDatabase
       value: 
       objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3488798597472391038, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_TargetMonster
       value: 
@@ -23835,6 +23879,10 @@ PrefabInstance:
       propertyPath: storyDatabase
       value: 
       objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -25579,6 +25627,10 @@ PrefabInstance:
       propertyPath: storyDatabase
       value: 
       objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3488798597472391038, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_TargetMonster
       value: 
@@ -25688,6 +25740,10 @@ PrefabInstance:
       propertyPath: storyDatabase
       value: 
       objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -27888,6 +27944,10 @@ PrefabInstance:
       propertyPath: storyDatabase
       value: 
       objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3488798597472391038, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_TargetMonster
       value: 
@@ -27997,6 +28057,10 @@ PrefabInstance:
       propertyPath: storyDatabase
       value: 
       objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -29224,6 +29288,10 @@ PrefabInstance:
       propertyPath: storyDatabase
       value: 
       objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3488798597472391038, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_TargetMonster
       value: 
@@ -29333,6 +29401,10 @@ PrefabInstance:
       propertyPath: storyDatabase
       value: 
       objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -30023,6 +30095,10 @@ PrefabInstance:
       propertyPath: storyDatabase
       value: 
       objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -30128,6 +30204,10 @@ PrefabInstance:
       propertyPath: storyDatabase
       value: 
       objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -30386,6 +30466,10 @@ PrefabInstance:
       propertyPath: storyDatabase
       value: 
       objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -30487,6 +30571,10 @@ PrefabInstance:
       propertyPath: storyDatabase
       value: 
       objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -34561,32 +34649,7 @@ MonoBehaviour:
   - {fileID: 277760077}
   startMonsterAIOnComplete: 1
   partnerTrigger: {fileID: 0}
-  encounterStages:
-  - stageName: First
-    messages:
-    - Wait, the hell is that?
-    - Oh god, NOPE! NIGERUNDAYO!(Run for your lives!)
-    - Wait, wait a sec...
-    - It stopped... Okay, it's fine as long as I don't shine the flashlight on it.
-    voiceClips:
-    - {fileID: 8300000, guid: 880946f6e787fb64da9b00feddca40c3, type: 3}
-    - {fileID: 8300000, guid: 2a3806a4f7a7a904190ef4090afca844, type: 3}
-    - {fileID: 8300000, guid: 09fa08625a6c01e41a5f130921650b89, type: 3}
-    - {fileID: 8300000, guid: e24b942254663cf4bb0802c93f4efa6d, type: 3}
-  - stageName: Second
-    messages:
-    - Okay... pitch black is good. Pitch black is safe.
-    - Just let me catch my breath...
-    voiceClips:
-    - {fileID: 8300000, guid: 8274eaf1afd83864ba1d218b8efcf9fa, type: 3}
-    - {fileID: 8300000, guid: dc3b595d10d22fc47b8e86a3bc0998de, type: 3}
-  - stageName: Third
-    messages:
-    - Alright, alright... just need to rest a bit more.
-    - Wait, did I turn the flashlight off?! Let me check!
-    voiceClips:
-    - {fileID: 8300000, guid: 70ff9fba108d09940ac0d52dfb89075c, type: 3}
-    - {fileID: 8300000, guid: 4b71275236a765f4d87f8eb76afc6165, type: 3}
+  encounterStages: []
   storyManager: {fileID: 288826885}
 --- !u!136 &930839931
 CapsuleCollider:
@@ -41101,32 +41164,7 @@ MonoBehaviour:
   targetMonsters: []
   startMonsterAIOnComplete: 1
   partnerTrigger: {fileID: 0}
-  encounterStages:
-  - stageName: First
-    messages:
-    - Holy shit! Why is it always me?!
-    - Wait, light. It hates light!
-    - Press F! Flashlight, come on!
-    voiceClips:
-    - {fileID: 8300000, guid: d0828cb770c4e6446b8b6e81fdcd094a, type: 3}
-    - {fileID: 8300000, guid: 18aca4ff5c52ad64b9c933080aedc836, type: 3}
-    - {fileID: 8300000, guid: 804980375e784d643b0f2e5ad2a1ee00, type: 3}
-  - stageName: Second
-    messages:
-    - ...
-    - Monther Fu*ker!!!
-    - Can you just leave me alone?!
-    voiceClips:
-    - {fileID: 0}
-    - {fileID: 8300000, guid: c49054cf7b5049b438475ebf9ba2738f, type: 3}
-    - {fileID: 8300000, guid: 2c040a8efa53b9048ac98c587aa7fc94, type: 3}
-  - stageName: Third
-    messages:
-    - ...
-    - I seriously need to go pay my respects at a temple after this.
-    voiceClips:
-    - {fileID: 0}
-    - {fileID: 8300000, guid: a57ea6a57d282844288fcb0ee1d7d83c, type: 3}
+  encounterStages: []
   storyManager: {fileID: 288826885}
 --- !u!136 &1136504740
 CapsuleCollider:
@@ -42724,6 +42762,10 @@ PrefabInstance:
       propertyPath: storyDatabase
       value: 
       objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -42829,6 +42871,10 @@ PrefabInstance:
       propertyPath: storyDatabase
       value: 
       objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -43675,7 +43721,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
   puzzleType: LaserPuzzle3D
-  storyDatabase: {fileID: 0}
+  storyDatabase: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
   saveAcrossSessions: 0
   requireFacingTarget: 1
   targetToLookAt: {fileID: 0}
@@ -43686,27 +43732,7 @@ MonoBehaviour:
   - {fileID: 1789998611}
   startMonsterAIOnComplete: 1
   partnerTrigger: {fileID: 0}
-  encounterStages:
-  - stageName: IntroPuzzle
-    messages:
-    - Wait a minute... is that the Neo Armstrong Cyclone Jet Armstrong Cannon?
-    - Damn, it actually has a really high-quality finish!
-    - Focus, man. I need to adjust these mirrors to hit all the sensors.
-    - So I gotta get close, press E, and use W, A, S, D, to rotate them......all
-      while dodging that thing's attacks. Perfect
-    - Great, the flashlight is completely useless.
-    - And it doesn't even have eyes. What an absolute unit.
-    - ' Okay... let''s try inching closer, then freeze.'
-    - If it doesn't attack me when I'm still... it must be hunting by sound.
-    voiceClips:
-    - {fileID: 8300000, guid: 00c0af0e48403364491ae4b93e0a4bdb, type: 3}
-    - {fileID: 8300000, guid: dad05b4c01ff3cf41bcbd081c4d66987, type: 3}
-    - {fileID: 8300000, guid: cd38bfb0a89716143b349d757d25d1d8, type: 3}
-    - {fileID: 8300000, guid: dedf6715ab386644093e53792272885c, type: 3}
-    - {fileID: 8300000, guid: c365bab10e7237e46ac78d7c44d4f143, type: 3}
-    - {fileID: 8300000, guid: 159398ce589adbc4abb0fd03cf9d4e83, type: 3}
-    - {fileID: 8300000, guid: 8d26ff55102bab6459cd65b1b542abf8, type: 3}
-    - {fileID: 8300000, guid: 2637524cfa16802419442c95f7e048f2, type: 3}
+  encounterStages: []
   storyManager: {fileID: 288826885}
 --- !u!1001 &1216319165
 PrefabInstance:
@@ -43868,6 +43894,10 @@ PrefabInstance:
       propertyPath: storyDatabase
       value: 
       objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -43977,6 +44007,10 @@ PrefabInstance:
       propertyPath: storyDatabase
       value: 
       objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -46512,33 +46546,7 @@ MonoBehaviour:
   targetMonsters: []
   startMonsterAIOnComplete: 1
   partnerTrigger: {fileID: 0}
-  encounterStages:
-  - stageName: First
-    messages:
-    - Holy shit! Why is it always me?!
-    - Wait, light. It hates light!
-    - Press F! Flashlight, come on!
-    - Quickly press F to turn on the flashlight and shine it on it.
-    voiceClips:
-    - {fileID: 8300000, guid: d0828cb770c4e6446b8b6e81fdcd094a, type: 3}
-    - {fileID: 8300000, guid: 18aca4ff5c52ad64b9c933080aedc836, type: 3}
-    - {fileID: 8300000, guid: 804980375e784d643b0f2e5ad2a1ee00, type: 3}
-  - stageName: Second
-    messages:
-    - ...
-    - Monther Fu*ker!!!
-    - Can you just leave me alone?!
-    voiceClips:
-    - {fileID: 0}
-    - {fileID: 8300000, guid: c49054cf7b5049b438475ebf9ba2738f, type: 3}
-    - {fileID: 8300000, guid: 2c040a8efa53b9048ac98c587aa7fc94, type: 3}
-  - stageName: Third
-    messages:
-    - ...
-    - I seriously need to go pay my respects at a temple after this.
-    voiceClips:
-    - {fileID: 0}
-    - {fileID: 8300000, guid: a57ea6a57d282844288fcb0ee1d7d83c, type: 3}
+  encounterStages: []
   storyManager: {fileID: 288826885}
 --- !u!136 &1292526172
 CapsuleCollider:
@@ -48079,32 +48087,7 @@ MonoBehaviour:
   - {fileID: 408683573}
   startMonsterAIOnComplete: 1
   partnerTrigger: {fileID: 0}
-  encounterStages:
-  - stageName: First
-    messages:
-    - Wait, the hell is that?
-    - Oh god, NOPE! NIGERUNDAYO!(Run for your lives!)
-    - Wait, wait a sec...
-    - It stopped... Okay, it's fine as long as I don't shine the flashlight on it.
-    voiceClips:
-    - {fileID: 8300000, guid: 880946f6e787fb64da9b00feddca40c3, type: 3}
-    - {fileID: 8300000, guid: 2a3806a4f7a7a904190ef4090afca844, type: 3}
-    - {fileID: 8300000, guid: 09fa08625a6c01e41a5f130921650b89, type: 3}
-    - {fileID: 8300000, guid: e24b942254663cf4bb0802c93f4efa6d, type: 3}
-  - stageName: Second
-    messages:
-    - Okay... pitch black is good. Pitch black is safe.
-    - Just let me catch my breath...
-    voiceClips:
-    - {fileID: 8300000, guid: 8274eaf1afd83864ba1d218b8efcf9fa, type: 3}
-    - {fileID: 8300000, guid: dc3b595d10d22fc47b8e86a3bc0998de, type: 3}
-  - stageName: Third
-    messages:
-    - Alright, alright... just need to rest a bit more.
-    - Wait, did I turn the flashlight off?! Let me check!
-    voiceClips:
-    - {fileID: 8300000, guid: 70ff9fba108d09940ac0d52dfb89075c, type: 3}
-    - {fileID: 8300000, guid: 4b71275236a765f4d87f8eb76afc6165, type: 3}
+  encounterStages: []
   storyManager: {fileID: 288826885}
 --- !u!136 &1338919971
 CapsuleCollider:
@@ -52798,6 +52781,10 @@ PrefabInstance:
       propertyPath: storyDatabase
       value: 
       objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -52903,6 +52890,10 @@ PrefabInstance:
       propertyPath: storyDatabase
       value: 
       objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -55870,6 +55861,10 @@ PrefabInstance:
       propertyPath: storyDatabase
       value: 
       objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -55975,6 +55970,10 @@ PrefabInstance:
       propertyPath: storyDatabase
       value: 
       objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -56221,32 +56220,7 @@ MonoBehaviour:
   - {fileID: 1563263870}
   startMonsterAIOnComplete: 1
   partnerTrigger: {fileID: 0}
-  encounterStages:
-  - stageName: First
-    messages:
-    - Wait, the hell is that?
-    - Oh god, NOPE! NIGERUNDAYO!(Run for your lives!)
-    - Wait, wait a sec...
-    - It stopped... Okay, it's fine as long as I don't shine the flashlight on it.
-    voiceClips:
-    - {fileID: 8300000, guid: 880946f6e787fb64da9b00feddca40c3, type: 3}
-    - {fileID: 8300000, guid: 2a3806a4f7a7a904190ef4090afca844, type: 3}
-    - {fileID: 8300000, guid: 09fa08625a6c01e41a5f130921650b89, type: 3}
-    - {fileID: 8300000, guid: e24b942254663cf4bb0802c93f4efa6d, type: 3}
-  - stageName: Second
-    messages:
-    - Okay... pitch black is good. Pitch black is safe.
-    - Just let me catch my breath...
-    voiceClips:
-    - {fileID: 8300000, guid: 8274eaf1afd83864ba1d218b8efcf9fa, type: 3}
-    - {fileID: 8300000, guid: dc3b595d10d22fc47b8e86a3bc0998de, type: 3}
-  - stageName: Third
-    messages:
-    - Alright, alright... just need to rest a bit more.
-    - Wait, did I turn the flashlight off?! Let me check!
-    voiceClips:
-    - {fileID: 8300000, guid: 70ff9fba108d09940ac0d52dfb89075c, type: 3}
-    - {fileID: 8300000, guid: 4b71275236a765f4d87f8eb76afc6165, type: 3}
+  encounterStages: []
   storyManager: {fileID: 288826885}
 --- !u!136 &1563263878
 CapsuleCollider:
@@ -56571,6 +56545,10 @@ PrefabInstance:
       propertyPath: storyDatabase
       value: 
       objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -56676,6 +56654,10 @@ PrefabInstance:
       propertyPath: storyDatabase
       value: 
       objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -58423,18 +58405,7 @@ MonoBehaviour:
   targetMonsters: []
   startMonsterAIOnComplete: 1
   partnerTrigger: {fileID: 0}
-  encounterStages:
-  - stageName: Intro
-    messages:
-    - Ugh... FUCK. Where the hell am I?
-    - Seriously, when will I be able to leave this awful place?
-    - Okay... I'll just keep searching for a way out.
-    - Hopefully, I can finally get out of this hellish place.
-    voiceClips:
-    - {fileID: 8300000, guid: f827d581161c97a4c8ba2b07d3dde887, type: 3}
-    - {fileID: 8300000, guid: ee195e3c6dfa4c94ba1aeb272441794f, type: 3}
-    - {fileID: 8300000, guid: 6860df5b67350b0448e66005d0298e5a, type: 3}
-    - {fileID: 8300000, guid: 3dd9046daf4a0a445862d4380a5a4960, type: 3}
+  encounterStages: []
   storyManager: {fileID: 288826885}
 --- !u!1001 &1627180711
 PrefabInstance:
@@ -61488,6 +61459,10 @@ PrefabInstance:
       propertyPath: storyDatabase
       value: 
       objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3488798597472391038, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_TargetMonster
       value: 
@@ -61597,6 +61572,10 @@ PrefabInstance:
       propertyPath: storyDatabase
       value: 
       objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -61837,32 +61816,7 @@ MonoBehaviour:
   - {fileID: 1715330692}
   startMonsterAIOnComplete: 1
   partnerTrigger: {fileID: 0}
-  encounterStages:
-  - stageName: First
-    messages:
-    - Wait, the hell is that?
-    - Oh god, NOPE! NIGERUNDAYO!(Run for your lives!)
-    - Wait, wait a sec...
-    - It stopped... Okay, it's fine as long as I don't shine the flashlight on it.
-    voiceClips:
-    - {fileID: 8300000, guid: 880946f6e787fb64da9b00feddca40c3, type: 3}
-    - {fileID: 8300000, guid: 2a3806a4f7a7a904190ef4090afca844, type: 3}
-    - {fileID: 8300000, guid: 09fa08625a6c01e41a5f130921650b89, type: 3}
-    - {fileID: 8300000, guid: e24b942254663cf4bb0802c93f4efa6d, type: 3}
-  - stageName: Second
-    messages:
-    - Okay... pitch black is good. Pitch black is safe.
-    - Just let me catch my breath...
-    voiceClips:
-    - {fileID: 8300000, guid: 8274eaf1afd83864ba1d218b8efcf9fa, type: 3}
-    - {fileID: 8300000, guid: dc3b595d10d22fc47b8e86a3bc0998de, type: 3}
-  - stageName: Third
-    messages:
-    - Alright, alright... just need to rest a bit more.
-    - Wait, did I turn the flashlight off?! Let me check!
-    voiceClips:
-    - {fileID: 8300000, guid: 70ff9fba108d09940ac0d52dfb89075c, type: 3}
-    - {fileID: 8300000, guid: 4b71275236a765f4d87f8eb76afc6165, type: 3}
+  encounterStages: []
   storyManager: {fileID: 288826885}
 --- !u!136 &1715330700
 CapsuleCollider:
@@ -65593,6 +65547,10 @@ PrefabInstance:
       propertyPath: storyDatabase
       value: 
       objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -65698,6 +65656,10 @@ PrefabInstance:
       propertyPath: storyDatabase
       value: 
       objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -67178,33 +67140,7 @@ MonoBehaviour:
   targetMonsters: []
   startMonsterAIOnComplete: 1
   partnerTrigger: {fileID: 0}
-  encounterStages:
-  - stageName: First
-    messages:
-    - Holy shit! Why is it always me?!
-    - Wait, light. It hates light!
-    - Press F! Flashlight, come on!
-    - Quickly press F to turn on the flashlight and shine it on it.
-    voiceClips:
-    - {fileID: 8300000, guid: d0828cb770c4e6446b8b6e81fdcd094a, type: 3}
-    - {fileID: 8300000, guid: 18aca4ff5c52ad64b9c933080aedc836, type: 3}
-    - {fileID: 8300000, guid: 804980375e784d643b0f2e5ad2a1ee00, type: 3}
-  - stageName: Second
-    messages:
-    - ...
-    - Monther Fu*ker!!!
-    - Can you just leave me alone?!
-    voiceClips:
-    - {fileID: 0}
-    - {fileID: 8300000, guid: c49054cf7b5049b438475ebf9ba2738f, type: 3}
-    - {fileID: 8300000, guid: 2c040a8efa53b9048ac98c587aa7fc94, type: 3}
-  - stageName: Third
-    messages:
-    - ...
-    - I seriously need to go pay my respects at a temple after this.
-    voiceClips:
-    - {fileID: 0}
-    - {fileID: 8300000, guid: a57ea6a57d282844288fcb0ee1d7d83c, type: 3}
+  encounterStages: []
   storyManager: {fileID: 288826885}
 --- !u!136 &1852813578
 CapsuleCollider:
@@ -67458,33 +67394,7 @@ MonoBehaviour:
   targetMonsters: []
   startMonsterAIOnComplete: 1
   partnerTrigger: {fileID: 0}
-  encounterStages:
-  - stageName: First
-    messages:
-    - Holy shit! Why is it always me?!
-    - Wait, light. It hates light!
-    - Press F! Flashlight, come on!
-    - Quickly press F to turn on the flashlight and shine it on it.
-    voiceClips:
-    - {fileID: 8300000, guid: d0828cb770c4e6446b8b6e81fdcd094a, type: 3}
-    - {fileID: 8300000, guid: 18aca4ff5c52ad64b9c933080aedc836, type: 3}
-    - {fileID: 8300000, guid: 804980375e784d643b0f2e5ad2a1ee00, type: 3}
-  - stageName: Second
-    messages:
-    - ...
-    - Monther Fu*ker!!!
-    - Can you just leave me alone?!
-    voiceClips:
-    - {fileID: 0}
-    - {fileID: 8300000, guid: c49054cf7b5049b438475ebf9ba2738f, type: 3}
-    - {fileID: 8300000, guid: 2c040a8efa53b9048ac98c587aa7fc94, type: 3}
-  - stageName: Third
-    messages:
-    - ...
-    - I seriously need to go pay my respects at a temple after this.
-    voiceClips:
-    - {fileID: 0}
-    - {fileID: 8300000, guid: a57ea6a57d282844288fcb0ee1d7d83c, type: 3}
+  encounterStages: []
   storyManager: {fileID: 288826885}
 --- !u!136 &1859611216
 CapsuleCollider:
@@ -69359,6 +69269,10 @@ PrefabInstance:
       propertyPath: storyDatabase
       value: 
       objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -69464,6 +69378,10 @@ PrefabInstance:
       propertyPath: storyDatabase
       value: 
       objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6
@@ -71199,6 +71117,10 @@ PrefabInstance:
       propertyPath: storyDatabase
       value: 
       objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
+    - target: {fileID: 2635882806691457128, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4000810497854795004, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_Name
       value: Wall BayDoor Laser
@@ -71308,6 +71230,10 @@ PrefabInstance:
       propertyPath: storyDatabase
       value: 
       objectReference: {fileID: 11400000, guid: b28ddb3926e3f074bad0325424f92eb0, type: 2}
+    - target: {fileID: 7690218565446734047, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
+      propertyPath: encounterStages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9161233082173945734, guid: 87b1a23d67b09724abc9ec012bc77977, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6

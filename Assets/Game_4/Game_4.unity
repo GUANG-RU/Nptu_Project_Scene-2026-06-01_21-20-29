@@ -119,6 +119,49 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &15633500 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5568371526223589888, guid: b99d2a62376c48541a549c710cd6790b, type: 3}
+  m_PrefabInstance: {fileID: 203920610}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &15633503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15633500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e24825143f6e82449ecfd7745057222, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PortalTeleporter
+  targetScene: NextScene
+  duration: 2
+  maxFovAdd: 60
+  maxRoll: 40
+  fadeGroup: {fileID: 0}
+--- !u!65 &15633504
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15633500}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.053307585, y: 0.05330756, z: 0.016302655}
+  m_Center: {x: 0.0000000013702586, y: 0.0010057931, z: -0.00009484963}
 --- !u!1 &65409171
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,7 +443,7 @@ PrefabInstance:
     - target: {fileID: -5744939489922719380, guid: b99d2a62376c48541a549c710cd6790b, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: bb2d88d2112f74d4b8dfef23a4b5d31d, type: 2}
+      objectReference: {fileID: 2100000, guid: baab5468dbdb114448b307048c9006a8, type: 2}
     - target: {fileID: 919132149155446097, guid: b99d2a62376c48541a549c710cd6790b, type: 3}
       propertyPath: m_Name
       value: Right_portal
@@ -420,7 +463,7 @@ PrefabInstance:
     - target: {fileID: 6762529485108464276, guid: b99d2a62376c48541a549c710cd6790b, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 73af2581c8439614db43aad4500fa480, type: 2}
+      objectReference: {fileID: 2100000, guid: bb2d88d2112f74d4b8dfef23a4b5d31d, type: 2}
     - target: {fileID: 8153101253863224186, guid: b99d2a62376c48541a549c710cd6790b, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -428,7 +471,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -5568371526223589888, guid: b99d2a62376c48541a549c710cd6790b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 15633504}
+    - targetCorrespondingSourceObject: {fileID: -5568371526223589888, guid: b99d2a62376c48541a549c710cd6790b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 15633503}
   m_SourcePrefab: {fileID: 100100000, guid: b99d2a62376c48541a549c710cd6790b, type: 3}
 --- !u!1 &697879001
 GameObject:
@@ -513,6 +562,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1212456050 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+  m_PrefabInstance: {fileID: 1663942926}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1212456051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212456050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ea9ac9b753ae6f4eba994d37e240fd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerFallRespawn
+  fallThresholdY: -100
+  resetRotation: 1
 --- !u!1 &1226159538
 GameObject:
   m_ObjectHideFlags: 0
@@ -794,6 +862,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FPSController
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -837,7 +909,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1212456051}
   m_SourcePrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
 --- !u!1 &1688392681
 GameObject:

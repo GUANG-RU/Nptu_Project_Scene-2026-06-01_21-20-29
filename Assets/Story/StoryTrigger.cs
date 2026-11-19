@@ -1,3 +1,4 @@
+
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -42,8 +43,37 @@ public class StoryTrigger : MonoBehaviour
     public bool triggerOnce = true;
 
 
+    // ======================================
+    // 永久播放記錄設定
+    // ======================================
+
+    [Header("永久播放記錄設定")]
+
+    [Tooltip("勾選後，即使重新載入場景也不會再次播放")]
+    public bool rememberPlayedStory = false;
+
+    [Tooltip("此劇情的唯一識別名稱")]
+    public string storyID = "Intro_01";
+
+
     private bool hasTriggered = false;
 
+
+    // ======================================
+    // 取得劇情儲存 Key
+    // ======================================
+
+    string GetStorySaveKey()
+    {
+        return "StoryPlayed:" +
+               gameObject.scene.name +
+               ":" + storyID;
+    }
+
+
+    // ======================================
+    // 玩家進入觸發區域
+    // ======================================
 
     void OnTriggerEnter(Collider other)
     {
@@ -53,10 +83,20 @@ public class StoryTrigger : MonoBehaviour
             return;
         }
 
-        // 已經觸發過
+        // 檢查本次場景是否已經觸發
         if (triggerOnce && hasTriggered)
         {
             return;
+        }
+
+        // 檢查永久播放記錄
+        if (rememberPlayedStory)
+        {
+            if (PlayerPrefs.GetInt(
+                GetStorySaveKey(), 0) == 1)
+            {
+                return;
+            }
         }
 
         // 檢查 StoryManager
@@ -71,7 +111,8 @@ public class StoryTrigger : MonoBehaviour
 
         // 檢查目前播放中的劇情優先權
         if (storyManager.IsPlayingStory &&
-            stagePriority <= storyManager.CurrentPriorityLevel)
+            stagePriority <=
+            storyManager.CurrentPriorityLevel)
         {
             Debug.Log(
                 "[StoryTrigger] 目前有相同或更高優先權的劇情正在播放"
@@ -80,7 +121,6 @@ public class StoryTrigger : MonoBehaviour
             return;
         }
 
-
         string[] messages = null;
         AudioClip[] voiceClips = null;
 
@@ -88,6 +128,7 @@ public class StoryTrigger : MonoBehaviour
         // ======================================
         // 模式 A：從 StoryDatabase 讀取
         // ======================================
+
         if (useDatabase)
         {
             if (storyDatabase == null)
@@ -99,7 +140,6 @@ public class StoryTrigger : MonoBehaviour
                 return;
             }
 
-            // 根據 Event Type Key 找到事件
             List<StoryEncounterStage> stages =
                 storyDatabase.GetStagesForEvent(
                     eventTypeKey
@@ -115,10 +155,8 @@ public class StoryTrigger : MonoBehaviour
                 return;
             }
 
-
             StoryEncounterStage selectedStage = null;
 
-            // 尋找指定階段
             foreach (StoryEncounterStage stage in stages)
             {
                 if (stage == null)
@@ -136,7 +174,6 @@ public class StoryTrigger : MonoBehaviour
                 }
             }
 
-
             if (selectedStage == null)
             {
                 Debug.LogWarning(
@@ -147,8 +184,6 @@ public class StoryTrigger : MonoBehaviour
                 return;
             }
 
-
-            // 直接取得資料庫內的文字與語音
             messages = selectedStage.messages;
             voiceClips = selectedStage.voiceClips;
         }
@@ -157,6 +192,7 @@ public class StoryTrigger : MonoBehaviour
         // ======================================
         // 模式 B：使用原本的文字設定
         // ======================================
+
         else
         {
             List<string> messageList =
@@ -186,6 +222,7 @@ public class StoryTrigger : MonoBehaviour
         // ======================================
         // 檢查劇情內容
         // ======================================
+
         if (messages == null || messages.Length == 0)
         {
             Debug.LogWarning(
@@ -195,10 +232,37 @@ public class StoryTrigger : MonoBehaviour
             return;
         }
 
+        bool hasValidMessage = false;
+
+        foreach (string message in messages)
+        {
+            if (!string.IsNullOrWhiteSpace(message))
+            {
+                hasValidMessage = true;
+                break;
+            }
+        }
+
+        if (!hasValidMessage)
+        {
+            return;
+        }
+
+        if (storyManager.storyPanel == null ||
+            storyManager.storyText == null)
+        {
+            Debug.LogWarning(
+                "[StoryTrigger] StoryManager UI 尚未設定！"
+            );
+
+            return;
+        }
+
 
         // ======================================
         // 開始播放
         // ======================================
+
         storyManager.ShowStories(
             messages,
             voiceClips,
@@ -208,9 +272,51 @@ public class StoryTrigger : MonoBehaviour
 
         hasTriggered = true;
 
+
+        // ======================================
+        // 儲存永久播放記錄
+        // ======================================
+
+        if (rememberPlayedStory)
+        {
+            PlayerPrefs.SetInt(
+                GetStorySaveKey(),
+                1
+            );
+
+            PlayerPrefs.Save();
+
+            Debug.Log(
+                "[StoryTrigger] 已儲存劇情播放記錄：" +
+                GetStorySaveKey()
+            );
+        }
+
         Debug.Log(
             "[StoryTrigger] 開始播放劇情：" +
             eventTypeKey + " / " + stageName
+        );
+    }
+
+
+    // ======================================
+    // 手動清除劇情播放記錄
+    // ======================================
+
+    [ContextMenu("Reset Story Record")]
+    public void ResetStoryRecord()
+    {
+        hasTriggered = false;
+
+        PlayerPrefs.DeleteKey(
+            GetStorySaveKey()
+        );
+
+        PlayerPrefs.Save();
+
+        Debug.Log(
+            "[StoryTrigger] 已清除劇情播放記錄：" +
+            GetStorySaveKey()
         );
     }
 }

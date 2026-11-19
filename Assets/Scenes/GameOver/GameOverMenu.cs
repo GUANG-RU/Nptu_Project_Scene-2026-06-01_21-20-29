@@ -3,20 +3,22 @@ using UnityEngine.SceneManagement;
 
 public class GameOverManager : MonoBehaviour
 {
+    [Header("Bad Ending 設定")]
+    public string badEndingSceneName = "Bad Ending";
+    public string badEndingRetryScene = "Game_4";
+
     void Start()
     {
         // 顯示滑鼠
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
-        // 避免之前有暫停遊戲
+        // 恢復遊戲時間
         Time.timeScale = 1f;
     }
 
-
     // ============================================
     // Retry 按鈕
-    // 回到玩家剛才死亡的關卡
     // ============================================
     public void RetryLevel()
     {
@@ -26,11 +28,21 @@ public class GameOverManager : MonoBehaviour
                 "Level1"
             );
 
-        SceneManager.LoadScene(
-            lastLevel
-        );
+        // Bad Ending 死亡時返回 Game_4
+        if (lastLevel == badEndingSceneName)
+        {
+            SceneManager.LoadScene(
+                badEndingRetryScene
+            );
+        }
+        else
+        {
+            // 其他關卡維持原本的 Retry 機制
+            SceneManager.LoadScene(
+                lastLevel
+            );
+        }
     }
-
 
     // ============================================
     // 回主選單

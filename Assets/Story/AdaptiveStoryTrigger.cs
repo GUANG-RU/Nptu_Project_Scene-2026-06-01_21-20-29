@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class AdaptiveStoryTrigger : MonoBehaviour
 {
-    // 供 DialogueInputBlocker 讀取的全域對話狀態
+    // 供 DialogueInputBlocker 與外部系統讀取的全域對話狀態
     public static bool IsDialoguePlaying { get; private set; } = false;
 
     [Header("1. 謎題/事件大分類")]
@@ -46,12 +46,14 @@ public class AdaptiveStoryTrigger : MonoBehaviour
 
     private static Dictionary<string, int> s_SessionCounts = new Dictionary<string, int>();
 
-    // 🚨 新增 Awake 函式：在遊戲第一幀初始化前就將怪物鎖定
     private void Awake()
     {
-        if (startMonsterAIOnComplete && targetMonsters != null)
+        if (startMonsterAIOnComplete && targetMonsters != null && targetMonsters.Count > 0)
         {
-            SetAllMonstersAIState(false);
+            // 只有在「還有可觸發的對話階段」時，才在開場鎖定怪物；
+            // 若所有 Encounter Stages 都已播完或沒有設定任何對話，直接讓怪物自由行動
+            bool hasDialogueToPlay = HasValidDialogueForNextStage();
+            SetAllMonstersAIState(!hasDialogueToPlay);
         }
     }
 
@@ -61,8 +63,6 @@ public class AdaptiveStoryTrigger : MonoBehaviour
         {
             targetToLookAt = transform;
         }
-
-        // (原 Start 內的 SetAllMonstersAIState 已移至 Awake)
     }
 
     private void OnTriggerEnter(Collider other)
@@ -123,34 +123,68 @@ public class AdaptiveStoryTrigger : MonoBehaviour
         return angle <= maxFacingAngle;
     }
 
+    /// <summary>
+    /// 檢查下一個階段是否還有有效的對話內容可播放（不增加計數器）
+    /// </summary>
+    private bool HasValidDialogueForNextStage()
+    {
+        int nextStageIndex = GetCurrentEncounterCount(puzzleType);
+        List<StoryEncounterStage> activeStages = GetActiveStagesList();
+
+        if (activeStages != null && nextStageIndex >= 0 && nextStageIndex < activeStages.Count)
+        {
+            StoryEncounterStage stage = activeStages[nextStageIndex];
+            if (stage.messages != null && stage.messages.Length > 0 && !string.IsNullOrWhiteSpace(stage.messages[0]))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private List<StoryEncounterStage> GetActiveStagesList()
+    {
+        if (encounterStages != null && encounterStages.Count > 0)
+        {
+            return encounterStages;
+        }
+        if (storyDatabase != null)
+        {
+            return storyDatabase.GetStagesForEvent(puzzleType);
+        }
+        return null;
+    }
+
     private void PrepareAndStartDialogue()
     {
         if (storyManager == null) return;
+
+        // 若所有階段皆已觸發完畢或沒有任何有效對話，標記完成並確保怪物可自由移動
+        if (!HasValidDialogueForNextStage())
+        {
+            hasTriggeredThisLocation = true;
+            if (partnerTrigger != null)
+            {
+                partnerTrigger.hasTriggeredThisLocation = true;
+            }
+
+            if (startMonsterAIOnComplete && targetMonsters != null)
+            {
+                SetAllMonstersAIState(true);
+            }
+            return;
+        }
 
         int currentCount = GetAndIncreaseEncounterCount(puzzleType);
         int stageIndex = currentCount - 1;
         int stagePriority = Mathf.Max(1, 3 - stageIndex);
 
-        List<StoryEncounterStage> activeStages = encounterStages;
-        if ((activeStages == null || activeStages.Count == 0) && storyDatabase != null)
-        {
-            activeStages = storyDatabase.GetStagesForEvent(puzzleType);
-        }
+        List<StoryEncounterStage> activeStages = GetActiveStagesList();
+        StoryEncounterStage stage = activeStages[stageIndex];
 
-        string[] messagesToPlay = null;
-        AudioClip[] voicesToPlay = null;
-
-        if (activeStages != null && stageIndex >= 0 && stageIndex < activeStages.Count)
-        {
-            StoryEncounterStage stage = activeStages[stageIndex];
-            if (stage.messages != null && stage.messages.Length > 0 && !string.IsNullOrWhiteSpace(stage.messages[0]))
-            {
-                messagesToPlay = stage.messages;
-                voicesToPlay = stage.voiceClips;
-            }
-        }
-
-        if (messagesToPlay == null || messagesToPlay.Length == 0) return;
+        string[] messagesToPlay = stage.messages;
+        AudioClip[] voicesToPlay = stage.voiceClips;
 
         hasTriggeredThisLocation = true;
         isDialogueActive = true;
@@ -160,7 +194,6 @@ public class AdaptiveStoryTrigger : MonoBehaviour
             partnerTrigger.hasTriggeredThisLocation = true;
         }
 
-        // 🚨 僅在開啟 enableFreeze 時，才鎖定輸入與凍結組件
         if (enableFreeze)
         {
             IsDialoguePlaying = true;
@@ -174,14 +207,12 @@ public class AdaptiveStoryTrigger : MonoBehaviour
     {
         isDialogueActive = false;
 
-        // 🚨 僅在開啟 enableFreeze 時，還原定格與解鎖輸入
         if (enableFreeze)
         {
             IsDialoguePlaying = false;
             ToggleFreezeState(false);
         }
 
-        // 只要勾選對話後啟用怪物 AI，不管有沒有開啟定格，對話完都會醒來
         if (startMonsterAIOnComplete && targetMonsters != null)
         {
             SetAllMonstersAIState(true);
@@ -197,7 +228,7 @@ public class AdaptiveStoryTrigger : MonoBehaviour
         {
             if (monster == null) continue;
 
-            // 1. 停用/啟用怪物 C# AI 腳本 (包含 SoundMonsterAI2, MonsterHearing2)
+            // 1. 啟用 / 停用怪物 AI 與聽覺腳本
             MonoBehaviour[] monsterScripts = monster.GetComponents<MonoBehaviour>();
             foreach (var script in monsterScripts)
             {
@@ -210,19 +241,19 @@ public class AdaptiveStoryTrigger : MonoBehaviour
                 }
             }
 
-            // 2. 🚨 關鍵：徹底清空並阻斷底層 NavMeshAgent 尋路
+            // 2. 控制 NavMeshAgent 尋路狀態
             UnityEngine.AI.NavMeshAgent agent = monster.GetComponent<UnityEngine.AI.NavMeshAgent>();
             if (agent != null && agent.enabled && agent.isOnNavMesh)
             {
                 agent.isStopped = !enable;
                 if (!enable)
                 {
-                    agent.velocity = Vector3.zero; // 速度歸零
-                    agent.ResetPath();             // 清空巡邏路徑
+                    agent.velocity = Vector3.zero;
+                    agent.ResetPath();
                 }
             }
 
-            // 3. 凍結/恢復怪物的動畫狀態
+            // 3. 控制怪物動畫速度
             Animator monsterAnim = monster.GetComponentInChildren<Animator>();
             if (monsterAnim != null)
             {
@@ -233,14 +264,12 @@ public class AdaptiveStoryTrigger : MonoBehaviour
 
     private void ToggleFreezeState(bool freeze)
     {
-        // 1. 呼叫獨立的 DialogueInputBlocker 封鎖/解除按鍵輸入
         DialogueInputBlocker inputBlocker = FindFirstObjectByType<DialogueInputBlocker>();
         if (inputBlocker != null)
         {
             inputBlocker.SetPlayerControlsLock(freeze);
         }
 
-        // 2. 凍結 / 解鎖玩家移動控制腳本 (停用 FirstPersonController 避免警報)
         if (cachedPlayerObj != null)
         {
             MonoBehaviour[] playerScripts = cachedPlayerObj.GetComponentsInChildren<MonoBehaviour>();
@@ -256,64 +285,32 @@ public class AdaptiveStoryTrigger : MonoBehaviour
             }
         }
 
-        // 3. 凍結 / 解鎖連動怪物的物理與動畫
         if (targetMonsters != null)
         {
-            foreach (var monster in targetMonsters)
-            {
-                if (monster == null) continue;
-
-                SetMonsterScriptStateForSingle(monster, !freeze);
-
-                UnityEngine.AI.NavMeshAgent agent = monster.GetComponent<UnityEngine.AI.NavMeshAgent>();
-                if (agent != null && agent.enabled && agent.isOnNavMesh)
-                {
-                    agent.isStopped = freeze;
-                    if (freeze)
-                    {
-                        agent.velocity = Vector3.zero;
-                        agent.ResetPath();
-                    }
-                }
-
-                Animator monsterAnim = monster.GetComponentInChildren<Animator>();
-                if (monsterAnim != null)
-                {
-                    monsterAnim.speed = freeze ? 0f : 1f;
-                }
-            }
+            SetAllMonstersAIState(!freeze);
         }
     }
 
-    private void SetMonsterScriptStateForSingle(GameObject monster, bool enable)
+    private int GetCurrentEncounterCount(string type)
     {
-        MonoBehaviour[] monsterScripts = monster.GetComponents<MonoBehaviour>();
-        foreach (var script in monsterScripts)
+        if (saveAcrossSessions)
         {
-            if (script == null) continue;
-            string sName = script.GetType().Name.ToLower();
-            if (sName.Contains("ai") || sName.Contains("monster") || sName.Contains("hearing") || sName.Contains("sound"))
-            {
-                script.enabled = enable;
-            }
+            return PlayerPrefs.GetInt("EncounterCount_" + type, 0);
         }
+        return s_SessionCounts.ContainsKey(type) ? s_SessionCounts[type] : 0;
     }
 
     private int GetAndIncreaseEncounterCount(string type)
     {
-        int count = 0;
+        int count = GetCurrentEncounterCount(type) + 1;
         if (saveAcrossSessions)
         {
-            string key = "EncounterCount_" + type;
-            count = PlayerPrefs.GetInt(key, 0) + 1;
-            PlayerPrefs.SetInt(key, count);
+            PlayerPrefs.SetInt("EncounterCount_" + type, count);
             PlayerPrefs.Save();
         }
         else
         {
-            if (!s_SessionCounts.ContainsKey(type)) s_SessionCounts[type] = 0;
-            s_SessionCounts[type]++;
-            count = s_SessionCounts[type];
+            s_SessionCounts[type] = count;
         }
         return count;
     }

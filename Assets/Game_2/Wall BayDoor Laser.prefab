@@ -71,15 +71,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca9942d112bfbd8449dea4ccc1003922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
-  puzzleTypeID: LaserPuzzle
+  puzzleType: Monster1
+  storyDatabase: {fileID: 0}
   saveAcrossSessions: 1
-  triggerOncePerID: 1
+  requireFacingTarget: 1
   targetToLookAt: {fileID: 0}
   maxFacingAngle: 40
-  targetMonster: {fileID: 0}
-  monster3Instance: {fileID: 0}
-  monster3InterferenceMessages: []
-  monster3InterferenceVoices: []
+  enableFreeze: 1
+  targetMonsters: []
+  startMonsterAIOnComplete: 1
+  partnerTrigger: {fileID: 0}
   encounterStages:
   - stageName: First
     messages:
@@ -99,7 +100,6 @@ MonoBehaviour:
     - FU*O*K
     voiceClips: []
   storyManager: {fileID: 0}
-  partnerTrigger: {fileID: 0}
 --- !u!1 &4239413524770478473
 GameObject:
   m_ObjectHideFlags: 0
@@ -687,15 +687,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca9942d112bfbd8449dea4ccc1003922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
-  puzzleTypeID: LaserPuzzle_01
+  puzzleType: Monster1
+  storyDatabase: {fileID: 0}
   saveAcrossSessions: 0
-  triggerOncePerID: 1
+  requireFacingTarget: 1
   targetToLookAt: {fileID: 6510223521580704717}
   maxFacingAngle: 40
-  targetMonster: {fileID: 0}
-  monster3Instance: {fileID: 0}
-  monster3InterferenceMessages: []
-  monster3InterferenceVoices: []
+  enableFreeze: 1
+  targetMonsters: []
+  startMonsterAIOnComplete: 1
+  partnerTrigger: {fileID: 7690218565446734047}
   encounterStages:
   - stageName: First
     messages:
@@ -725,7 +726,6 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 8300000, guid: 98835701e62a3fb4ab5eea961a19556b, type: 3}
   storyManager: {fileID: 0}
-  partnerTrigger: {fileID: 7690218565446734047}
 --- !u!1001 &2636658681800106155
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -961,15 +961,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca9942d112bfbd8449dea4ccc1003922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdaptiveStoryTrigger
-  puzzleTypeID: LaserPuzzle_01
+  puzzleType: Monster1
+  storyDatabase: {fileID: 0}
   saveAcrossSessions: 0
-  triggerOncePerID: 1
+  requireFacingTarget: 1
   targetToLookAt: {fileID: 9161233082173945734}
   maxFacingAngle: 40
-  targetMonster: {fileID: 0}
-  monster3Instance: {fileID: 0}
-  monster3InterferenceMessages: []
-  monster3InterferenceVoices: []
+  enableFreeze: 1
+  targetMonsters: []
+  startMonsterAIOnComplete: 1
+  partnerTrigger: {fileID: 2635882806691457128}
   encounterStages:
   - stageName: First
     messages:
@@ -999,7 +1000,6 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 8300000, guid: 98835701e62a3fb4ab5eea961a19556b, type: 3}
   storyManager: {fileID: 0}
-  partnerTrigger: {fileID: 2635882806691457128}
 --- !u!4 &9161233082173945734 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 690562261663448245, guid: d37c84bfb8ca47345bab04e1a6c622c5, type: 3}

@@ -18,7 +18,7 @@ public class CorridorDoor_V2 : MonoBehaviour
 
     [Header("互動提示 UI")]
     [SerializeField] private GameObject interactPrompt;
-    [SerializeField] private KeyCode    interactKey    = KeyCode.F;
+    [SerializeField] private KeyCode    interactKey    = KeyCode.E;
 
     [Header("互動碰撞範圍")]
     [SerializeField] private float interactRadius = 2.0f;

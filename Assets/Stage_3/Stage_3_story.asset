@@ -12,4 +12,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b5213f75801e214d8fb9ad8f5b8cac8, type: 3}
   m_Name: Stage_3_story
   m_EditorClassIdentifier: Assembly-CSharp::StoryDatabaseSO
-  eventConfigs: []
+  eventConfigs:
+  - eventTypeKey: Intro
+    encounterStages:
+    - stageName: First
+      messages:
+      - ...Wood? Since when did this place have wooden walls?
+      - 'This doesn''t look like the lab anymore.
+
+        Where am I?'
+      - 'Five doors. All identical.
+
+        Something tells me not all of them
+        lead somewhere good.'
+      voiceClips:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+    - stageName: Second
+      messages:
+      - 'Only one of these is the real path forward.
+
+        The others... I don''t
+        want to find out.'
+      - There must be a clue somewhere. I should look around.
+      voiceClips:
+      - {fileID: 0}
+      - {fileID: 0}
+  - eventTypeKey: Door
+    encounterStages:
+    - stageName: First
+      messages:
+      - ...A dead end. Of course.
+      - Back to the corridor. The right door is still out there.
+      voiceClips:
+      - {fileID: 0}
+      - {fileID: 0}
+  - eventTypeKey: Scroll
+    encounterStages:
+    - stageName: First
+      messages:
+      - "A scroll. There are symbols on it \u2014 and a grid."
+      - 'I think I understand. Draw the path of light across the grid.
+
+        Use
+        the mirrors to reflect it to the endpoint.'
+      - 'Angle them right, and the correct door will reveal itself.
+
+        Let''s
+        try.'
+      voiceClips:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}

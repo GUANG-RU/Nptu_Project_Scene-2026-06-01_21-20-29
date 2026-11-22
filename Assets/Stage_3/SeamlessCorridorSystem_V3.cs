@@ -36,6 +36,8 @@ public class SeamlessCorridorSystem_V3 : MonoBehaviour
 
     [Header("浮動走道延伸方向（門內側朝向）")]
     [SerializeField] private Vector3 pathForward = Vector3.forward;
+    [Header("故事物件")]
+    [SerializeField] private GameObject obj;
 
     // ──────────────────────────────────────────
     public System.Action OnWrongDoor;
@@ -193,6 +195,8 @@ public class SeamlessCorridorSystem_V3 : MonoBehaviour
             float finalYaw    = spawnYaw + relativeYaw;
 
             Debug.Log($"[System] TeleportTo YAWLOG | camYaw={camYaw:F1} pathYaw={pathYaw:F1} spawnYaw={spawnYaw:F1} relYaw={relativeYaw:F1} finalYaw={finalYaw:F1}");
+
+            obj.SetActive(true);
 
             player.rotation = Quaternion.Euler(0f, finalYaw, 0f);
             if (playerCameraTransform)

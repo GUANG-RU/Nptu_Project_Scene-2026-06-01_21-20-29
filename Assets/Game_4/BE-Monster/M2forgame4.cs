@@ -55,12 +55,12 @@ public class M2forgame4 : MonoBehaviour
     // ==========================================
     // Game Over 設定
     // ==========================================
-    [Header("Game Over 設定")]
+    [Header("Game Clear 設定")]
 
-    [Tooltip("攻擊命中後多久進入 GameOver")]
+    [Tooltip("攻擊命中後多久進入 GameClear")]
     public float gameOverDelay = 2f;
 
-    public string gameOverSceneName = "GameOver";
+    public string gameOverSceneName = "GameClear";
 
     // ==========================================
     // 音效設定

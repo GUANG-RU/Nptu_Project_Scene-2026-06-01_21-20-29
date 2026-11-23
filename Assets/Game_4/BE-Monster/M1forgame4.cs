@@ -39,8 +39,8 @@ public class M1forgame4 : MonoBehaviour
     public bool waitForAttackAnimation = false;
     public float animationFinishTimeout = 3f;
 
-    [Header("Game Over")]
-    public string gameOverSceneName = "GameOver";
+    [Header("Game Claer")]
+    public string gameOverSceneName = "GameClear";
 
     [Header("Animation")]
     public Animator animator;

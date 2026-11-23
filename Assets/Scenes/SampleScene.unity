@@ -5476,7 +5476,7 @@ MonoBehaviour:
   storyManager: {fileID: 604931615}
   stagePriority: 1
   triggerOnce: 1
-  rememberPlayedStory: 1
+  rememberPlayedStory: 0
   storyID: Intro_01
 --- !u!4 &1422947359
 Transform:

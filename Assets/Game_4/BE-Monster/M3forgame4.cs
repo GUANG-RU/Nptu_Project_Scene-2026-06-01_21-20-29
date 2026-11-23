@@ -65,8 +65,8 @@ public class M3forgame4 : MonoBehaviour
     public float freezeDuration = 2.5f;
     public float effectCooldown = 5f;
 
-    [Header("Game Over 設定")]
-    public string gameOverSceneName = "GameOver";
+    [Header("Game Claer")]
+    public string gameOverSceneName = "GameClear";
 
     [Tooltip("重影效果結束後額外等待的秒數")]
     public float extraGameOverDelay = 0f;

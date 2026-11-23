@@ -1,0 +1,77 @@
+LIGHT MAZE
+
+
+
+
+A game by
+
+
+
+
+黃長智
+洪茂翔
+沈光儒
+
+
+
+
+─────────────────
+
+
+
+
+Special Thanks
+
+
+
+
+Instructor
+施釗偲 教授
+
+
+
+
+─────────────────
+
+
+
+
+Assets
+
+
+
+
+Character Models
+Unity Asset Store
+
+Scene Assets
+Quaternius
+
+Sound Effects
+Audacity / FMOD / ElevenLabs
+
+UI Assets
+Game Developer Studio
+Idylwild
+
+
+
+
+─────────────────
+
+
+
+
+Made with Unity 6
+
+
+
+
+115學年度
+電腦科學與人工智慧學系
+專題成果展
+
+
+
+
+Thank you for playing.

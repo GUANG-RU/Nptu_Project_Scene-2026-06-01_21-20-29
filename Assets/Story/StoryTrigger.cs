@@ -10,10 +10,10 @@ public class StoryTrigger : MonoBehaviour
     [Tooltip("勾選後從 StoryDatabase 讀取劇情")]
     public bool useDatabase = false;
 
-    [Tooltip("指定原本的 StoryDatabaseSO")]
+    [Tooltip("指定 StoryDatabaseSO")]
     public StoryDatabaseSO storyDatabase;
 
-    [Tooltip("事件 ID，例如 Intro、Monster1、Room02")]
+    [Tooltip("事件 ID，例如 Game4、BadEnding、GoodEnding")]
     public string eventTypeKey = "Intro";
 
     [Tooltip("階段名稱，例如 First、Second、Third")]
@@ -35,6 +35,9 @@ public class StoryTrigger : MonoBehaviour
 
     public StoryManager storyManager;
 
+    [Tooltip("勾選後，進入場景就自動播放劇情")]
+    public bool playOnStart = false;
+
     [Tooltip("劇情優先權：1=低，2=中，3=高")]
     [Range(1, 3)]
     public int stagePriority = 1;
@@ -42,10 +45,6 @@ public class StoryTrigger : MonoBehaviour
     [Tooltip("是否只觸發一次")]
     public bool triggerOnce = true;
 
-
-    // ======================================
-    // 永久播放記錄設定
-    // ======================================
 
     [Header("永久播放記錄設定")]
 
@@ -56,6 +55,11 @@ public class StoryTrigger : MonoBehaviour
     public string storyID = "Intro_01";
 
 
+    [Header("Debug")]
+
+    public bool showDebugLog = true;
+
+
     private bool hasTriggered = false;
 
 
@@ -63,7 +67,7 @@ public class StoryTrigger : MonoBehaviour
     // 取得劇情儲存 Key
     // ======================================
 
-    string GetStorySaveKey()
+    private string GetStorySaveKey()
     {
         return "StoryPlayed:" +
                gameObject.scene.name +
@@ -72,17 +76,50 @@ public class StoryTrigger : MonoBehaviour
 
 
     // ======================================
+    // 進入場景自動播放
+    // ======================================
+
+    private void Start()
+    {
+        if (playOnStart)
+        {
+            PlayStory();
+        }
+    }
+
+
+    // ======================================
     // 玩家進入觸發區域
     // ======================================
 
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        // 確認玩家進入
-        if (!other.CompareTag("Player"))
+        // 使用自動播放模式時，不需要碰撞觸發
+        if (playOnStart)
         {
             return;
         }
 
+        // 確認玩家進入
+        bool isPlayer =
+            other.CompareTag("Player") ||
+            other.transform.root.CompareTag("Player");
+
+        if (!isPlayer)
+        {
+            return;
+        }
+
+        PlayStory();
+    }
+
+
+    // ======================================
+    // 統一播放劇情
+    // ======================================
+
+    public void PlayStory()
+    {
         // 檢查本次場景是否已經觸發
         if (triggerOnce && hasTriggered)
         {
@@ -95,15 +132,29 @@ public class StoryTrigger : MonoBehaviour
             if (PlayerPrefs.GetInt(
                 GetStorySaveKey(), 0) == 1)
             {
+                if (showDebugLog)
+                {
+                    Debug.Log(
+                        "[StoryTrigger] 劇情已播放過：" +
+                        GetStorySaveKey()
+                    );
+                }
+
                 return;
             }
         }
 
-        // 檢查 StoryManager
+        // 自動尋找 StoryManager
+        if (storyManager == null)
+        {
+            storyManager =
+                FindFirstObjectByType<StoryManager>();
+        }
+
         if (storyManager == null)
         {
             Debug.LogWarning(
-                "[StoryTrigger] StoryManager 尚未指定！"
+                "[StoryTrigger] 找不到 StoryManager！"
             );
 
             return;
@@ -114,9 +165,13 @@ public class StoryTrigger : MonoBehaviour
             stagePriority <=
             storyManager.CurrentPriorityLevel)
         {
-            Debug.Log(
-                "[StoryTrigger] 目前有相同或更高優先權的劇情正在播放"
-            );
+            if (showDebugLog)
+            {
+                Debug.Log(
+                    "[StoryTrigger] 目前有相同或更高" +
+                    "優先權的劇情正在播放"
+                );
+            }
 
             return;
         }
@@ -145,7 +200,7 @@ public class StoryTrigger : MonoBehaviour
                     eventTypeKey
                 );
 
-            if (stages == null)
+            if (stages == null || stages.Count == 0)
             {
                 Debug.LogWarning(
                     "[StoryTrigger] 找不到事件：" +
@@ -245,9 +300,14 @@ public class StoryTrigger : MonoBehaviour
 
         if (!hasValidMessage)
         {
+            Debug.LogWarning(
+                "[StoryTrigger] 所有劇情文字都是空白！"
+            );
+
             return;
         }
 
+        // 檢查字幕 UI
         if (storyManager.storyPanel == null ||
             storyManager.storyText == null)
         {
@@ -286,16 +346,22 @@ public class StoryTrigger : MonoBehaviour
 
             PlayerPrefs.Save();
 
-            Debug.Log(
-                "[StoryTrigger] 已儲存劇情播放記錄：" +
-                GetStorySaveKey()
-            );
+            if (showDebugLog)
+            {
+                Debug.Log(
+                    "[StoryTrigger] 已儲存劇情播放記錄：" +
+                    GetStorySaveKey()
+                );
+            }
         }
 
-        Debug.Log(
-            "[StoryTrigger] 開始播放劇情：" +
-            eventTypeKey + " / " + stageName
-        );
+        if (showDebugLog)
+        {
+            Debug.Log(
+                "[StoryTrigger] 開始播放劇情：" +
+                eventTypeKey + " / " + stageName
+            );
+        }
     }
 
 

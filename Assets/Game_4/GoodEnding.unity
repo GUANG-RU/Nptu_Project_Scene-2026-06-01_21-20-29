@@ -481,7 +481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 551ff52d88667464ba18c5314cde0555, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StoryTrigger
-  useDatabase: 0
+  useDatabase: 1
   storyDatabase: {fileID: 11400000, guid: b8e11e6f0d9bc6a4ab0a069563c3a479, type: 2}
   eventTypeKey: GoodEnding
   stageName: First
@@ -489,7 +489,7 @@ MonoBehaviour:
   followingMessages: []
   displayTime: 3
   storyManager: {fileID: 1844891291}
-  playOnStart: 0
+  playOnStart: 1
   stagePriority: 1
   triggerOnce: 1
   rememberPlayedStory: 0

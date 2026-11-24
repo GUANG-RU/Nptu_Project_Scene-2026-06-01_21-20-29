@@ -36,6 +36,8 @@ MonoBehaviour:
     encounterStages:
     - stageName: First
       messages:
-      - 
+      - Did I finally get out of that strange place?
+      - But... where am I now?
       voiceClips:
-      - {fileID: 0}
+      - {fileID: 8300000, guid: 8d0628170219e1e43a58552228a9c358, type: 3}
+      - {fileID: 8300000, guid: 6fb44e8642933434687299de8b61d91b, type: 3}

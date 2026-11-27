@@ -21,7 +21,7 @@ public class IntroSceneController : MonoBehaviour
     public GameObject blackScreen;
 
     [Tooltip("劇情結束後，黑畫面維持的秒數")]
-    public float blackScreenDuration = 2f;
+    public float blackScreenDuration = 1f;
 
     [Header("下一個場景")]
     public string nextSceneName = "SampleScene";

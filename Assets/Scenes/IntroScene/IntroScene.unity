@@ -960,7 +960,7 @@ MonoBehaviour:
   eventTypeKey: Intro
   stageName: First
   blackScreen: {fileID: 653831642}
-  blackScreenDuration: 2
+  blackScreenDuration: 1
   nextSceneName: SampleScene
 --- !u!4 &2136511692
 Transform:
